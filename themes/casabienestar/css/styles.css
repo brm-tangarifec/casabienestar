@@ -1,0 +1,34 @@
+/**
+ * Estilos para quitar etiquetas drupal
+ */
+
+.element-invisible{
+    display:none !important;
+}
+
+.block__title{
+     display:none !important;
+}
+
+.jcarousel-item {
+	width: 150px !important;
+	margin: 0 1px;
+	height: 144px;
+}
+
+.field-label{
+    display:none!important;
+}
+/* .shareThis{
+    padding: 18px;
+    float: left;
+    width: 35%;
+}
+.shareThis > div{
+	padding:0;
+}
+
+.verMas > a {
+	    font-size: 14px;
+    color:white;
+} */
