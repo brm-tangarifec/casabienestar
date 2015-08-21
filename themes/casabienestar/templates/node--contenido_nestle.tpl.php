@@ -208,7 +208,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
         <h3>Artículos Relacionados</h3>
         <!--Validacion de tipo contenido-->
         <?php if ($tipoContenido=='Salud' || $tipoContenido=='Bienestar' ): ?>
-        <article class="module-box module-box-nutricion">
+       <article class="module-box module-box-nutricion">
           <div class="title">
             <h2>Nutricion</h2>
           </div>
@@ -218,21 +218,23 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
             <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
 
           </p>
-          <!--Wrapper para compartir, enviar, favorito y ver más-->
+         <!--  Wrapper para compartir, enviar, favorito y ver más -->
           <div class="wrapper-vermas">
-            <!--Box flotante botones de compartir-->
+           <!--  Box flotante botones de compartir -->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
               <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+              </div> -->
+              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
+
+
          <?php endif; ?>
         <?php if ($tipoContenido=='Nutrición' || $tipoContenido=='Bienestar'): ?>
         <article class="module-box module-box-salud">
@@ -250,13 +252,13 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
             <!--Box flotante botones de compartir-->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+         <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
+            <!--  <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+              <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+              <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+            </div> -->
+              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -276,12 +278,12 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <div class="wrapper-vermas">
             <div class="row">
               <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+              </div> -->
+              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
             </div>
           </div>
         </article>
