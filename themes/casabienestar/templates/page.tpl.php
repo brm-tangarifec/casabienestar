@@ -114,7 +114,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="index.html"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h2><a href="/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
@@ -366,10 +366,10 @@ print_r($contShN);
 <!--Acá finaliza el contenido-->
 
 <!--Sección Widgets Sociales-->
-    <!-- <div class="container-fluid">
+ <div class="container-fluid">
       <div class="row">
         <div class="widget widget-fb col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          Facebook
+          <!-- Facebook -->
           <div class="icon-widget btn btn-info btn-fab btn-raised"><span class="fa fa-facebook"></span></div>
           <div style="width:100%;">
             <div data-href="https://www.facebook.com/nestle.colombia" data-small-header="false" data-adapt-container-width="true" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" class="fb-page"></div>
@@ -379,34 +379,34 @@ print_r($contShN);
           </div>
         </div>
         <div class="widget widget-tw col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          Twitter
+          <!-- Twitter -->
           <div class="icon-widget btn btn-info btn-fab btn-raised"><span class="fa fa-twitter"></span></div>
-          <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><img src="<?php print base_path() . path_to_theme(); ?>/images/avatar-nestle.jpg" alt="Nestlé en Twitter" class="img-responsive img-circle">
-              <p class="desc">
-                Nestlé Colombia @NestleColombia
+         <!--  <div class="row">
+           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><img src="<?php print base_path() . path_to_theme(); ?>/images/avatar-nestle.jpg" alt="Nestlé en Twitter" class="img-responsive img-circle">
+             <p class="desc">
+               Nestlé Colombia @NestleColombia
 
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="https://twitter.com/NestleColombia" data-size-value="default" data-show-count="false" data-show-screen-name="false" class="twitter-follow-button">Follow @NestleColombia</a></div>
-          </div>
+             </p>
+           </div>
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="https://twitter.com/NestleColombia" data-size-value="default" data-show-count="false" data-show-screen-name="false" class="twitter-follow-button">Follow @NestleColombia</a></div>
+         </div> -->
           <div class="row">
             <div class="col-lg-12">
               <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent" data-tweet-limit="1">Nestlé Colombia.</a>
-              <p><?php echo date('Y-m-d H:m:s');?></p>
+
             </div>
-            <div class="col-lg-12">
+            <!-- <div class="col-lg-12">
               <hr>
               <p class="tweet-stats">1,123 RETWEETS  1,203 FAVORITES</p>
               <hr>
             </div>
             <div class="col-lg-12">
               <p class="tweet-actions"><span class="fa fa-reply"></span><span class="mdi-action-cached"></span><span class="mdi-action-grade"></span><span class="glyphicon glyphicon-option-horizontal"></span></p>
-            </div>
+            </div> -->
                       </div>
         </div>
         <div class="widget widget-yt col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          YouTube
+          <!-- YouTube -->
           <div class="icon-widget btn btn-danger btn-fab btn-raised"><span class="fa fa-youtube"></span></div>
           <div class="row">
             <div class="col-lg-12">
@@ -418,7 +418,7 @@ print_r($contShN);
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <!--/-Sección Widgets Sociales-->
 
     <!--Footer-->

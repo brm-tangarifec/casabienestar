@@ -184,6 +184,8 @@ $(document).ready(function(){
 		$('.module-box-salud > h2').wrap('<div class="title">');
 		$('.module-box-bienestar > h2').wrap('<div class="title">');
 		jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
+		jQuery('.item > img').removeAttr('width');
+		jQuery('.item > img').removeAttr('height');
 
 	}
 
