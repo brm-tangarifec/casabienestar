@@ -155,6 +155,7 @@ $(document).ready(function(){
 			jQuery(".img-responsive").removeAttr('width');
 			jQuery(".sticker").width(140);
 			jQuery("td").css('float','left');
+			jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
 			//jQuery(".img-responsive").width(451);
 
 			}

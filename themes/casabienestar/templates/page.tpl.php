@@ -392,7 +392,7 @@ print_r($contShN);
          </div> -->
           <div class="row">
             <div class="col-lg-12">
-              <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent" data-tweet-limit="1">Nestlé Colombia.</a>
+              <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent noheader" data-tweet-limit="1">Nestlé Colombia.</a>
 
             </div>
             <!-- <div class="col-lg-12">
@@ -413,6 +413,8 @@ print_r($contShN);
               <div data-channel="Nestlecol" data-layout="full" data-count="false" class="g-ytsubscribe"></div>
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe src="https://www.youtube.com/embed/Ms-cvKwkgu8" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe>
+
+
               </div>
             </div>
           </div>

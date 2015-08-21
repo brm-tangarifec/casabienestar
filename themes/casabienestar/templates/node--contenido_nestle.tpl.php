@@ -152,7 +152,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
       <!--Contenido artículo-->
       <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <!--Box botones de compartir-->
-        <div class="box-compartir row">
+        <!-- <div class="box-compartir row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <h5>Compartido</h5>
             <p class="contador-general">9999</p>
@@ -167,7 +167,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
               <p class="contador-num">9999</p>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--/-Box botones de compartir-->
         <!--Texto destacado del artículo-->
         <h4 class="destacado">
@@ -185,7 +185,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 article-action">
             <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-            <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+            <!-- <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->
             <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
           </div>
         </div>
@@ -223,13 +223,14 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
            <!--  Box flotante botones de compartir -->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
+              <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
               <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -252,13 +253,14 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
             <!--Box flotante botones de compartir-->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
-         <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
+         <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
             <!--  <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
               <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
               <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
               <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
             </div> -->
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -277,13 +279,14 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <!--Wrapper para compartir, enviar, favorito y ver más-->
           <div class="wrapper-vermas">
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
+              <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
               <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
             </div>
           </div>
         </article>
@@ -312,3 +315,22 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
   <?php print render($content['comments']); ?>
 
 </section>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    jQuery('.field-name-field-imginternaarticulo > img').addClass('img-responsive');
+    jQuery('.field-name-field-imginternaarticulo > img').removeAttr('width');
+    jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
+    jQuery('.link-wrapper').hide();
+
+
+    jQuery('.share-others').click(function(){
+
+      jQuery('.st_sharethis_custom')[0].click();
+    });
+    jQuery('.share-mail').click(function(){
+
+      jQuery('.st_email_custom')[0].click();
+    });
+  });
+</script>
