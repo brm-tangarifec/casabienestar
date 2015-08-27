@@ -81,7 +81,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
@@ -128,9 +128,9 @@
                       print theme('links__menu_casabienestar', array('links' => $menu,'attributes' => array('class' => array('nav navbar-nav'))));
                     ?>
                     <ul class="nav navbar-nav navbar-right">
-                       <li class="social-link social-links-facebok"><a href="#" rel="nofollow"><span class="fa fa-facebook"></span></a></li>
-                       <li class="social-link social-links-twitter"><a href="#" rel="nofollow"><span class="fa fa-twitter"></span></a></li>
-                       <li class="social-link social-links-youtube"><a href="#" rel="nofollow"><span class="fa fa-youtube"></span></a></li>
+                       <li class="social-link social-links-facebok"><a href="https://www.facebook.com/nestle.colombia" rel="nofollow" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                       <li class="social-link social-links-twitter"><a href="https://twitter.com/NestleColombia" rel="nofollow" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                       <li class="social-link social-links-youtube"><a href="https://www.youtube.com/user/Nestlecol" rel="nofollow" target="_blank"><span class="fa fa-youtube"></span></a></li>
                     </ul>
 
 
@@ -182,7 +182,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 nestip-titulo">
-          <h3>Nestips</h3>
+          <h3>Nestip</h3>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 nestip-texto">
 

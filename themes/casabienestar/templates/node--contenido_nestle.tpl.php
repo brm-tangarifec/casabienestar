@@ -212,7 +212,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <div class="title">
             <h2>Nutricion</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Salud" class="sticker sticker-nutricion img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Salud" class="sticker sticker-nutricion img-responsive"><img src="<?php print image_style_url('imgarticulo',$contenidoAr->field_image['und'][0]['uri'])?>" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
           <h3><?php print $contenidoArt->title;?></h3>
           <p>
             <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
@@ -230,7 +230,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -260,7 +260,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
               <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
             </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -286,7 +286,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
             </div>
           </div>
         </article>
