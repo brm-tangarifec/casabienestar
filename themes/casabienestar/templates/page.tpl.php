@@ -134,7 +134,12 @@
           </p>
           <form id="search-input">
             <div class="form-group">
-              <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>
+              
+              <?php       
+                $block = module_invoke('search', 'block_view', 'form');
+               print render($page['busqueda']);
+                ?>
+              <span class="glyphicon glyphicon-search"></span>
             </div>
           </form>
           <!--/-País y buscador-->

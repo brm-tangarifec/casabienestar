@@ -241,5 +241,4 @@ function toArray($obj)
     return $new;
 }
 
-/*Funcion para cargar regiones en nodos*/
 
