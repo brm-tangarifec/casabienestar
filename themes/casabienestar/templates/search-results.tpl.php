@@ -14,28 +14,20 @@
  * Available variables:
  * - $search_results: All results as it is rendered through
  *   search-result.tpl.php
- * - $type: The type of search, e.g., "node" or "user".
+ * - $module: The machine-readable name of the module (tab) being searched, such
+ *   as "node" or "user".
  *
  *
- * @see template_preprocess_custom_search_results()
+ * @see template_preprocess_search_results()
+ *
+ * @ingroup themeable
  */
-print_r('hola');
 ?>
-<?php if ($search_results) : ?>
+<?php if ($search_results): ?>
   <h2><?php print t('Search results');?></h2>
-  <?php if (isset($filter) && $filter != '' && $filter_position == 'above') : ?>
-    <div class="custom-search-filter">
-      <?php print $filter; ?>
-    </div>
-  <?php endif; ?>
   <ol class="search-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
   </ol>
-  <?php if (isset($filter) && $filter != '' && $filter_position == 'below') : ?>
-    <div class="custom-search-filter">
-      <?php print $filter; ?>
-    </div>
-  <?php endif; ?>
   <?php print $pager; ?>
 <?php else : ?>
   <h2><?php print t('Your search yielded no results');?></h2>

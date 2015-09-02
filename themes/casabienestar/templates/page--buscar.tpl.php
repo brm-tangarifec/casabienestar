@@ -1,0 +1,1 @@
+page--buscar.tpl.php

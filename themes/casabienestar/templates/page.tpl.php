@@ -134,12 +134,8 @@
           </p>
           <form id="search-input">
             <div class="form-group">
-              
-              <?php       
-                $block = module_invoke('search', 'block_view', 'form');
-               print render($page['busqueda']);
-                ?>
-              <span class="glyphicon glyphicon-search"></span>
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span> -->
+              <?php print render($page['buscador']);?>
             </div>
           </form>
           <!--/-País y buscador-->
@@ -434,9 +430,9 @@ print_r($contShN);
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="#">Políticas de privacidad</a></li>
-            <li><a href="#">Ver información corporativa</a></li>
-            <li><a href="#">Política de tratamiento de datos personales</a></li>
+            <li><a href="/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="http://corporativa.nestle.com.co/">Ver información corporativa</a></li>
+            <li><a href="/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

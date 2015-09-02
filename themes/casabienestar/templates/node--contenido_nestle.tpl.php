@@ -84,8 +84,9 @@
 $contenido=toArray($content);
 $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['value'];
 
+$descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0]['value'];
  //print_r($content[1]->body);
-  //print_r(array_values($contenido['body']['#object']));
+
 
 
 
@@ -171,7 +172,8 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
         <!--/-Box botones de compartir-->
         <!--Texto destacado del artículo-->
         <h4 class="destacado">
-          <?php print render($content['field_descripcionarticulo'])?>
+          
+          <?php print $descripcion?>
 
         </h4>
         <!--/-Texto destacado del artículo-->
