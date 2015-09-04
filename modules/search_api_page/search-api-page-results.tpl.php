@@ -34,6 +34,8 @@
  * @see template_preprocess_search_api_page_results()
  */
 
+print_r($page);
+
 ?>
 <div class="<?php print $classes;?>">
   <?php if ($result_count): ?>

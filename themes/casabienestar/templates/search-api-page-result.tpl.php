@@ -40,6 +40,7 @@
  *
  * @see template_preprocess_search_api_page_result()
  */
+
 ?>
 <li class="search-result">
   <h3 class="title">
@@ -49,8 +50,8 @@
     <?php if ($snippet) : ?>
       <p class="search-snippet"><?php print $snippet; ?></p>
     <?php endif; ?>
-    <?php if ($info) : ?>
+   <!--  <?php if ($info) : ?>
       <p class="search-info"><?php print $info; ?></p>
-    <?php endif; ?>
+    <?php endif; ?> -->
   </div>
 </li>

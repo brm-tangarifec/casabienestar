@@ -33,21 +33,21 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
-
+/*print_r($page);*/
 ?>
 <div class="<?php print $classes;?>">
-  <?php if ($result_count): ?>
+  <!--<?php if ($result_count): ?>-->
     <?php print render($search_performance); ?>
   <?php endif; ?>
   <?php print render($spellcheck); ?>
   <?php if ($result_count): ?>
     <h2><?php print t('Search results');?></h2>
-    <ol class="search-results">
+    <ol class="pagina-resultados">
       <?php print render($search_results); ?>
     </ol>
     <?php print render($pager); ?>
   <?php else : ?>
-    <h2><?php print t('Your search yielded no results.');?></h2>
-    <?php print $no_results_help; ?>
+    <h2><?php print t('No hay resultados disponibles.');?></h2>
+    <!--<?php print $no_results_help; ?>-->
   <?php endif; ?>
 </div>

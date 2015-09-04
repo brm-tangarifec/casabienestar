@@ -96,13 +96,36 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
          $view = views_get_view_result('view_nutricion', 'default', array(arg(0)));
          $contenidoArt=$view[0]->_field_data[nid][entity];
 
+         /*Imagen nutrición*/
+         $imagenNut=toArray($contenidoArt);
+         $imagenNutricion=$imagenNut['field_image']['und'][0];
+
+         /*Link nutrición*/
+         $linkNutricion=$imagenNut['field_linkarticulo']['und'][0]['value'];
+         
          //Campos vista salud
          $viewsalud = views_get_view_result('view_salud', 'default', array(arg(0)));
          $contenidoSalud=$viewsalud[0]->_field_data[nid][entity];
 
+        /*Imagen salud*/
+        $imagenSal=toArray($contenidoSalud);
+         $imagenSalud=$imagenSal['field_image']['und'][0];
+
+         /*Link salud*/
+         $linkSalud=$imagenSal['field_linkarticulo']['und'][0]['value'];
+
+
+
           //Campos vista bienestar
          $viewbienestar = views_get_view_result('view_bienestar', 'default', array(arg(0)));
          $contenidoBienestar=$viewbienestar[0]->_field_data[nid][entity];
+
+         /*Imagen bienestar*/
+         $imagenBie=toArray($contenidoBienestar);
+         $imagenBienestar=$imagenBie['field_image']['und'][0];
+
+         /*Link bienstar*/
+         $linkBienestar=$imagenBie['field_linkarticulo']['und'][0]['value'];
 
 ?>
 
@@ -214,7 +237,7 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
           <div class="title">
             <h2>Nutricion</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Salud" class="sticker sticker-nutricion img-responsive"><img src="<?php print image_style_url('imgarticulo',$contenidoAr->field_image['und'][0]['uri'])?>" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+           <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Nutrición" class="sticker sticker-nutricion img-responsive"><img src="<?php print file_create_url($imagenNutricion[uri])?>" alt="<?php print $imagenNutricion[alt]?>" title='<?php print $imagenNutricion[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoArt->title;?></h3>
           <p>
             <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
@@ -232,7 +255,7 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/<?php echo $linkNutricion?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -244,7 +267,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
           <div class="title">
             <h2>Salud</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print file_create_url($imagenSalud[uri])?>" alt="<?php print $imagenSalud[alt]?>" title='<?php print $imagenSalud[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoSalud->title;?></h3>
           <p>
             <?php print $contenidoSalud->field_descripcionarticulo[und][0]['value'];?>
@@ -262,7 +285,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
               <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
             </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/<?php echo $linkSalud?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -272,7 +295,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
           <div class="title">
             <h2>Bienestar</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print file_create_url($imagenBienestar[uri])?>" alt="<?php print $imagenBienestar[alt]?>" title='<?php print $imagenBienestar[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoBienestar->title;?></h3>
           <p>
            <?php print $contenidoBienestar->field_descripcionarticulo[und][0]['value'];?>
@@ -288,7 +311,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
               </div> -->
               <div class="
-col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/fbappCasaBienestar/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/fbappCasaBienestar/<?php echo $linkBienestar?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
             </div>
           </div>
         </article>
@@ -298,24 +321,6 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
     </div>
 
 
-
-  <?php
-    // Remove the "Add new comment" link on the teaser page or if the comment
-    // form is being displayed on the same page.
-    if ($teaser || !empty($content['comments']['comment_form'])) {
-      unset($content['links']['comment']['#links']['comment-add']);
-    }
-    // Only display the wrapper div if there are links.
-    $links = render($content['links']);
-    if ($links):
-  ?>
-    <div class="link-wrapper">
-      <?php print $links; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php print render($content['comments']); ?>
-
 </section>
 
 <script type="text/javascript">
@@ -324,6 +329,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('width');
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
     jQuery('.link-wrapper').hide();
+    jQuery('.box-comentarios').hide();
 
 
     jQuery('.share-others').click(function(){

@@ -132,12 +132,13 @@
             Estás en el sitio de NESTLÉ&reg; Colombia
 
           </p>
-          <form id="search-input">
+         
             <div class="form-group">
-              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span> -->
-              <?php print render($page['buscador']);?>
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
+              <?php print render($page['buscador']);?> 
+             
             </div>
-          </form>
+         
           <!--/-País y buscador-->
         </div>
       </div>
@@ -241,83 +242,10 @@ print_r($contShN);
     <!--Secciones Nutrición, Salud y Bienestar-->
     <div class="container-fluid">
       <div class="row">
-       <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-nutricion">
-          <div class="title">
-            <h2>Nutrición</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Nutrición" class="sticker sticker-nutricion img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoArt->title;?></h3>
-          <p>
-           <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-         Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-           Box flotante botones de compartir
-
-            <div class="row">
-              <?php print $accesoSh;?>
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href='/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>' role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div> -->
-
         <?php print render($page['nutricion']); ?>
 
-
-       <!-- </article> -->
-        <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-salud">
-          <div class="title">
-            <h2>Salud</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoSalud->title;?></h3>
-          <p>
-           <?php print $contenidoSalud->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-          Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-            <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div>
-        </article> -->
         <?php print render($page['salud']);?>
-        <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-bienestar">
-          <div class="title">
-            <h2>Bienestar</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoBienestar->title;?></h3>
-          <p>
-           <?php print $contenidoBienestar->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-          Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-            <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div>
-        </article> -->
+        
         <?php print render($page['bienestar']);?>
       </div>
     </div>
@@ -425,14 +353,14 @@ print_r($contShN);
     <!--/-Sección Widgets Sociales-->
 
     <!--Footer-->
-    <footer>
+     <footer>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="/politicas-privacidad">Políticas de privacidad</a></li>
-            <li><a href="http://corporativa.nestle.com.co/">Ver información corporativa</a></li>
-            <li><a href="/politicas-datos">Política de tratamiento de datos personales</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

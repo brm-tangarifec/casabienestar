@@ -91,7 +91,7 @@ scripts[] = js/jquery.jcarousellite.min.js
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[busqueda]         = busqueda
+regions[buscador]         = Buscador
 regions[header]         = Header
 regions[banner]         = banner
 regions[navigation]     = Navigation bar
@@ -104,6 +104,7 @@ regions[articulosv]        = articulosv
 regions[nutricion]        = Nutricion
 regions[salud]        = Salud
 regions[bienestar]        = bienestar
+regions[resultado]        = resultado
 regions[marcas]        = Marcas
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
