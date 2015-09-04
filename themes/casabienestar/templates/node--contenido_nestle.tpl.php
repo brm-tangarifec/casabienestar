@@ -84,8 +84,9 @@
 $contenido=toArray($content);
 $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['value'];
 
+$descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0]['value'];
  //print_r($content[1]->body);
-  //print_r(array_values($contenido['body']['#object']));
+
 
 
 
@@ -95,13 +96,36 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
          $view = views_get_view_result('view_nutricion', 'default', array(arg(0)));
          $contenidoArt=$view[0]->_field_data[nid][entity];
 
+         /*Imagen nutrición*/
+         $imagenNut=toArray($contenidoArt);
+         $imagenNutricion=$imagenNut['field_image']['und'][0];
+
+         /*Link nutrición*/
+         $linkNutricion=$imagenNut['field_linkarticulo']['und'][0]['value'];
+         
          //Campos vista salud
          $viewsalud = views_get_view_result('view_salud', 'default', array(arg(0)));
          $contenidoSalud=$viewsalud[0]->_field_data[nid][entity];
 
+        /*Imagen salud*/
+        $imagenSal=toArray($contenidoSalud);
+         $imagenSalud=$imagenSal['field_image']['und'][0];
+
+         /*Link salud*/
+         $linkSalud=$imagenSal['field_linkarticulo']['und'][0]['value'];
+
+
+
           //Campos vista bienestar
          $viewbienestar = views_get_view_result('view_bienestar', 'default', array(arg(0)));
          $contenidoBienestar=$viewbienestar[0]->_field_data[nid][entity];
+
+         /*Imagen bienestar*/
+         $imagenBie=toArray($contenidoBienestar);
+         $imagenBienestar=$imagenBie['field_image']['und'][0];
+
+         /*Link bienstar*/
+         $linkBienestar=$imagenBie['field_linkarticulo']['und'][0]['value'];
 
 ?>
 
@@ -152,7 +176,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
       <!--Contenido artículo-->
       <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <!--Box botones de compartir-->
-        <div class="box-compartir row">
+        <!-- <div class="box-compartir row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <h5>Compartido</h5>
             <p class="contador-general">9999</p>
@@ -167,11 +191,12 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
               <p class="contador-num">9999</p>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--/-Box botones de compartir-->
         <!--Texto destacado del artículo-->
         <h4 class="destacado">
-          <?php print render($content['field_descripcionarticulo'])?>
+          
+          <?php print $descripcion?>
 
         </h4>
         <!--/-Texto destacado del artículo-->
@@ -185,7 +210,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 article-action">
             <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-            <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+            <!-- <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->
             <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
           </div>
         </div>
@@ -208,38 +233,41 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
         <h3>Artículos Relacionados</h3>
         <!--Validacion de tipo contenido-->
         <?php if ($tipoContenido=='Salud' || $tipoContenido=='Bienestar' ): ?>
-        <article class="module-box module-box-nutricion">
+       <article class="module-box module-box-nutricion">
           <div class="title">
             <h2>Nutricion</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Salud" class="sticker sticker-nutricion img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+           <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Nutrición" class="sticker sticker-nutricion img-responsive"><img src="<?php print file_create_url($imagenNutricion[uri])?>" alt="<?php print $imagenNutricion[alt]?>" title='<?php print $imagenNutricion[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoArt->title;?></h3>
           <p>
             <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
 
           </p>
-          <!--Wrapper para compartir, enviar, favorito y ver más-->
+         <!--  Wrapper para compartir, enviar, favorito y ver más -->
           <div class="wrapper-vermas">
-            <!--Box flotante botones de compartir-->
+           <!--  Box flotante botones de compartir -->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
+              <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+              </div> -->
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/<?php echo $linkNutricion?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
+
+
          <?php endif; ?>
         <?php if ($tipoContenido=='Nutrición' || $tipoContenido=='Bienestar'): ?>
         <article class="module-box module-box-salud">
           <div class="title">
             <h2>Salud</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print file_create_url($imagenSalud[uri])?>" alt="<?php print $imagenSalud[alt]?>" title='<?php print $imagenSalud[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoSalud->title;?></h3>
           <p>
             <?php print $contenidoSalud->field_descripcionarticulo[und][0]['value'];?>
@@ -250,13 +278,14 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
             <!--Box flotante botones de compartir-->
             <div class="buttons-share"><img src="<?php print base_path() . path_to_theme(); ?>/images/shares.jpg" class="img-responsive"></div>
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
+         <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
+            <!--  <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+              <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+              <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+            </div> -->
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a href="/fbappCasaBienestar/<?php echo $linkSalud?>" role="button" class="btn btn-primary readmore">Ver Más  </a></div>
             </div>
           </div>
         </article>
@@ -266,7 +295,7 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <div class="title">
             <h2>Bienestar</h2>
           </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print file_create_url($imagenBienestar[uri])?>" alt="<?php print $imagenBienestar[alt]?>" title='<?php print $imagenBienestar[title]?>' class="img-article img-responsive"></figure>
           <h3><?php print $contenidoBienestar->title;?></h3>
           <p>
            <?php print $contenidoBienestar->field_descripcionarticulo[und][0]['value'];?>
@@ -275,13 +304,14 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
           <!--Wrapper para compartir, enviar, favorito y ver más-->
           <div class="wrapper-vermas">
             <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+              <!-- <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">             </div> -->
+              <!-- <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
                 <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
                 <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
                 <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+              </div> -->
+              <div class="
+col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offset-6"><a id="readmore" href="/fbappCasaBienestar/<?php echo $linkBienestar?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
             </div>
           </div>
         </article>
@@ -291,22 +321,24 @@ $tipoContenido=$contenido['body']['#object']['field_tipo_contenido']['und'][0]['
     </div>
 
 
-
-  <?php
-    // Remove the "Add new comment" link on the teaser page or if the comment
-    // form is being displayed on the same page.
-    if ($teaser || !empty($content['comments']['comment_form'])) {
-      unset($content['links']['comment']['#links']['comment-add']);
-    }
-    // Only display the wrapper div if there are links.
-    $links = render($content['links']);
-    if ($links):
-  ?>
-    <div class="link-wrapper">
-      <?php print $links; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php print render($content['comments']); ?>
-
 </section>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    jQuery('.field-name-field-imginternaarticulo > img').addClass('img-responsive');
+    jQuery('.field-name-field-imginternaarticulo > img').removeAttr('width');
+    jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
+    jQuery('.link-wrapper').hide();
+    jQuery('.box-comentarios').hide();
+
+
+    jQuery('.share-others').click(function(){
+
+      jQuery('.st_sharethis_custom')[0].click();
+    });
+    jQuery('.share-mail').click(function(){
+
+      jQuery('.st_email_custom')[0].click();
+    });
+  });
+</script>

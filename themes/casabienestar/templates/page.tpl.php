@@ -114,7 +114,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="index.html"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h1><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
@@ -132,11 +132,13 @@
             Estás en el sitio de NESTLÉ&reg; Colombia
 
           </p>
-          <form id="search-input">
+         
             <div class="form-group">
-              <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
+              <?php print render($page['buscador']);?> 
+             
             </div>
-          </form>
+         
           <!--/-País y buscador-->
         </div>
       </div>
@@ -161,11 +163,11 @@
                     <?php $menu = menu_navigation_links('menu-casabienestar');
                       print theme('links__menu_casabienestar', array('links' => $menu,'attributes' => array('class' => array('nav navbar-nav'))));
                     ?>
-                    <ul class="nav navbar-nav navbar-right">
-                  <li class="social-link social-links-facebok"><a href="#" rel="nofollow"><span class="fa fa-facebook"></span></a></li>
-                  <li class="social-link social-links-twitter"><a href="#" rel="nofollow"><span class="fa fa-twitter"></span></a></li>
-                  <li class="social-link social-links-youtube"><a href="#" rel="nofollow"><span class="fa fa-youtube"></span></a></li>
-                </ul>
+                   <ul class="nav navbar-nav navbar-right">
+                       <li class="social-link social-links-facebok"><a href="https://www.facebook.com/nestle.colombia" rel="nofollow" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                       <li class="social-link social-links-twitter"><a href="https://twitter.com/NestleColombia" rel="nofollow" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                       <li class="social-link social-links-youtube"><a href="https://www.youtube.com/user/Nestlecol" rel="nofollow" target="_blank"><span class="fa fa-youtube"></span></a></li>
+                    </ul>
 
                        </div>
                      </div> <!-- .section, /#navigation -->
@@ -240,83 +242,10 @@ print_r($contShN);
     <!--Secciones Nutrición, Salud y Bienestar-->
     <div class="container-fluid">
       <div class="row">
-       <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-nutricion">
-          <div class="title">
-            <h2>Nutrición</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Nutrición" class="sticker sticker-nutricion img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoArt->title;?></h3>
-          <p>
-           <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-         Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-           Box flotante botones de compartir
-
-            <div class="row">
-              <?php print $accesoSh;?>
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href='/content/<?php echo str_replace(' ','-',$contenidoArt->title)?>' role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div> -->
-
         <?php print render($page['nutricion']); ?>
 
-
-       <!-- </article> -->
-        <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-salud">
-          <div class="title">
-            <h2>Salud</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoSalud->title;?></h3>
-          <p>
-           <?php print $contenidoSalud->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-          Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-            <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a id="readmore" href="/content/<?php echo str_replace(' ','-',$contenidoSalud->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div>
-        </article> -->
         <?php print render($page['salud']);?>
-        <!-- <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-bienestar">
-          <div class="title">
-            <h2>Bienestar</h2>
-          </div>
-          <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print base_path() . path_to_theme(); ?>/images/sample-article-section.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoBienestar->title;?></h3>
-          <p>
-           <?php print $contenidoBienestar->field_descripcionarticulo[und][0]['value'];?>
-
-          </p>
-          Wrapper para compartir, enviar, favorito y ver más
-          <div class="wrapper-vermas">
-            <div class="row">
-              <div class="col-lg-3 col-md-2 hidden-sm hidden-xs">              </div>
-              <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-                <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-                <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-                <button class="btn btn-default share share-others"><span class="fa fa-share-alt">        </span></button>
-              </div>
-              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="/content/<?php echo str_replace(' ','-',$contenidoBienestar->title)?>" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-            </div>
-          </div>
-        </article> -->
+        
         <?php print render($page['bienestar']);?>
       </div>
     </div>
@@ -366,10 +295,10 @@ print_r($contShN);
 <!--Acá finaliza el contenido-->
 
 <!--Sección Widgets Sociales-->
-    <!-- <div class="container-fluid">
+ <div class="container-fluid">
       <div class="row">
         <div class="widget widget-fb col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          Facebook
+          <!-- Facebook -->
           <div class="icon-widget btn btn-info btn-fab btn-raised"><span class="fa fa-facebook"></span></div>
           <div style="width:100%;">
             <div data-href="https://www.facebook.com/nestle.colombia" data-small-header="false" data-adapt-container-width="true" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" class="fb-page"></div>
@@ -379,57 +308,59 @@ print_r($contShN);
           </div>
         </div>
         <div class="widget widget-tw col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          Twitter
+          <!-- Twitter -->
           <div class="icon-widget btn btn-info btn-fab btn-raised"><span class="fa fa-twitter"></span></div>
-          <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><img src="<?php print base_path() . path_to_theme(); ?>/images/avatar-nestle.jpg" alt="Nestlé en Twitter" class="img-responsive img-circle">
-              <p class="desc">
-                Nestlé Colombia @NestleColombia
+         <!--  <div class="row">
+           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><img src="<?php print base_path() . path_to_theme(); ?>/images/avatar-nestle.jpg" alt="Nestlé en Twitter" class="img-responsive img-circle">
+             <p class="desc">
+               Nestlé Colombia @NestleColombia
 
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="https://twitter.com/NestleColombia" data-size-value="default" data-show-count="false" data-show-screen-name="false" class="twitter-follow-button">Follow @NestleColombia</a></div>
-          </div>
+             </p>
+           </div>
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="https://twitter.com/NestleColombia" data-size-value="default" data-show-count="false" data-show-screen-name="false" class="twitter-follow-button">Follow @NestleColombia</a></div>
+         </div> -->
           <div class="row">
             <div class="col-lg-12">
-              <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent" data-tweet-limit="1">Nestlé Colombia.</a>
-              <p><?php echo date('Y-m-d H:m:s');?></p>
+              <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent noheader" data-tweet-limit="1">Nestlé Colombia.</a>
+
             </div>
-            <div class="col-lg-12">
+            <!-- <div class="col-lg-12">
               <hr>
               <p class="tweet-stats">1,123 RETWEETS  1,203 FAVORITES</p>
               <hr>
             </div>
             <div class="col-lg-12">
               <p class="tweet-actions"><span class="fa fa-reply"></span><span class="mdi-action-cached"></span><span class="mdi-action-grade"></span><span class="glyphicon glyphicon-option-horizontal"></span></p>
-            </div>
+            </div> -->
                       </div>
         </div>
         <div class="widget widget-yt col-lg-4 col-md-4 col-sm-4 hidden-xs">
-          YouTube
+          <!-- YouTube -->
           <div class="icon-widget btn btn-danger btn-fab btn-raised"><span class="fa fa-youtube"></span></div>
           <div class="row">
             <div class="col-lg-12">
               <div data-channel="Nestlecol" data-layout="full" data-count="false" class="g-ytsubscribe"></div>
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe src="https://www.youtube.com/embed/Ms-cvKwkgu8" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe>
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <!--/-Sección Widgets Sociales-->
 
     <!--Footer-->
-    <footer>
+     <footer>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="#">Políticas de privacidad</a></li>
-            <li><a href="#">Ver información corporativa</a></li>
-            <li><a href="#">Política de tratamiento de datos personales</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

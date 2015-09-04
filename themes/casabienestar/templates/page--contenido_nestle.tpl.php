@@ -113,7 +113,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="index.html"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
@@ -131,11 +131,11 @@
             Estás en el sitio de NESTLÉ&reg; Colombia
 
           </p>
-          <form id="search-input">
-            <div class="form-group">
-              <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>
+          <div class="form-group">
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
+              <?php print render($page['buscador']);?> 
+             
             </div>
-          </form>
           <!--/-País y buscador-->
         </div>
       </div>
@@ -160,10 +160,10 @@
                       print theme('links__menu_casabienestar', array('links' => $menu,'attributes' => array('class' => array('nav navbar-nav'))));
                     ?>
            			 <ul class="nav navbar-nav navbar-right">
-           				  <li class="social-link social-links-facebok"><a href="#" rel="nofollow"><span class="fa fa-facebook"></span></a></li>
-           				  <li class="social-link social-links-twitter"><a href="#" rel="nofollow"><span class="fa fa-twitter"></span></a></li>
-           				  <li class="social-link social-links-youtube"><a href="#" rel="nofollow"><span class="fa fa-youtube"></span></a></li>
-           			</ul>
+                       <li class="social-link social-links-facebok"><a href="https://www.facebook.com/nestle.colombia" rel="nofollow" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                       <li class="social-link social-links-twitter"><a href="https://twitter.com/NestleColombia" rel="nofollow" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                       <li class="social-link social-links-youtube"><a href="https://www.youtube.com/user/Nestlecol" rel="nofollow" target="_blank"><span class="fa fa-youtube"></span></a></li>
+                    </ul>
 
 
                        </div>
@@ -187,14 +187,14 @@
 <!--Fin contenido nodo-->
 
    <!--Footer-->
-    <footer>
+   <footer>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="#">Políticas de privacidad</a></li>
-            <li><a href="#">Ver información corporativa</a></li>
-            <li><a href="#">Política de tratamiento de datos personales</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 
