@@ -190,6 +190,8 @@ $(document).ready(function(){
 
 	}
 
+	jQuery('#edit-submit-5').addClass('btn btn-primary edit-submit-5');
+
 });
 
 

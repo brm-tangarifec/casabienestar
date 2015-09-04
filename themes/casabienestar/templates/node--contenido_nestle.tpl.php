@@ -174,6 +174,7 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
 <section class="container-fluid article-body">
  <div class="row">
       <!--Contenido artículo-->
+      <?php print render($content['flippy_pager']);?>
       <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <!--Box botones de compartir-->
         <!-- <div class="box-compartir row">
