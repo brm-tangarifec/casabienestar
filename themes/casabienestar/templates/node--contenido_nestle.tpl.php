@@ -174,27 +174,9 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
 <section class="container-fluid article-body">
  <div class="row">
       <!--Contenido artículo-->
-      <?php print render($content['flippy_pager']);?>
+      
       <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-        <!--Box botones de compartir-->
-        <!-- <div class="box-compartir row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <h5>Compartido</h5>
-            <p class="contador-general">9999</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="contador-social twitter"><i class="fa fa-twitter"></i>
-              <p class="contador-num">9999</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="contador-social facebook"><i class="fa fa-facebook"></i>
-              <p class="contador-num">9999</p>
-            </div>
-          </div>
-        </div> -->
-        <!--/-Box botones de compartir-->
-        <!--Texto destacado del artículo-->
+   
         <h4 class="destacado">
           
           <?php print $descripcion?>
@@ -236,10 +218,10 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
         <?php if ($tipoContenido=='Salud' || $tipoContenido=='Bienestar' ): ?>
        <article class="module-box module-box-nutricion">
           <div class="title">
-            <h2>Nutricion</h2>
+            <h2><a href="/fbappCasaBienestar/nutricion">Nutricion</a></h2>
           </div>
            <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-nutricion.png" width="140" alt="Nutrición" class="sticker sticker-nutricion img-responsive"><img src="<?php print file_create_url($imagenNutricion[uri])?>" alt="<?php print $imagenNutricion[alt]?>" title='<?php print $imagenNutricion[title]?>' class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoArt->title;?></h3>
+          <h3><a href="/fbappCasaBienestar/<?php echo $linkNutricion?>"><?php print $contenidoArt->title;?></a></h3>
           <p>
             <?php print $contenidoArt->field_descripcionarticulo[und][0]['value'];?>
 
@@ -266,10 +248,10 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
         <?php if ($tipoContenido=='Nutrición' || $tipoContenido=='Bienestar'): ?>
         <article class="module-box module-box-salud">
           <div class="title">
-            <h2>Salud</h2>
+            <h2><a href="/fbappCasaBienestar/salud">Salud</a></h2>
           </div>
           <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-salud.png" width="140" alt="Salud" class="sticker sticker-salud img-responsive"><img src="<?php print file_create_url($imagenSalud[uri])?>" alt="<?php print $imagenSalud[alt]?>" title='<?php print $imagenSalud[title]?>' class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoSalud->title;?></h3>
+          <h3><a href="/fbappCasaBienestar/<?php echo $linkSalud?>"><?php print $contenidoSalud->title;?></a></h3>
           <p>
             <?php print $contenidoSalud->field_descripcionarticulo[und][0]['value'];?>
 
@@ -294,10 +276,10 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
       <?php if ($tipoContenido=='Nutrición' || $tipoContenido=='Salud'): ?>
         <article class="module-box module-box-bienestar">
           <div class="title">
-            <h2>Bienestar</h2>
+            <h2><a href="/fbappCasaBienestar/bienestar">Bienestar</a></h2>
           </div>
           <figure class="img-wrapper"><img src="<?php print base_path() . path_to_theme(); ?>/images/sticker-bienestar.png" width="140" alt="Bienestar" class="sticker sticker-bienestar img-responsive"><img src="<?php print file_create_url($imagenBienestar[uri])?>" alt="<?php print $imagenBienestar[alt]?>" title='<?php print $imagenBienestar[title]?>' class="img-article img-responsive"></figure>
-          <h3><?php print $contenidoBienestar->title;?></h3>
+          <h3><a href="/fbappCasaBienestar/<?php echo $linkBienestar?>"><?php print $contenidoBienestar->title;?></a></h3>
           <p>
            <?php print $contenidoBienestar->field_descripcionarticulo[und][0]['value'];?>
 
@@ -321,6 +303,9 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
       <!--/-Contenido artículo-->
     </div>
 
+    <?php print render($content['flippy_pager']);?>
+    <?php print render($content['sharethis']);?>
+
 
 </section>
 
@@ -330,16 +315,17 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('width');
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
     jQuery('.link-wrapper').hide();
+    jQuery('.sharethis-buttons').hide();
     jQuery('.box-comentarios').hide();
 
 
     jQuery('.share-others').click(function(){
 
-      jQuery('.st_sharethis_custom')[0].click();
+      jQuery('.st_sharethis_custom').click();
     });
     jQuery('.share-mail').click(function(){
 
-      jQuery('.st_email_custom')[0].click();
+      jQuery('.st_email_custom').click();
     });
   });
 </script>

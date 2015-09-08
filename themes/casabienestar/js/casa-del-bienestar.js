@@ -159,6 +159,18 @@ $(document).ready(function(){
 			//jQuery(".img-responsive").width(451);
 
 			}
+			if(nutricion=='/'){
+
+			//$('section').empty().remove();
+			//$('.module-box').empty().remove();
+
+			jQuery(".img-responsive").removeAttr('width');
+			jQuery(".sticker").width(140);
+			jQuery("td").css('float','left');
+			jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
+			//jQuery(".img-responsive").width(451);
+
+			}
 /*
 			$('#skip-link').remove();
 			$('p').filter(function() {
@@ -190,7 +202,7 @@ $(document).ready(function(){
 
 	}
 
-	jQuery('#edit-submit-5').addClass('btn btn-primary edit-submit-5');
+	
 
 });
 

@@ -280,21 +280,59 @@ function toArray($obj)
 
 /*Funcion para modificar el buscador*/
 
-//altering search result
-function casabienestar_form_search_block_form_alter(&$form, &$form_state, $form_id) {
-    $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
-    $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
-    $form['search_block_form']['#size'] = 40;  // define size of the textfield
-    $form['search_block_form']['#default_value'] = t('Search'); // Set a default value for the textfield
-    $form['actions']['submit']['#value'] = t('GO!'); // Change the text on the submit button
-    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/images/search-button.png');
+/*function casabienestar_theme($existing, $type, $theme, $path){
+  $hooks['user_login']=array(
+    'render element'=>'form',
+    'template'    =>'templates/user-login',
+  );
+  $hooks['user_register']=array(
+    'render element'=>'form',
+    'template'    =>'templates/user-register',
+  );
+  $hooks['user_pass']=array(
+    'render element'=>'form',
+    'template'    =>'templates/user-pass',
+  );
+  return $hooks;
+}*/
 
-    // Add extra attributes to the text box
-    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Search';}";
-    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Search') {this.value = '';}";
-    // Prevent user from searching the default text
-    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Search'){; return false; }";
+/*function casabienestar_theme(&$existing, $type, $theme, $path){
+  $hooks = array();
+   // Make user-register.tpl.php available
+  $hooks['user_register_form'] = array (
+     'render element' => 'form',
+     'path' => drupal_get_path('theme','casabienestar'),
+     'template' => 'user-register',
+     'preprocess functions' => array('casabienestar_preprocess_user_register_form'),
+  );
+  return $hooks;
+}
+function 
+casabienestar_preprocess_user_register_form(&$vars) {
+  $args = func_get_args();
+  array_shift($args);
+  $form_state['build_info']['args'] = $args; 
+  $vars['form'] = drupal_build_form('user_register_form', $form_state['build_info']['args']);
+}*/
 
-    // Alternative (HTML5) placeholder attribute instead of using the javascript
-    $form['search_block_form']['#attributes']['placeholder'] = t('Search');
-} 
+function casabienestar_theme() {
+  $items = array();
+  // create custom user-login.tpl.php
+  $items['user_login'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'casabienestar') . '/templates',
+  'template' => 'user-login',
+  'preprocess functions' => array(
+  'casabienestar_preprocess_user_login'
+  ),);
+  $items['user_register_form'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'casabienestar') . '/templates',
+  'template' => 'user-register-form',
+  'preprocess functions' => array(
+  'casabienestar_preprocess_user_register_form'
+  ),
+ );
+return $items;
+}
+?>
