@@ -74,6 +74,9 @@
  */
 
 ?>
+<?php
+ render($page['content']['metatags']); 
+?>
 <header>
 
   <!--Header CB-->
@@ -352,6 +355,8 @@ print_r($contShN);
     </div>
     <!--/-Sección Widgets Sociales-->
 
+    <div id="fb-root"></div>
+    <button class="fb oli">Dar click</button>
     <!--Footer-->
      <footer>
     <div class="container-fluid">

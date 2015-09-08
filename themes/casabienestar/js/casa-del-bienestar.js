@@ -1,9 +1,28 @@
 //Widget de FB
+
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '681271491974457',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
 	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=694888090567711";
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=681271491974457";
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
@@ -30,6 +49,22 @@ $("#carrusel-marcas").carousel({
 	interval: false
 
 });
+
+
+/*Funcion para compartir en facebook*/
+var oli;
+function Share(url) {
+  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og:share',
+  action_properties: JSON.stringify({
+      object: oli,
+  })
+}, function(response){});
+}
+
+
+
 
 //Función para check de selección de preferencias en el registro
 $(document).on("click", ".boton-brand", function () {
@@ -81,6 +116,15 @@ $(document).on("click", "#btn-up", function () {
 
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
+
+	jQuery(".oli").click(function(){
+
+	console.log('Hola me dieron click');
+
+    oli='http://fbapp.brm.com.co/fbappCasaBienestar/bienestar/armoniza-tu-casa-al-estilo-del-feng-shui';
+	Share();
+});
+
 	//Sticky menu
 	 $("#menu").affix({
 							offset: {
@@ -190,7 +234,8 @@ $(document).ready(function(){
 	//$(".sharethis-wrapper").addClass("col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action");
 	//$(".vermas").appendTo(".wrapper-vermas");
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
-	$(".article-action").wrap( "<div class='shareThis' >");
+	//$(".article-action").wrap( "<div class='shareThis' >");
+	$(".article-action").html( "<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>");
 
 	if(nutricion=='/'){
 		$('.module-box-nutricion > h2').wrap('<div class="title">');
@@ -201,6 +246,9 @@ $(document).ready(function(){
 		jQuery('.item > img').removeAttr('height');
 
 	}
+
+	jQuery('#edit-field-imagen-perfil-und-0-upload-button').addClass('btn btn-primary');
+	jQuery('#edit-submit').addClass('btn btn-warning');
 
 	
 
