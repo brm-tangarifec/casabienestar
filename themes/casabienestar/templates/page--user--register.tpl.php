@@ -162,9 +162,9 @@
           <h1 class="text-center">Registro</h1>
         </div>
       </div>
-      <div class="row">
+      
         <?php print render($page['content']); ?>
-      </div>
+      
     </div>
 </section>
 
