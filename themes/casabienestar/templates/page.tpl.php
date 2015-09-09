@@ -214,35 +214,7 @@
 <!--Fin Banners-->
 <!--Acá se pone el contenido-->
 <section>
-	 <?php
-         //Campos vista nutricion
-         $view = views_get_view_result('view_nutricion', 'default', array(arg(0)));
-         $contenidoArt=$view[0]->_field_data[nid][entity];
-
-          $shareN=views_get_view('view_nutricion');
-          $contShN=toArray($shareN);
-          $accesoSh=$contShN['display']['default']['display_options']['fields']['sharethis'];
-      /*echo "<pre>";
-
-print_r($contShN);
-
-
-
-
-          //var_dump($accesoSh); // returns null so I cannot use your suggestion
-
-          echo "</pre>";
-*/
-
-         //Campos vista salud
-         $viewsalud = views_get_view_result('view_salud', 'default', array(arg(0)));
-         $contenidoSalud=$viewsalud[0]->_field_data[nid][entity];
-
-          //Campos vista bienestar
-         $viewbienestar = views_get_view_result('view_bienestar', 'default', array(arg(0)));
-         $contenidoBienestar=$viewbienestar[0]->_field_data[nid][entity];
-     ?>
-    <!--Secciones Nutrición, Salud y Bienestar-->
+	 <!--Secciones Nutrición, Salud y Bienestar-->
     <div class="container-fluid">
       <div class="row">
         <?php print render($page['nutricion']); ?>

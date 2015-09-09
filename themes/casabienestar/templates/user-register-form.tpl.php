@@ -39,11 +39,7 @@ print_r($form);
 print render($form['account']['mail']);
 echo '</pre>';*/
 ?>
-<div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <h1 class="text-center">Registro</h1>
-  </div>
-</div>
+
 <div class="row">
   <!--Imagen de perfil-->
   <div class="col-lg-4 col-md-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
@@ -140,22 +136,22 @@ echo '</pre>';*/
   </div>
   <!--/-Genero-->
   <!--Departamento-->
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <?php
-    print render($form['field_departamento']);
+    print render($form['field_ciudades']);
     ?>
 
   </div>
   <!--/-Departamento-->
   <!--Ciudad-->
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<!--   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
     <?php
-    print render($form['field_ciudad']);
+    /*print render($form['field_ciudad']);*/
     ?>
            
     
-  </div>
+  </div> -->
   <!--/-Ciudad-->
 </div>
 <div class="row">
@@ -174,7 +170,7 @@ echo '</pre>';*/
   <!--Deseo Recibir Info-->
   <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
        <?php
-      print render($form['field_aturizacion_datos']); 
+      print render($form['field_deseo_recibir_informacion']); 
       ?>
     
   </div>
@@ -193,7 +189,7 @@ echo '</pre>';*/
   <!--Autorizo uso de datos-->
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
      <?php
-      print render($form['field_deseo_recibir_informacion']); 
+      print render($form['field_aturizacion_datos']); 
      ?>
 
   </div>

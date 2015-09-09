@@ -234,8 +234,8 @@ $(document).ready(function(){
 	//$(".sharethis-wrapper").addClass("col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action");
 	//$(".vermas").appendTo(".wrapper-vermas");
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
-	//$(".article-action").wrap( "<div class='shareThis' >");
-	$(".article-action").html( "<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>");
+	$(".article-action").wrap( "<div class='shareThis' >");
+	//$(".article-action").html( '<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>');
 
 	if(nutricion=='/'){
 		$('.module-box-nutricion > h2').wrap('<div class="title">');
