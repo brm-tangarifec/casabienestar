@@ -159,6 +159,7 @@
   <div class="container-fluid">
       <div class="row">
         <article class="col-lg-12">
+          
         <?php print render($page['content']); ?>
         </article>
       </div>

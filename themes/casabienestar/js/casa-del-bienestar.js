@@ -191,41 +191,7 @@ $(document).ready(function(){
 	 	var nutricion = currentURL.slice(-1);
 	 	var lg = currentURL.slice(-9);
 	 	//console.log(currentURL);
-	 	if(nutricion!='/'){
-
-			//$('section').empty().remove();
-			//$('.module-box').empty().remove();
-
-			jQuery(".img-responsive").removeAttr('width');
-			jQuery(".sticker").width(140);
-			jQuery("td").css('float','left');
-			jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
-			//jQuery(".img-responsive").width(451);
-
-			}
-			if(nutricion=='/'){
-
-			//$('section').empty().remove();
-			//$('.module-box').empty().remove();
-
-			jQuery(".img-responsive").removeAttr('width');
-			jQuery(".sticker").width(140);
-			jQuery("td").css('float','left');
-			jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
-			//jQuery(".img-responsive").width(451);
-
-			}
-/*
-			$('#skip-link').remove();
-			$('p').filter(function() {
-        	return $.trim($(this).text()) === '' && $(this).children().length == 0
-   			 })
-    		.remove();
-    		$('.module-box').filter(function() {
-        	return $.trim($(this).text()) === '' && $(this).children().length == 0
-   			 })
-    		.remove();
-*/
+	 	
 
 	jQuery('.menu-534 > a').html("<img src='/fbappCasaBienestar/sites/all/themes/casabienestar/images/logo-nestle-blanco.svg' alt='NESTLÉ&amp;reg; A gusto con la vida' class='img-responsive'>");
 
@@ -237,13 +203,19 @@ $(document).ready(function(){
 	$(".article-action").wrap( "<div class='shareThis' >");
 	//$(".article-action").html( '<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>');
 
+
+	//Se agrega clase responsive a las imagenes de cada box de contenido
+	jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
+		jQuery('.item > img').removeAttr('width');
+		jQuery('.item > img').removeAttr('height');
+	//Se agrega clase responsive a las imagenes grandes de las internas de cada artículo
+	jQuery(".img-article img").addClass("img-responsive");
+
 	if(nutricion=='/'){
 		$('.module-box-nutricion > h2').wrap('<div class="title">');
 		$('.module-box-salud > h2').wrap('<div class="title">');
 		$('.module-box-bienestar > h2').wrap('<div class="title">');
-		jQuery(".img-wrapper > a > img").addClass("img-article img-responsive");
-		jQuery('.item > img').removeAttr('width');
-		jQuery('.item > img').removeAttr('height');
+		
 
 	}
 
