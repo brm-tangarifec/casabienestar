@@ -50,6 +50,7 @@ stylesheets[all][] = system.messages.css
 stylesheets[all][] = system.theme.css
 
 ; Then we add our own stylesheet.
+stylesheets[all][] = css/jquery.share.css
 stylesheets[all][] = css/casa-del-bienestar.min.css
 ;Estilos para quitar elementos generados por drupal
 stylesheets[all][] = css/styles.css
@@ -71,6 +72,7 @@ stylesheets[all][] = css/styles.css
 ;scripts[] = js/script.js
 ;Llamado de los js del tema
 scripts[] = js/libs.casa-del-bienestar.min.js
+scripts[] = js/jquery.share.js
 scripts[] = js/casa-del-bienestar.js
 scripts[] = js/jquery.jcarousellite.min.js
 

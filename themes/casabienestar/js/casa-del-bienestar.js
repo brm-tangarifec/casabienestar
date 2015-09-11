@@ -118,7 +118,7 @@ $(document).on("click", "#btn-up", function () {
 $(document).on("ready", function () {
 
 	//Url que se cambia según el servidor
-	var link = "http://fbapp.brm.com.co/";
+	var link = "http://fbapp.brm.com.co";
 
 	//Clase a la cual se le da el link
 	jQuery(".fa").click(function(){
@@ -128,7 +128,21 @@ $(document).on("ready", function () {
     var urlShare= link + j;
     oli=urlShare;
     console.log(oli);
-	Share();
+
+    
+	//Share();
+
+
+	jQuery('.fa-share-alt').click(function(){
+		$('.shareThis').share({
+        networks: ['facebook','pinterest','googleplus','twitter'],
+    	});
+	});
+	jQuery('.fa-paper-plane').click(function(){
+		$('.shareThis').share({
+        networks: ['email'],
+    	});
+	});
 });
 
 	//Sticky menu
