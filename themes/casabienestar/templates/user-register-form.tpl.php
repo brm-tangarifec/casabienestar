@@ -124,7 +124,7 @@ echo '</pre>';*/
   <!--Teléfono-->
   <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
     <?php
-      print render($form['field_tel_fono']);
+      print render($form['field_telefono']);
     ?>
 
   </div>
@@ -184,7 +184,7 @@ echo '</pre>';*/
   <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
     
     <?php
-    print render($form['field__c_mo_te_enteraste_']);
+    print render($form['field_como_te_enteraste']);
     ?>
     
   </div>
