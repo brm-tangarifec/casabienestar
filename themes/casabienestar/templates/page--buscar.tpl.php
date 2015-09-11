@@ -85,25 +85,20 @@
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
-        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-          Registro y Login
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+          <!-- Registro y Login -->
           <p class="helpers-registro">
-            <a href="registro.html">Registrarse</a> / <a href="#" class="btn-login">Iniciar sesión</a>
-
+            <a href="user/register">Registrarse</a> <!-- / <a href="#" class="btn-login">Iniciar sesión</a> -->
           </p>
-          /-Registro y Login
-        </div> -->
+          <!-- /-Registro y Login -->
+        </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <!--País y buscador-->
           <p class="pais">
             Estás en el sitio de NESTLÉ&reg; Colombia
 
           </p>
-          <div class="form-group">
-              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
-              <?php print render($page['buscador']);?> 
-             
-            </div>
+          
           <!--/-País y buscador-->
         </div>
       </div>

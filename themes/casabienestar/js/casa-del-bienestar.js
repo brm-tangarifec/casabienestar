@@ -72,7 +72,7 @@ $(document).on("click", ".boton-brand", function () {
 		var idCheck = $(this).attr('data-box');
 		//Dejar "chulo" activo sobre el elemento
 		$(this).addClass("active");
-		console.log(idCheck);
+		//console.log(idCheck);
 		//Check en la preferencia
 		$('#'+idCheck).prop('checked', true);
 		//Quitar clases para deseleccionar checkbox
@@ -81,7 +81,7 @@ $(document).on("click", ".boton-brand", function () {
 		$(this).removeClass("active-equis");
 		//Quitar seleccion de checkbox
 		$('#'+idCheck).prop('checked', false);
-		console.log(idCheck+" adios check");
+		//console.log(idCheck+" adios check");
 		}
 
 
@@ -116,31 +116,109 @@ $(document).on("click", "#btn-up", function () {
 
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
-
-	jQuery('#compartirN').click(function(){
-		$('.shareThis').share({
-        networks: ['facebook','pinterest','googleplus','twitter','email'],
+	var count=0;
+	jQuery('#compartirN').on('click',function(){
+		count++;
+		console.log(count);
+		if(count==1){
+			$('.botones-redes-wrapper').show('fade').share({
+        networks: ['facebook','googleplus','twitter'],
     	});
+			count++;
+			console.log(count);
+		}else{
+			count=2;
+		}
+		console.log(count);
+
+		jQuery(".pop").on("click", function () {
+			count =0;
+			$('.botones-redes-wrapper').hide('fade');
+			$('.botones-redes-wrapper').html("");
+		});
+
+	});
+
+	jQuery('.module-box .fa-share-alt').on('click',function(){
+
+
+
+
+		var link = "http://fbapp.brm.com.co";
+
+	//Clase a la cual se le da el link
+		//Variable que recoge el href del módulo donde se está dando click		
+		var j= jQuery(this).parent().parent().next().find("a").attr('href');
+
+    
+		count++;
+		//console.log(count);
+		if(count==1){
+
+			/*Generación de los botones para compartir*/
+
+			jQuery(this).parent().prev().show("fade").html('<a href="javascript:;" title="Share this page on facebook" class="pop share-icon share-icon-facebook" data-share="fb" rel="nofollow"></a><a href="javascript:;" title="Share this page on googleplus" class="pop share-icon share-icon-googleplus" data-share="g+"></a><a href="javascript:;" title="Share this page on twitter" class="pop share-icon share-icon-twitter" data-share="tw"></a>');
+
+			var urlShare= link + j;
+    		oli=urlShare;
+
+    		var data;
+    		
+
+  
+				//Share();
+
+			jQuery(".pop").click(function () {
+
+				data = jQuery(this).attr('data-share');
+				console.log(data);
+
+				//Funcion compartir facebook
+				if(data=='fb'){
+					Share();
+					$('.botones-redes-wrapper').hide('fade');
+					$('.botones-redes-wrapper').html("");
+					count=0;
+				}else if(data=='tw'){
+					urlTw="https://twitter.com/share?url="+oli;
+					window.open(urlTw,'toolbar=0,resizable=1,status=0,width=640,height=528');
+					$('.botones-redes-wrapper').hide('fade');
+					$('.botones-redes-wrapper').html("");
+					count=0;
+					return false;
+				}else if(data=='g+'){
+					urlG="https://plusone.google.com/_/+1/confirm?hl=en&url="+oli;
+					window.open(urlG,'toolbar=0,resizable=1,status=0,width=640,height=528');
+					$('.botones-redes-wrapper').hide('fade');
+					$('.botones-redes-wrapper').html("");
+					return false;
+					count=0;
+				}
+			});
+
+			//Click sobre los botones de redes sociales
+    	
+			count++;
+			return false;
+		}else{
+			count=2;
+		}
+		
+
+		jQuery(".pop").on("click", function () {
+			count =0;
+			$('.botones-redes-wrapper').hide('fade');
+			$('.botones-redes-wrapper').html("");
+		});
+
 	});
 
 	//Url que se cambia según el servidor
 	
-	var link = "http://fbapp.brm.com.co";
-
-	//Clase a la cual se le da el link
-	jQuery(".fa").click(function(){
-		//Variable que recoge el href del módulo donde se está dando click		
-		var j= jQuery(this).parent().parent().next().find("a").attr('href');
-
-    var urlShare= link + j;
-    oli=urlShare;
-    console.log(oli);
-
-    
-	Share();
-	});
+	
 
 
+			
 
 
 	//Sticky menu
@@ -220,6 +298,7 @@ $(document).ready(function(){
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
 	$(".article-action").wrap( "<div class='shareThis' >");
 	$(".article-action").html( '</span><span class="fa fa-share-alt" displayText="sharethis"></span>');
+	jQuery('.shareThis').prepend('<div class="botones-redes-wrapper" style="display:none"></div>')
 
 
 	//Se agrega clase responsive a las imagenes de cada box de contenido

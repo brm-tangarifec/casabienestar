@@ -121,14 +121,14 @@
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
-        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-          Registro y Login
+         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+         <!--  Registro y Login -->
           <p class="helpers-registro">
-            <a href="registro.html">Registrarse</a> / <a href="#" class="btn-login">Iniciar sesión</a>
+            <a href="user/register">Registrarse</a> <!-- /  <a href="#" class="btn-login"> Iniciar sesión</a> -->
 
           </p>
-          /-Registro y Login
-        </div> -->
+          <!-- /-Registro y Login -->
+        </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <!--País y buscador-->
           <p class="pais">
@@ -214,7 +214,35 @@
 <!--Fin Banners-->
 <!--Acá se pone el contenido-->
 <section>
-	 <!--Secciones Nutrición, Salud y Bienestar-->
+	 <?php
+         //Campos vista nutricion
+         $view = views_get_view_result('view_nutricion', 'default', array(arg(0)));
+         $contenidoArt=$view[0]->_field_data[nid][entity];
+
+          $shareN=views_get_view('view_nutricion');
+          $contShN=toArray($shareN);
+          $accesoSh=$contShN['display']['default']['display_options']['fields']['sharethis'];
+      /*echo "<pre>";
+
+print_r($contShN);
+
+
+
+
+          //var_dump($accesoSh); // returns null so I cannot use your suggestion
+
+          echo "</pre>";
+*/
+
+         //Campos vista salud
+         $viewsalud = views_get_view_result('view_salud', 'default', array(arg(0)));
+         $contenidoSalud=$viewsalud[0]->_field_data[nid][entity];
+
+          //Campos vista bienestar
+         $viewbienestar = views_get_view_result('view_bienestar', 'default', array(arg(0)));
+         $contenidoBienestar=$viewbienestar[0]->_field_data[nid][entity];
+     ?>
+    <!--Secciones Nutrición, Salud y Bienestar-->
     <div class="container-fluid">
       <div class="row">
         <?php print render($page['nutricion']); ?>
@@ -238,28 +266,7 @@
         <h2 class="text-center">Nuestras Marcas</h2>
         <div class="col-lg-12 carrusel-marcas">
           <?php print render($page['marcas']); ?>
-          <!-- <div id="carrusel-marcas" data-ride="carousel" class="carousel slide">
-            wrapper
-            <div role="listbox" class="carousel-inner">
-              item
-
-              item
-              <div class="item">
-                <?php print render($page['marcas']); ?>
-              </div>
-
-            </div>
-            Controles<a href="#carrusel-marcas" role="button" data-slide="prev" class="left-carousel-control left carousel-control">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-              </a><a href="#carrusel-marcas" role="button" data-slide="next" class="right carousel-control">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-
-
-
-              </a>
-          </div> -->
+         
         </div>
       </div>
     </div>
@@ -328,7 +335,7 @@
     <!--/-Sección Widgets Sociales-->
 
     <div id="fb-root"></div>
-    <button class="fb oli">Dar click</button>
+   
     <!--Footer-->
      <footer>
     <div class="container-fluid">
