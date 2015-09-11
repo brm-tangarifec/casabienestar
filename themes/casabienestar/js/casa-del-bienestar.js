@@ -117,11 +117,17 @@ $(document).on("click", "#btn-up", function () {
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
 
-	jQuery(".oli").click(function(){
+	//Url que se cambia según el servidor
+	var link = "http://fbapp.brm.com.co/";
 
-	console.log('Hola me dieron click');
+	//Clase a la cual se le da el link
+	jQuery(".fa").click(function(){
+		//Variable que recoge el href del módulo donde se está dando click		
+		var j= jQuery(this).parent().parent().next().find("a").attr('href');
 
-    oli='http://fbapp.brm.com.co/fbappCasaBienestar/bienestar/armoniza-tu-casa-al-estilo-del-feng-shui';
+    var urlShare= link + j;
+    oli=urlShare;
+    console.log(oli);
 	Share();
 });
 
@@ -201,7 +207,7 @@ $(document).ready(function(){
 	//$(".vermas").appendTo(".wrapper-vermas");
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
 	$(".article-action").wrap( "<div class='shareThis' >");
-	//$(".article-action").html( '<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>');
+	$(".article-action").html( '<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>');
 
 
 	//Se agrega clase responsive a las imagenes de cada box de contenido
