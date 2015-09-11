@@ -36,7 +36,7 @@
 /*print_r($page);*/
 ?>
 <div class="<?php print $classes;?>">
-  <!--<?php if ($result_count): ?>-->
+  <?php if ($result_count): ?>
     <?php print render($search_performance); ?>
   <?php endif; ?>
   <?php print render($spellcheck); ?>
