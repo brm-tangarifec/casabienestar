@@ -50,9 +50,9 @@ echo '</pre>';*/
 
   </div>
   <!--/-Imagen de perfil-->
-
+</div>
 <div class="row">
-  <!--Nombres-->
+    <!--Nombres-->
   <div class="col-lg-5 col-md-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
     <?php
       print render($form['field_nombres']);
@@ -67,7 +67,6 @@ echo '</pre>';*/
     ?>
 
   </div>
-</div>
   <!--/-Apellidos-->
 </div>
 <div class="row">
@@ -92,7 +91,7 @@ echo '</pre>';*/
   </div>
   <!--/-Tipo Documento-->
   <!--Número de documento-->
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
     <?php
       print render($form['field_numero_documento']);
@@ -102,7 +101,7 @@ echo '</pre>';*/
   </div>
   <!--/-Número de documento-->
   <!--Fecha nacimiento-->
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
     
     <?php
       print render($form['field_fecha_nacimiento']);
@@ -164,7 +163,8 @@ echo '</pre>';*/
   <div class="col-lg-10 col-md-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
 
     <?php
-        print render($form['field_confirmar_contrasena']); 
+        /*print render($form['field_confirmar_contrasena']);*/ 
+         print render($form['account']['pass']);
     ?>
     
     
