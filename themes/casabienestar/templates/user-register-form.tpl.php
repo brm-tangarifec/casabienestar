@@ -50,8 +50,10 @@ echo '</pre>';*/
 
   </div>
   <!--/-Imagen de perfil-->
+
+<div class="row">
   <!--Nombres-->
-  <div class="col-lg-10 col-md-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+  <div class="col-lg-5 col-md-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
     <?php
       print render($form['field_nombres']);
     ?>
@@ -59,13 +61,16 @@ echo '</pre>';*/
   </div>
   <!--/-Nombres-->
   <!--Apellidos-->
-  <div class="col-lg-10 col-md-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+  <div class="col-lg-5 col-md-5 col-xs-12">
     <?php
       print render($form['field_apellidos']);
     ?>
 
   </div>
+</div>
   <!--/-Apellidos-->
+</div>
+<div class="row">
   <!--Nombre Usuario-->
   <div class="col-lg-10 col-md-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
     <?php
@@ -127,7 +132,7 @@ echo '</pre>';*/
 </div>
 <div class="row">
   <!--Genero-->
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
     
     <?php
       print render($form['field_genero']);
@@ -136,7 +141,7 @@ echo '</pre>';*/
   </div>
   <!--/-Genero-->
   <!--Departamento-->
-  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
     <?php
     print render($form['field_ciudades']);
     ?>
