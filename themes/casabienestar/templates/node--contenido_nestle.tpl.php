@@ -315,17 +315,17 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('width');
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
     jQuery('.link-wrapper').hide();
-    jQuery('.sharethis-buttons').hide();
+    jQuery('.fa-share-alt').attr('id','compartirN')
     jQuery('.box-comentarios').hide();
 
 
-    jQuery('.share-others').click(function(){
+    /*jQuery('.share-others').click(function(){
 
       jQuery('.st_sharethis_custom').click();
     });
     jQuery('.share-mail').click(function(){
 
       jQuery('.st_email_custom').click();
-    });
+    });*/
   });
 </script>

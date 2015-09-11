@@ -117,7 +117,14 @@ $(document).on("click", "#btn-up", function () {
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
 
+	jQuery('#compartirN').click(function(){
+		$('.shareThis').share({
+        networks: ['facebook','pinterest','googleplus','twitter','email'],
+    	});
+	});
+
 	//Url que se cambia según el servidor
+	
 	var link = "http://fbapp.brm.com.co";
 
 	//Clase a la cual se le da el link
@@ -130,20 +137,11 @@ $(document).on("ready", function () {
     console.log(oli);
 
     
-	//Share();
+	Share();
+	});
 
 
-	jQuery('.fa-share-alt').click(function(){
-		$('.shareThis').share({
-        networks: ['facebook','pinterest','googleplus','twitter'],
-    	});
-	});
-	jQuery('.fa-paper-plane').click(function(){
-		$('.shareThis').share({
-        networks: ['email'],
-    	});
-	});
-});
+
 
 	//Sticky menu
 	 $("#menu").affix({
@@ -217,11 +215,11 @@ $(document).ready(function(){
 
 	$(".st_email_custom").addClass("fa fa-paper-plane");
 	$(".st_sharethis_custom").addClass("fa fa-share-alt");
-	//$(".sharethis-wrapper").addClass("col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action");
+	//$(".sharethis-wrapper").addClass("col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action <span class="fa fa-paper-plane" displayText="email">");
 	//$(".vermas").appendTo(".wrapper-vermas");
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
 	$(".article-action").wrap( "<div class='shareThis' >");
-	$(".article-action").html( '<span class="fa fa-paper-plane" displayText="email"></span><span class="fa fa-share-alt" displayText="sharethis"></span>');
+	$(".article-action").html( '</span><span class="fa fa-share-alt" displayText="sharethis"></span>');
 
 
 	//Se agrega clase responsive a las imagenes de cada box de contenido
