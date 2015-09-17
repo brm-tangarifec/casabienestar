@@ -1,4 +1,4 @@
-BUILD A THEME WITH ZEN
+BUILD A THEME FOR NESTLÉ COLOMBIA
 ----------------------
 
 The base Zen theme is designed to be easily extended by its sub-themes. You
