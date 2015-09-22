@@ -86,7 +86,7 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-          Registro y Login
+         <!--  Registro y Login -->
           <p class="helpers-registro">
             <a href="user/register">Registrarse</a> <!-- / <a href="#" class="btn-login">Iniciar sesión</a> -->
           </p>
@@ -118,7 +118,7 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/"><img src="images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
