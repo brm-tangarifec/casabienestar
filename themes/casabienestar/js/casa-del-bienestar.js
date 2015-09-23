@@ -1,71 +1,3 @@
-//Widget de FB
-
-
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '681271491974457',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=681271491974457";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-
-//Widget de Twitter
-window.twttr = (function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0],
-		t = window.twttr || {};
-	if (d.getElementById(id)) return t;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "https://platform.twitter.com/widgets.js";
-	fjs.parentNode.insertBefore(js, fjs);
-
-	t._e = [];
-	t.ready = function(f) {
-		t._e.push(f);
-	};
-
-	return t;
-}(document, "script", "twitter-wjs"));
-
-$("#carrusel-marcas").carousel({
-	interval: false
-
-});
-
-
-/*Funcion para compartir en facebook*/
-var oli;
-function Share(url) {
-  FB.ui({
-  method: 'share_open_graph',
-  action_type: 'og:share',
-  action_properties: JSON.stringify({
-      object: oli,
-  })
-}, function(response){});
-}
-
-
-
-
 //Función para check de selección de preferencias en el registro
 $(document).on("click", ".boton-brand", function () {
 		//Variable que almacena la opción que fue clickeada
@@ -106,7 +38,12 @@ $(document).on("mouseout", ".boton-brand", function () {
 //Funcion para volver arriba
 $(document).on("click", "#btn-up", function () {
 
-		$(window).scrollTop(0);
+		// $(window).scrollTop(0);
+		var opacity=1.3-($(window).scrollTop()/500);
+		if(opacity>1)opacity=1;
+		if(opacity<0)opacity=0;$('#btn-up').fadeTo(10,opacity);
+
+		$('html,body').animate({scrollTop:$(window).scrollTop()-5000+'px'},1000);
 		$(".up").removeClass('animated fadeInUp');
 
 
@@ -281,6 +218,8 @@ $(document).on("ready", function () {
 
 
 
+
+
 $(document).ready(function(){
 
 	var currentURL = window.location.pathname;
@@ -322,6 +261,70 @@ $(document).ready(function(){
 	
 
 });
+
+
+
+//Widget de FB
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '681271491974457',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=681271491974457";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+//Widget de Twitter
+window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
+
+	t._e = [];
+	t.ready = function(f) {
+		t._e.push(f);
+	};
+
+	return t;
+}(document, "script", "twitter-wjs"));
+
+$("#carrusel-marcas").carousel({
+	interval: false
+
+});
+
+
+/*Funcion para compartir en facebook*/
+var oli;
+function Share(url) {
+  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og:share',
+  action_properties: JSON.stringify({
+      object: oli,
+  })
+}, function(response){});
+}
 
 
 
