@@ -84,7 +84,7 @@
           <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
         <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
           Registro y Login
           <p class="helpers-registro">
@@ -93,7 +93,7 @@
           </p>
           /-Registro y Login
         </div> -->
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 ">
           <!--País y buscador-->
           <p class="pais">
             Estás en el sitio de NESTLÉ&reg; Colombia

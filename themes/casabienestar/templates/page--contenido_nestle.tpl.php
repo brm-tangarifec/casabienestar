@@ -96,11 +96,11 @@
           <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-          <!-- Registro y Login -->
+         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+         <!--  Registro y Login -->
           <p class="helpers-registro">
-            <a href="../user/register">Registrarse</a> <!-- / <a href="#" class="btn-login">Iniciar sesión</a> -->
+            <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
+
           </p>
           <!-- /-Registro y Login -->
         </div> 
