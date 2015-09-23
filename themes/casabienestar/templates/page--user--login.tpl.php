@@ -2,11 +2,10 @@
 
 /**
  * @file
- * Bartik's theme implementation to display a single Drupal page.
+ * Default theme implementation to display a single Drupal page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
- * can be found in the html.tpl.php template normally located in the
- * modules/system directory.
+ * can be found in the html.tpl.php template in this directory.
  *
  * Available variables:
  *
@@ -28,12 +27,6 @@
  *   in theme settings.
  * - $site_slogan: The slogan of the site, empty when display has been disabled
  *   in theme settings.
- * - $hide_site_name: TRUE if the site name has been toggled off on the theme
- *   settings page. If hidden, the "element-invisible" class is added to make
- *   the site name visually hidden, but still accessible.
- * - $hide_site_slogan: TRUE if the site slogan has been toggled off on the
- *   theme settings page. If hidden, the "element-invisible" class is added to
- *   make the site slogan visually hidden, but still accessible.
  *
  * Navigation:
  * - $main_menu (array): An array containing the Main menu links for the
@@ -63,87 +56,158 @@
  *   comment/reply/12345).
  *
  * Regions:
- * - $page['header']: Items for the header region.
- * - $page['featured']: Items for the featured region.
- * - $page['highlighted']: Items for the highlighted content region.
  * - $page['help']: Dynamic help text, mostly for admin pages.
+ * - $page['highlighted']: Items for the highlighted content region.
+ * - $page['banner']: Items for the banner content region.
  * - $page['content']: The main content of the current page.
  * - $page['sidebar_first']: Items for the first sidebar.
- * - $page['triptych_first']: Items for the first triptych.
- * - $page['triptych_middle']: Items for the middle triptych.
- * - $page['triptych_last']: Items for the last triptych.
- * - $page['footer_firstcolumn']: Items for the first footer column.
- * - $page['footer_secondcolumn']: Items for the second footer column.
- * - $page['footer_thirdcolumn']: Items for the third footer column.
- * - $page['footer_fourthcolumn']: Items for the fourth footer column.
+ * - $page['sidebar_second']: Items for the second sidebar.
+ * - $page['header']: Items for the header region.
  * - $page['footer']: Items for the footer region.
  *
  * @see template_preprocess()
  * @see template_preprocess_page()
  * @see template_process()
- * @see bartik_process_page()
  * @see html.tpl.php
+ *
+ * @ingroup themeable
  */
+
 ?>
-<div id="page-wrapper"><div id="page">
+<header>
 
 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+          <!--Logo-->
+          <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <!--/-Logo-->
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+          Registro y Login
+          <p class="helpers-registro">
+            <a href="registro.html">Registrarse</a> / <a href="#" class="btn-login">Iniciar sesión</a>
+
+          </p>
+          /-Registro y Login
+        </div> -->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <!--País y buscador-->
+          <p class="pais">
+            Estás en el sitio de NESTLÉ&reg; Colombia
+
+          </p>
+          <div class="form-group">
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
+              <?php print render($page['buscador']);?> 
+             
+            </div>
+          <!--/-País y buscador-->
+        </div>
+      </div>
+    </div>
+  <!--Fin Header-->
+    <!--Menú home-->
+
+    <?php if ($main_menu /*|| $secondary_menu*/): ?>
+    <div id="menu" class="container-fluid shadow-z-2 menu u-no-border">
+     <div class="row">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+              </div>
+                <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
 
+                       <?php $menu = menu_navigation_links('menu-casabienestar');
+                      print theme('links__menu_casabienestar', array('links' => $menu,'attributes' => array('class' => array('nav navbar-nav'))));
+                       ?>
+                       <ul class="nav navbar-nav navbar-right">
+                       <li class="social-link social-links-facebok"><a href="https://www.facebook.com/nestle.colombia" rel="nofollow" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                       <li class="social-link social-links-twitter"><a href="https://twitter.com/NestleColombia" rel="nofollow" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                       <li class="social-link social-links-youtube"><a href="https://www.youtube.com/user/Nestlecol" rel="nofollow" target="_blank"><span class="fa fa-youtube"></span></a></li>
+                      </ul>
 
 
+                       </div>
+                     </div> <!-- /.section, /#navigation -->
 
-  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
+          </div>
+        </nav>
+      </div>
+
+    </div>
 
 
-    <?php if ($page['sidebar_first']): ?>
-      <div id="sidebar-first" class="column sidebar"><div class="section">
-        <?php print render($page['sidebar_first']); ?>
-      </div></div> <!-- /.section, /#sidebar-first -->
     <?php endif; ?>
+    <!--Fin del menú del home-->
+    </header>
 
-    <div id="content" class="column"><div class="section">
-      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
+
+<!--Acá se pone el contenido-->
+
+
+
+
+<section>
+
+  <div id="registro" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h1 class="text-center">Inicio de sesión</h1>
+        </div>
+      </div>
+      
+     
+     
+      <?php print render($page['content']); ?>
+
+        <!--Links para el loggin-->
       <?php if ($tabs): ?>
         <div class="tabs">
           <?php print render($tabs); ?>
         </div>
       <?php endif; ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links">
-          <?php print render($action_links); ?>
-        </ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+      <!--Links para el loggin-->
+      
+    </div>
+</section>
 
-    </div></div> <!-- /.section, /#content -->
 
-    <?php if ($page['sidebar_second']): ?>
-      <div id="sidebar-second" class="column sidebar"><div class="section">
-        <?php print render($page['sidebar_second']); ?>
-      </div></div> <!-- /.section, /#sidebar-second -->
-    <?php endif; ?>
 
-  </div></div> <!-- /#main, /#main-wrapper -->
 
-  <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
-    <div id="triptych-wrapper"><div id="triptych" class="clearfix">
-      <?php print render($page['triptych_first']); ?>
-      <?php print render($page['triptych_middle']); ?>
-      <?php print render($page['triptych_last']); ?>
-    </div></div> <!-- /#triptych, /#triptych-wrapper -->
-  <?php endif; ?>
+<!--Acá finaliza el contenido-->
 
-<!-- /.section, /#footer-wrapper -->
 
-</div></div> <!-- /#page, /#page-wrapper -->
+    <!--Footer-->
+     <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="footer-list">
+            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
+          </ul>
+          <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/-Footer-->
+  <!--Scripts-->
+  <script>
+    $(document).ready(function() {
+      // This command is used to initialize some elements and make them work properly
+      $.material.init();
+    });
+  </script>
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <!-- /#page, /#page-wrapper -->
+ <!--Fin Footer-->

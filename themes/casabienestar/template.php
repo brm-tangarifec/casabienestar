@@ -386,75 +386,19 @@ function casabienestar_lt_password_description($variables) {
   }
 }
 
-/**
- * Implement hook_form_alter().
- *
- * @ingroup logintoboggan_core
- */
-function casabienestar_form_alter(&$form, &$form_state, $form_id) {
-  switch ($form_id) {
-    case 'user_login':
-    case 'user_login_block':
-      // Grab the message from settings for display at the top of the login block.
-      if ($login_msg = variable_get('logintoboggan_login_block_message', '')) {
-        $form['message'] = array(
-          '#markup' => filter_xss_admin($login_msg),
-          '#weight' => -50,
-        );
-      }
-      if (variable_get('logintoboggan_login_with_email', 0)) {
-        // Ensure a valid validate array.
-        $form['#validate'] = is_array($form['#validate']) ? $form['#validate'] : array();
-        // LT's validation function must run first.
-        array_unshift($form['#validate'],'logintoboggan_user_login_validate');
-        // Use theme functions to print the username field's textual labels.
-        $form['name']['#title']       = theme('lt_username_title', array('form_id' => $form_id));
-        $form['name']['#description'] = theme('lt_username_description', array('form_id' => $form_id));
-        // Use theme functions to print the password field's textual labels.
-        $form['pass']['#title']       = theme('lt_password_title', array('form_id' => $form_id));
-        $form['pass']['#description'] = theme('lt_password_description', array('form_id' => $form_id));
-      }
 
-      if (($form_id == 'user_login_block')) {
-        $block_type = variable_get('logintoboggan_login_block_type', 0);
-        if ($block_type == 1) {
-          // What would really be nice here is to start with a clean form, but
-          // we can't really do that, because drupal_prepare_form() has already
-          // been run, and we can't run it again in the _alter() hook, or we'll
-          // get into and endless loop. Since we don't know exactly what's in
-          // the form, strip out all regular form elements and the handlers.
-          foreach (element_children($form) as $element) {
-            unset($form[$element]);
-            // OpenID expects this key, so provide it to prevent notices.
-            if (module_exists("openid")) {
-              $form['name']['#size'] = 0;
-            }
-          }
-          unset($form['#validate'], $form['#submit']);
-          $form['logintoboggan_login_link'] = array(
-            '#markup' => l(theme('lt_login_link'), 'user/login', array('query' => drupal_get_destination())),
-          );
-        }
-        elseif ($block_type == 2) {
-          $form  = _logintoboggan_toggleboggan($form);
-        }
-      }
-      else {
-        if (variable_get('logintoboggan_unified_login', 0)) {
-          $form['lost_password'] = array(
-            '#markup' => '<div class="login-forgot">' . l(t('Request new password'), 'user/password') . '</div>',
-          );
-        }
-      }
+
+/*Cambio de texto del bloque de loggin*/
+function casabienestar_lt_username_title($variables) {
+  switch ($variables['form_id']) {
+    case 'user_login':
+      // Label text for the username field on the /user/login page.
+      return t('Username or e-mail address');
       break;
-    case 'user_admin_settings':
-      // Disable the checkbox at the Account settings page which controls
-      // whether e-mail verification is required upon registration or not.
-      // The LoginToboggan module implements e-mail verification functionality
-      // differently than core, and will control wether e-mail verification is
-      // required or not.
-      $form['registration_cancellation']['user_email_verification']['#disabled'] = true;
-      $form['registration_cancellation']['user_email_verification']['#description'] = t('This setting has been locked by the LoginToboggan module. You can change this setting by modifying the <strong>Set password</strong> checkbox at <a href="!link">LoginToboggan settings page</a>.', array('!link' => url('admin/config/system/logintoboggan')));
+
+    case 'user_login_block':
+      // Label text for the username field when shown in a block.
+      return t('Nombre de usuario o e-mail');
       break;
   }
 }
