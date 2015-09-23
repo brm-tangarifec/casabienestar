@@ -94,6 +94,7 @@ scripts[] = js/jquery.jcarousellite.min.js
 ;   <?php print $header_top; ?>
 
 regions[buscador]         = Buscador
+regions[loggin]         = loggin
 regions[header]         = Header
 regions[banner]         = banner
 regions[navigation]     = Navigation bar
