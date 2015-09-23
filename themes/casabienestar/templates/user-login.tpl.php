@@ -44,7 +44,7 @@ echo '</pre>';*/
 
 <div class="row">
   <!--Nombre Usuario-->
-  <div class="col-lg-10 col-md-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
     <?php
       print render($form['account']['name']);
     ?>
@@ -55,7 +55,7 @@ echo '</pre>';*/
 
 <div class="row">
   <!--Email-->
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
     <?php
       print render($form['account']['mail']);
     ?>
@@ -68,7 +68,7 @@ echo '</pre>';*/
 </div>
 <div class="row">
   <!--Submit-->
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
     <?php print drupal_render_children($form); ?>
     
   </div>
