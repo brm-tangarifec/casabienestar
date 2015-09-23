@@ -82,48 +82,21 @@
 <header>
 
   <!--Header CB-->
-   <!-- <div class="container-fluid login">
+   <div class="container-fluid login">
+    
+    <!--Wrapper login-->
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-2 hidden-xs"></div>
-        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
           <h2>Inicio de sesión</h2>
-          <form id="login" method="">
-            Usuario
-            <div class="form-group">
-              <label for="login-usuario">Usuario:</label>
-              <input type="text" id="login-usuario" name="login-usuario" class="form-control">
-            </div>
-            Contraseña
-            <div class="form-group">
-              <label for="login-password">Contraseña: </label>
-              <input type="text" id="login-password" name="login-password" class="form-control">
-            </div>
-            Recordarme
-            <div class="checkbox">
-              <label><input type="checkbox"> Recordar mi cuenta</label>
-            </div>
-            <button id="login-submit" type="button" class="btn btn-warning">Ingresar</button>
-            <p>
-              <a href="#">¿Olvidaste tu contraseña?</a> / Eres nuevo, <a href="registro.html">regístrate</a>
 
-
-            </p>
-          </form>
+          <?php print render($page['loggin']);?>
+          
           <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-2 hidden-xs"></div>
       </div>
-    </div> -->
+    </div>
     <!--/-Wrapper login-->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-            <h3>hola login</h3>
-          <?php print render($page['loggin']);?>
 
-
-        </div>
-      </div>
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
@@ -134,7 +107,7 @@
          <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
          <!--  Registro y Login -->
           <p class="helpers-registro">
-            <a href="user/register">Registrarse</a> <!-- /  <a href="#" class="btn-login"> Iniciar sesión</a> -->
+            <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
           <!-- /-Registro y Login -->
