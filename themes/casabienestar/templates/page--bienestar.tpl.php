@@ -76,18 +76,18 @@
 ?>
 <header>
 
-  <!--Wrapper login-->
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
-        <h2>Inicio de sesión</h2>
-
-        <?php print render($page['loggin']);?>
-        
-        <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
-      </div>
-    </div>
-  </div>
-  <!--/-Wrapper login-->
+  <div class="container-fluid login">
+   <!--Wrapper login-->
+     <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+         <h2>Inicio de sesión</h2>
+         <?php print render($page['loggin']);?>
+         
+         <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
+       </div>
+     </div>
+   </div>
+   <!--/-Wrapper login-->
 
 
     <div class="container-fluid">
@@ -101,7 +101,7 @@
        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
           <!-- Registro y Login -->
           <p class="helpers-registro">
-            <a href="user/register">Registrarse</a> <!-- / <a href="#" class="btn-login">Iniciar sesión</a> -->
+            <a href="user/register">Registrarse</a> <a href="#" class="btn-login">Iniciar sesión</a>
           </p>
           <!-- /-Registro y Login -->
         </div> 
@@ -131,7 +131,7 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
