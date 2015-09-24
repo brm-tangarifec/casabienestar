@@ -163,7 +163,7 @@ echo '</pre>';*/
 
 <section>
 
-  <div id="registro" class="container-fluid">
+  <div id="perfil" class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h1 class="text-center">Mi perfil</h1>
@@ -176,8 +176,10 @@ echo '</pre>';*/
 
         <!--Links para el loggin-->
       <?php if ($tabs): ?>
-        <div class="tabs">
-          <?php print render($tabs['#primary'][1]); ?>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+          <span class="fa fa-pencil-square-o"> </span>   <?php print render($tabs['#primary'][1]); ?>
+        </div>
         </div>
       <?php endif; ?>
       <!--Links para el loggin-->

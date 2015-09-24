@@ -37,10 +37,10 @@
 $perfil=toArray($user_profile);
 $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['und'][0]['uri'];
 
-echo '<pre>';
+// echo '<pre>';
 /*print_r(array_keys($user_profile));*/
 /*print_r($perfil['field_confirmar_contrasena']);*/
-echo '</pre>';
+// echo '</pre>';
 
 
 ?>
@@ -52,19 +52,19 @@ echo '</pre>';
  <div class="row">
 	
 
-    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+
 
     	<figure class="img-perfil img-circle">
     		
-         <img src="<?php print file_create_url($fotoPerfil)?>" class="img-article img-responsive">
+        	<img src="<?php print file_create_url($fotoPerfil)?>" class="img-article img-responsive" alt=" ">
     		
     	</figure>
 
    </div>
-   <!--Nombre Usuario-->
+
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-		<p> <?php print $user_profile['field_nombres'][0]['#markup'] ?></p>
-		<p><?php print $user_profile['field_apellidos'][0]['#markup']; ?></p>
+		<p> <?php print $user_profile['field_nombres'][0]['#markup']'." ".' $user_profile['field_apellidos'][0]['#markup']; ?></p>
 		<p><?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
 		<p><?php print $user_profile['field_tel_fono'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
@@ -72,7 +72,6 @@ echo '</pre>';
 		<p><?php print $user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_genero'][0]['#markup']; ?></p>
    </div>
-   <!--/-Nombre Usuario-->
  </div>
 
 
