@@ -64,7 +64,7 @@ $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['un
    </div>
 
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-		<p> <?php print $user_profile['field_nombres'][0]['#markup']'." ".' $user_profile['field_apellidos'][0]['#markup']; ?></p>
+		<p> <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
 		<p><?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
 		<p><?php print $user_profile['field_tel_fono'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
