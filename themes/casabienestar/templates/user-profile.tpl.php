@@ -55,7 +55,7 @@ $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['un
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
 
 
-    	<figure class="img-perfil img-circle">
+    	<figure class="img-perfil img-circle center-block">
     		
         	<img src="<?php print file_create_url($fotoPerfil)?>" class="img-article img-responsive" alt=" ">
     		
@@ -64,9 +64,10 @@ $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['un
    </div>
 
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-		<p> <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+		<p class="nombre"> <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
 		<p><?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
 		<p><?php print $user_profile['field_tel_fono'][0]['#markup']; ?></p>
+		<p><?php print $user_profile['field_telefono'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_numero_documento'][0]['#markup']; ?></p>
 		<p><?php print $user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>

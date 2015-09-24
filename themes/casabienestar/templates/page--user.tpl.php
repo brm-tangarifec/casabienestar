@@ -178,7 +178,7 @@ echo '</pre>';*/
       <?php if ($tabs): ?>
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
-          <span class="fa fa-pencil-square-o"> </span>   <?php print render($tabs['#primary'][1]); ?>
+          <div class="center-block editar text-center"><span class="fa fa-pencil-square-o"> </span>   <?php print render($tabs['#primary'][1]); ?></div>
         </div>
         </div>
       <?php endif; ?>
