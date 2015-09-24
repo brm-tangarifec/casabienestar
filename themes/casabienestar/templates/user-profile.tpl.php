@@ -48,18 +48,43 @@ echo '</pre>';
 </div>
  -->
 
+ <div class="row">
+	
 
- <?php print $user_profile['field_nombres'][0]['#markup'] ?>
+    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
 
- <hr>
- 
-
-  <?php print$user_profile['field_apellidos'][0]['#markup']; ?>
-
- <hr>
- 
-         <h3>Hola soy un perro</h3>
+    	<figure class="img-perfil img-circle">
+    		
          <img src="<?php print file_create_url($fotoPerfil)?>" class="img-article img-responsive">
+    		
+    	</figure>
+
+   </div>
+   <!--Nombre Usuario-->
+    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+		<p> <?php print $user_profile['field_nombres'][0]['#markup'] ?></p>
+		<p><?php print$user_profile['field_apellidos'][0]['#markup']; ?></p>
+		<p><?php print$user_profile['account']['mail']['#markup']; ?></p>
+		<p><?php print$user_profile['account']['password']['#markup']; ?></p>
+		<p><?php print$user_profile['field_tel_fono'][0]['#markup']; ?></p>
+		<p><?php print$user_profile['field_ciudades'][0]['#markup']; ?></p>
+		<p><?php print$user_profile['field_numero_documento'][0]['#markup']; ?></p>
+		<p><?php print$user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>
+		<p><?php print$user_profile['field_genero'][0]['#markup']; ?></p>
+   </div>
+   <!--/-Nombre Usuario-->
+ </div>
+
+
+
+
+
+ 
+
+
+
+ 
+        
           
        </div>
     
