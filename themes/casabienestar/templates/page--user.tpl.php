@@ -73,6 +73,13 @@
  * @ingroup themeable
  */
 
+$linksPerfil=toArray($tabs);
+
+/*echo '<pre>';
+print_r(array_keys($tabs['#primary'][1]));
+/*print_r($tabs);
+echo '</pre>';*/
+
 ?>
 <header>
 
@@ -170,7 +177,7 @@
         <!--Links para el loggin-->
       <?php if ($tabs): ?>
         <div class="tabs">
-          <?php print render($tabs); ?>
+          <?php print render($tabs['#primary'][1]); ?>
         </div>
       <?php endif; ?>
       <!--Links para el loggin-->
