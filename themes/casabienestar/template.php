@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',0);
+ini_set('display_errors',1);
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup
@@ -248,6 +248,9 @@ function casabienestar_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 
+  /*Muesta los templates disponibles*/
+   /*echo '<pre>'; var_dump($variables['theme_hook_suggestions']); echo '</pre>';*/
+
   
 }
 
@@ -349,6 +352,8 @@ function casabienestar_theme() {
   'preprocess functions' => array(
   'casabienestar_preprocess_user_login-block'
   ),);
+
+   
 return $items;
 }
 
@@ -381,7 +386,7 @@ function casabienestar_lt_password_description($variables) {
 
     case 'user_login_block':
       // If showing the login form in a block, don't print any descriptive text.
-       return t('Username or e-mail');
+       return t('Ingresa tu contraseña');
       break;
   }
 }
@@ -402,5 +407,57 @@ function casabienestar_lt_username_title($variables) {
       break;
   }
 }
+
+/*Funcion para hacer render del user profile*/
+
+function casabienestar_preprocess_user_profile(&$variables) {
+  $account = $variables['elements']['#account'];
+
+  // Helpful $user_profile variable for casabienestars.
+  foreach (element_children($variables['elements']) as $key) {
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+   
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
+}
+
+/**
+ * Process variables for user-profile-item.tpl.php.
+ *
+ * The $variables array contains the following arguments:
+ * - $element
+ *
+ * @see user-profile-item.tpl.php
+ */
+function casabienestar_preprocess_user_profile_item(&$variables) {
+  $variables['title'] = $variables['element']['#title'];
+  $variables['value'] = $variables['element']['#markup'];
+  $variables['attributes'] = '';
+  if (isset($variables['element']['#attributes'])) {
+    $variables['attributes'] = drupal_attributes($variables['element']['#attributes']);
+  }
+}
+
+/**
+ * Process variables for user-profile-category.tpl.php.
+ *
+ * The $variables array contains the following arguments:
+ * - $element
+ *
+ * @see user-profile-category.tpl.php
+ */
+function casabienestar_preprocess_user_profile_category(&$variables) {
+  $variables['title'] = check_plain($variables['element']['#title']);
+  $variables['profile_items'] = $variables['element']['#children'];
+  $variables['attributes'] = '';
+  if (isset($variables['element']['#attributes'])) {
+    $variables['attributes'] = drupal_attributes($variables['element']['#attributes']);
+  }
+}
+
+/*Imprime los templates disponible en drupal7*/
+
 
 ?>
