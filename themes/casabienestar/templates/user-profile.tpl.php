@@ -39,7 +39,7 @@ $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['un
 
 echo '<pre>';
 /*print_r(array_keys($user_profile));*/
-print_r($perfil['field_ciudades']);
+print_r($perfil['field_ciudades']['#object'][0]['#title'] );
 echo '</pre>';
 
 
@@ -67,7 +67,7 @@ echo '</pre>';
     <p class="nombre"> <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
 		<p><strong>Email</strong> <?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
 		<p><strong>Teléfono </strong><?php print $user_profile['field_telefono'][0]['#markup']; ?></p>
-		<p><strong>Departamento/Ciudad</strong>  <?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
+		<p><strong>Ciudad</strong>  <?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
 		<p><strong>Documento</strong>    <?php print $user_profile['field_tipo_documento'][0]['#markup']; ?>." ".<?php print $user_profile['field_numero_documento'][0]['#markup']; ?> </p>
 		<p><strong>Fecha de nacimiento </strong><?php print $user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>
    </div>
