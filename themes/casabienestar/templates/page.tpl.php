@@ -88,9 +88,9 @@
         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
           <?php if($logged_in):?>
           
-           <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+           <!-- <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
            
-          <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a>
+          <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a> -->
       
         <?php else: ?>
           <h2>Inicio de sesión</h2>
@@ -116,17 +116,15 @@
          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
          <!--  Registro y Login -->
 
+         <p class="helpers-registro">
          <?php if($logged_in):?>
           
-         <p class="helpers-registro">
-           <a href="user/">Ver Perfil</a>
-           <a href="#" class="btn-login">Mostrar más</a>
-
-         </p>    
+           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Mostrar más</a>
+  
       
         <?php else: ?>
 
-          <p class="helpers-registro">
+ 
             <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
