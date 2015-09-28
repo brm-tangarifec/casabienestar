@@ -345,12 +345,12 @@ function casabienestar_theme() {
     'casabienestar_preprocess_user_pass'
     ),
   );
-   $items['user_login'] = array(
+   $items['user_profile_form'] = array(
   'render element' => 'form',
   'path' => drupal_get_path('theme', 'casabienestar') . '/templates',
-  'template' => 'user-login-block',
+  'template' => 'user-profile-edit',
   'preprocess functions' => array(
-  'casabienestar_preprocess_user_login-block'
+  'casabienestar_preprocess_user_profile_form'
   ),);
 
    
@@ -381,7 +381,7 @@ function casabienestar_lt_password_description($variables) {
   switch ($variables['form_id']) {
     case 'user_login':
       // The password field's description on the /user/login page.
-      return t('El campo de contrase&ntilde; es diferencia entre mayusculas y minusculas.');
+      return t('El campo de contrase&ntilde; diferencia entre mayusculas y minusculas.');
       break;
 
     case 'user_login_block':

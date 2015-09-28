@@ -39,7 +39,7 @@ $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['un
 
 echo '<pre>';
 /*print_r(array_keys($user_profile));*/
-print_r($perfil['field_ciudades']['#object'][0]['#title'] );
+print_r($user_profile['field_ciudades']);
 echo '</pre>';
 
 
