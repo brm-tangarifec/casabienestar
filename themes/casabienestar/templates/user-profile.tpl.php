@@ -37,10 +37,10 @@
 $perfil=toArray($user_profile);
 $fotoPerfil=$perfil['field_imagen_perfil']['#object']['field_imagen_perfil']['und'][0]['uri'];
 
-echo '<pre>';
-/*print_r(array_keys($user_profile));*/
-print_r($user_profile['field_ciudades']);
-echo '</pre>';
+// echo '<pre>';
+// /*print_r(array_keys($user_profile));*/
+// print_r($perfil['field_ciudades']['#object'][0]['#title'] );
+// echo '</pre>';
 
 
 ?>
@@ -50,34 +50,28 @@ echo '</pre>';
  -->
 
  <div class="row">
-	
+  
 
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
 
 
-    	<figure class="img-perfil img-circle center-block">
-    		
-        	<img src="<?php print file_create_url($fotoPerfil)?>" >
-    		
-    	</figure>
+      <figure class="img-perfil img-circle center-block">
+        
+          <img src="<?php print file_create_url($fotoPerfil)?>" >
+        
+      </figure>
 
    </div>
 
     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
     <p class="nombre"> <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
-		<p><strong>Email</strong> <?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
-		<p><strong>Teléfono </strong><?php print $user_profile['field_telefono'][0]['#markup']; ?></p>
-		<p><strong>Ciudad</strong>  <?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
-		<p><strong>Documento</strong>    <?php print $user_profile['field_tipo_documento'][0]['#markup']; ?>." ".<?php print $user_profile['field_numero_documento'][0]['#markup']; ?> </p>
-		<p><strong>Fecha de nacimiento </strong><?php print $user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>
+    <p><strong>Email</strong> <?php print $perfil['field_confirmar_contrasena']['#object']['mail'] ?></p>
+    <p><strong>Teléfono </strong><?php print $user_profile['field_telefono'][0]['#markup']; ?></p>
+    <p><strong>Ciudad</strong>  <?php print $user_profile['field_ciudades'][0]['#markup']; ?></p>
+    <p><strong>Documento</strong>    <?php print $user_profile['field_tipo_documento'][0]['#markup']; ?>." ".<?php print $user_profile['field_numero_documento'][0]['#markup']; ?> </p>
+    <p><strong>Fecha de nacimiento </strong><?php print $user_profile['field_fecha_nacimiento'][0]['#markup']; ?></p>
    </div>
  </div>
-
-
-
-
-
- 
 
 
 
@@ -85,4 +79,3 @@ echo '</pre>';
         
           
        </div>
-    
