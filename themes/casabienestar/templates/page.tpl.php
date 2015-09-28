@@ -88,17 +88,17 @@
         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
           <?php if($logged_in):?>
           
-          <h3>Holi :D</h3>    
+           
       
         <?php else: ?>
           <h2>Inicio de sesión</h2>
           
           <?php print render($page['loggin']);?>
 
+          <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
           <?php endif; ?>
       
           
-          <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
         </div>
       </div>
     </div>
@@ -113,10 +113,23 @@
         <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
          <!--  Registro y Login -->
+
+         <?php if($logged_in):?>
+          
+         <p class="helpers-registro">
+           <a href="user/">Ver Perfil</a>
+          <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a>
+
+         </p>    
+      
+        <?php else: ?>
+
           <p class="helpers-registro">
             <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
+
+          <?php endif; ?>
           <!-- /-Registro y Login -->
         </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
