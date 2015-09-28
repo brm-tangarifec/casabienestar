@@ -119,7 +119,7 @@
          <p class="helpers-registro">
          <?php if($logged_in):?>
           
-           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Mostrar más</a>
+           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
   
       
         <?php else: ?>

@@ -78,30 +78,53 @@
   <!--Header CB-->
 
   <div class="container-fluid login">
-   <!--Wrapper login-->
-     <div class="row">
-       <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
-         <h2>Inicio de sesión</h2>
-         <?php print render($page['loggin']);?>
-         
-         <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
-       </div>
-     </div>
-   </div>
-   <!--/-Wrapper login-->
-    <div class="container-fluid">
+    <!--Wrapper login-->
       <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+          <?php if($logged_in):?>
+          
+           <!-- <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+           
+          <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a> -->
+      
+        <?php else: ?>
+          <h2>Inicio de sesión</h2>
+          
+          <?php print render($page['loggin']);?>
+
+          <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
+          <?php endif; ?>
+      
+          
+        </div>
+      </div>
+    </div>
+    <!--/-Wrapper login-->
+
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
           <!--Logo-->
-          <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h1><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
           <!--/-Logo-->
         </div>
+        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
          <!--  Registro y Login -->
-          <p class="helpers-registro">
+
+         <p class="helpers-registro">
+         <?php if($logged_in):?>
+          
+           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
+  
+      
+        <?php else: ?>
+
+ 
             <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
+
+          <?php endif; ?>
           <!-- /-Registro y Login -->
         </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
