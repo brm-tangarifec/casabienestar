@@ -255,7 +255,7 @@ $(document).ready(function(){
 
 	}
 
-	jQuery('#edit-field-imagen-perfil-und-0-upload-button').addClass('btn btn-primary');
+	jQuery('.image-widget-data input[type="submit"]').addClass('btn btn-primary');
 	jQuery('#edit-submit').addClass('btn btn-warning');
 
 	
