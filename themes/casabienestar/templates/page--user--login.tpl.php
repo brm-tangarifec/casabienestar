@@ -158,14 +158,16 @@
 
   <div id="registro" class="container-fluid">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
           <h1 class="text-center">Inicio de sesión</h1>
         </div>
-      </div>
       
+      
+       <?php print render($page['content']); ?>
      
      
-      <?php print render($page['content']); ?>
+     <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+
 
         <!--Links para el loggin-->
       <?php if ($tabs): ?>
@@ -174,7 +176,9 @@
         </div>
       <?php endif; ?>
       <!--Links para el loggin-->
-      
+
+     </div>
+    </div>  
     </div>
 </section>
 

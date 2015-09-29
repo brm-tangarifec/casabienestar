@@ -311,8 +311,7 @@ function toArray($obj)
   );
   return $hooks;
 }
-function 
-casabienestar_preprocess_user_register_form(&$vars) {
+function casabienestar_preprocess_user_register_form(&$vars) {
   $args = func_get_args();
   array_shift($args);
   $form_state['build_info']['args'] = $args; 
@@ -381,7 +380,7 @@ function casabienestar_lt_password_description($variables) {
   switch ($variables['form_id']) {
     case 'user_login':
       // The password field's description on the /user/login page.
-      return t('El campo de contrase&ntilde; diferencia entre mayusculas y minusculas.');
+      return t('El campo de contrase&ntilde;a diferencia entre may&ucute;sculas y min&ucute;sculas.');
       break;
 
     case 'user_login_block':
