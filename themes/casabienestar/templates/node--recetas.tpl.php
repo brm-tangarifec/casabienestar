@@ -147,11 +147,10 @@ print_r(array_keys($content));
     <div class="row">
       <!--Listado de ingredientes-->
       <article id="listado-ingredientes" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-        <form  method=""><span class="texto-apoyo">ingredientes para</span>
+        <span class="texto-apoyo">ingredientes para</span>
           <div class="form-group">
             <?php print render($content['field_receta_porciones'])?>
           </div><span class="texto-apoyo">porciones</span>
-        </form>
         <div class="table-responsive">
           <?php print render($content['field_receta_ingredientes'])?>
         </div>
