@@ -108,7 +108,7 @@ print_r(array_keys($content));
   </div>
   <section class="container-fluid article-body">
     <!--Compartir y ranking-->
-    <div class="box-compartir box-compartir-receta row">
+    <!-- <div class="box-compartir box-compartir-receta row">
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h5>Compartido</h5>
         <p class="contador-general">9999</p>
@@ -124,7 +124,7 @@ print_r(array_keys($content));
         </div>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div>
-    </div>
+    </div> -->
     <!--/-Compartir y ranking-->
     <!--Momentos y Marcas-->
     <div class="row filtros">
@@ -169,105 +169,116 @@ print_r(array_keys($content));
     <div class="row compartir">
       
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-md-push-8 col-sm-push-8 article-action">
-        <button class="btn btn-default share share-print"><span class="fa fa-print"></span></button>
+        <!-- <button class="btn btn-default share share-print"><span class="fa fa-print"></span></button>
         <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-        <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+        <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->
         <button class="btn btn-default share share-others"><span class="fa fa-share-alt"></span></button>
       </div>
     </div>
     <!--/-Calificación y compartir-->
-    <!--Comentarios-->
-    <div class="row box-comentarios">
-      <div class="col-lg-12">
-        <h3>Comentarios</h3>
-        <form id="comentarios" action="">
-          <div class="form-group">
-            <textarea id="espacio-comentario" name="espacio-comentario" placeholder="Déjanos tus comentarios" class="form-control"></textarea>
-          </div>
-          <div class="form-group u-text-right">
-            <button id="comentar" type="button" class="btn btn-primary">Publicar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!--/-Comentarios-->
-    <!--Contenido relacionado-->
-    <aside class="row recetas-relacionadas">
-      <h2>también te sugerimos</h2>
-      <!--Receta 1-->
-      <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
-        <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-        <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
-        <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
-        <div class="wrapper-vermas">
-          <div class="row">
-            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
-              <p class="tiempo">
-                <span class="mdi-device-access-alarm"></span>
-                45 mins.					
-                
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-              <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-              <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-              <button class="btn btn-default share share-others"><span class="fa fa-share-alt">				</span></button>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-          </div>
-        </div>
-      </article>
-      <!--/-Receta 1-->
-      <!--Receta 2-->
-      <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
-        <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-        <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
-        <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
-        <div class="wrapper-vermas">
-          <div class="row">
-            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
-              <p class="tiempo">
-                <span class="mdi-device-access-alarm"></span>
-                45 mins.					
-                
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-              <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-              <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-              <button class="btn btn-default share share-others"><span class="fa fa-share-alt">				</span></button>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-          </div>
-        </div>
-      </article>
-      <!--/-Receta 2-->
-      <!--Receta 3-->
-      <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
-        <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
-        <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
-        <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
-        <div class="wrapper-vermas">
-          <div class="row">
-            <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
-              <p class="tiempo">
-                <span class="mdi-device-access-alarm"></span>
-                45 mins.					
-                
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
-              <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-              <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-              <button class="btn btn-default share share-others"><span class="fa fa-share-alt">				</span></button>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
-          </div>
-        </div>
-      </article>
-      <!--/-Receta 3-->
-    </aside>
-    <!--/-Contenido relacionado	-->
+    
     
   </section>
+  <script>
 
+  jQuery(document).on("ready", function () {
+    jQuery('.fa-share-alt').attr('id','compartirN');
+  });
+
+  </script>
+<?php
+
+///Este es el contenido que no se ha puesto
+// <!--Comentarios-->
+// <div class="row box-comentarios">
+//   <div class="col-lg-12">
+//     <h3>Comentarios</h3>
+//     <form id="comentarios" action="">
+//       <div class="form-group">
+//         <textarea id="espacio-comentario" name="espacio-comentario" placeholder="Déjanos tus comentarios" class="form-control"></textarea>
+//       </div>
+//       <div class="form-group u-text-right">
+//         <button id="comentar" type="button" class="btn btn-primary">Publicar</button>
+//       </div>
+//     </form>
+//   </div>
+// </div>
+// <!--/-Comentarios-->
+// <!--Contenido relacionado-->
+// <aside class="row recetas-relacionadas">
+//   <h2>también te sugerimos</h2>
+//   <!--Receta 1-->
+//   <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
+//     <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+//     <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
+//     <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
+//     <div class="wrapper-vermas">
+//       <div class="row">
+//         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
+//           <p class="tiempo">
+//             <span class="mdi-device-access-alarm"></span>
+//             45 mins.          
+            
+//           </p>
+//         </div>
+//         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+//           <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+//           <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+//           <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+//         </div>
+//         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+//       </div>
+//     </div>
+//   </article>
+//   <!--/-Receta 1-->
+//   <!--Receta 2-->
+//   <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
+//     <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+//     <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
+//     <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
+//     <div class="wrapper-vermas">
+//       <div class="row">
+//         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
+//           <p class="tiempo">
+//             <span class="mdi-device-access-alarm"></span>
+//             45 mins.          
+            
+//           </p>
+//         </div>
+//         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+//           <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+//           <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+//           <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+//         </div>
+//         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+//       </div>
+//     </div>
+//   </article>
+//   <!--/-Receta 2-->
+//   <!--Receta 3-->
+//   <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-receta">
+//     <figure class="img-wrapper"><img src="images/sample-thumb-receta.jpg" alt="Ejemplo ALT" title="Ejemplo de Title" class="img-article img-responsive"></figure>
+//     <h3>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</h3>
+//     <!--Wrapper para tiempo, compartir, enviar, favorito y ver más-->
+//     <div class="wrapper-vermas">
+//       <div class="row">
+//         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12">
+//           <p class="tiempo">
+//             <span class="mdi-device-access-alarm"></span>
+//             45 mins.          
+            
+//           </p>
+//         </div>
+//         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 article-action">
+//           <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+//           <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+//           <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+//         </div>
+//         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><a href="#" role="button" class="btn btn-primary readmore">Ver Más</a></div>
+//       </div>
+//     </div>
+//   </article>
+//   <!--/-Receta 3-->
+// </aside>
+// <!--/-Contenido relacionado -->
+?>

@@ -81,6 +81,142 @@ print_r(array_keys($tabs['#primary'][1]));
 echo '</pre>';*/
 
 ?>
+<header>
 
+  <div class="container-fluid login">
+   <!--Wrapper login-->
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+            <?php if($logged_in):?>
+            
+             <!-- <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+             
+            <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a> -->
+        
+          <?php else: ?>
+            <h2>Inicio de sesión</h2>
+            
+            <?php print render($page['loggin']);?>
+
+            <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
+            <?php endif; ?>
+        
+            
+          </div>
+        </div>
+      </div>
+      <!--/-Wrapper login-->
+
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
+            <!--Logo-->
+            <h1><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+            <!--/-Logo-->
+          </div>
+          <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
+           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+           <!--  Registro y Login -->
+
+           <p class="helpers-registro">
+           <?php if($logged_in):?>
+            
+             <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
+    
+        
+          <?php else: ?>
+
+   
+              <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
+
+            </p>
+
+            <?php endif; ?>
+            <!-- /-Registro y Login -->
+       </div> 
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <!--País y buscador-->
+          <p class="pais">
+            Estás en el sitio de NESTLÉ&reg; Colombia
+
+          </p>
+          <div class="form-group">
+              <!-- <input type="search" class="form-control"><span class="glyphicon glyphicon-search"></span>-->
+              <?php print render($page['buscador']);?> 
+             
+            </div>
+          <!--/-País y buscador-->
+        </div>
+      </div>
+    </div>
+  <!--Fin Header-->
+    <!--Menú home-->
+
+    <?php if ($main_menu /*|| $secondary_menu*/): ?>
+    <div id="menu" class="container-fluid shadow-z-2 menu u-no-border">
+     <div class="row">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+              </div>
+                <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
+
+
+
+                       <?php $menu = menu_navigation_links('menu-casabienestar');
+                      print theme('links__menu_casabienestar', array('links' => $menu,'attributes' => array('class' => array('nav navbar-nav'))));
+                    ?>
+                 <ul class="nav navbar-nav navbar-right">
+                       <li class="social-link social-links-facebok"><a href="https://www.facebook.com/nestle.colombia" rel="nofollow" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                       <li class="social-link social-links-twitter"><a href="https://twitter.com/NestleColombia" rel="nofollow" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                       <li class="social-link social-links-youtube"><a href="https://www.youtube.com/user/Nestlecol" rel="nofollow" target="_blank"><span class="fa fa-youtube"></span></a></li>
+                    </ul>
+
+
+                       </div>
+                     </div> <!-- /.section, /#navigation -->
+
+          </div>
+        </nav>
+      </div>
+
+    </div>
+
+
+    <?php endif; ?>
+    <!--Fin del menú del home-->
+    </header>
+
+
+<!--Acá se pone el contenido-->
 
  <?php print render($page['content']); ?>
+
+ <!--Acá finaliza el contenido-->
+
+     <!--Footer-->
+      <footer>
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-lg-12">
+           <ul class="footer-list">
+             <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+             <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
+             <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
+           </ul>
+           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
+
+         </div>
+       </div>
+     </div>
+   </footer>
+   <!--/-Footer-->
+   <!--Scripts-->
+   <script>
+     $(document).ready(function() {
+       // This command is used to initialize some elements and make them work properly
+       $.material.init();
+     });
+   </script>
