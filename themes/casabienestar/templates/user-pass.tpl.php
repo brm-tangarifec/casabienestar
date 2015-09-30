@@ -43,7 +43,7 @@ echo '</pre>';*/
 
     <?php
         /*print render($form['field_confirmar_contrasena']);*/ 
-         print render($form['pass']);
+         print render($field_confirmar_contrasena['pass']);
     ?>
     
     
