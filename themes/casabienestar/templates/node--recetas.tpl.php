@@ -87,13 +87,13 @@ print_r(array_keys($content));
     <!--Titulo del artículo-->
     <div class="row max-width titular titular-receta">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <h2 class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_tiemporpreparacion'])?></h2>
+        <h2 class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_receta_tiempo'])?></h2>
         <h1 class="titulo-articulo"><?php print render($title)?></h1>
       </div>
       <!--Calorías-->
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
         <h2 class="calorias">
-          Calorías <span class="num-calorias"><?php print render($content['field_caloriasreceta'])?></span>
+          Calorías <span class="num-calorias"><?php print render($content['field_receta_calorias'])?></span>
           
         </h2>
       </div>
@@ -102,7 +102,7 @@ print_r(array_keys($content));
     <!--/-Titulo del artículo-->
     <div class="row max-width img-article">
       <!--Imagen destacada del articulo-->
-      <div class="col-lg-12 u-no-border"><?php print render($content['field_imggdreceta']);?></div>
+      <div class="col-lg-12 u-no-border"><?php print render($content['field_receta_imgg']);?></div>
       <!--/-Imagen destacada del articulo-->
     </div>
   </div>
@@ -149,7 +149,7 @@ print_r(array_keys($content));
       <article id="listado-ingredientes" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
         <form  method=""><span class="texto-apoyo">ingredientes para</span>
           <div class="form-group">
-            <?php print render($content['field_porciones'])?>
+            <?php print render($content['field_receta_porciones'])?>
           </div><span class="texto-apoyo">porciones</span>
         </form>
         <div class="table-responsive">
