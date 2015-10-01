@@ -87,7 +87,7 @@ print_r(array_keys($content));
     <!--Titulo del artículo-->
     <div class="row max-width titular titular-receta">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <h2 class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_receta_tiempo'])?></h2>
+        <div class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_receta_tiempo'])?></div>
         <h1 class="titulo-articulo"><?php print render($title)?></h1>
       </div>
       <!--Calorías-->
