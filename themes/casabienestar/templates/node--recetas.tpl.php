@@ -78,7 +78,7 @@
  * @see template_process()
  */
 
-print_r(array_keys($content));
+/*print_r(array_keys($content));*/
 
 ?>
 
@@ -165,6 +165,16 @@ print_r(array_keys($content));
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
+    <!--Barra para compartir-->
+        <div class="row compartir">
+          <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 article-action">
+            <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+            <!-- <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->
+            <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
+          </div>
+        </div>
+        <!--/-Barra para compartir-->
     <!-- <div class="row compartir">
       
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-md-push-8 col-sm-push-8 article-action">
@@ -178,13 +188,23 @@ print_r(array_keys($content));
     
     
   </section>
-  <script>
-
-  jQuery(document).on("ready", function () {
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+     
     jQuery('.fa-share-alt').attr('id','compartirN');
-  });
+    jQuery('.box-comentarios').hide();
 
-  </script>
+
+    /*jQuery('.share-others').click(function(){
+
+      jQuery('.st_sharethis_custom').click();
+    });
+    jQuery('.share-mail').click(function(){
+
+      jQuery('.st_email_custom').click();
+    });*/
+  });
+</script>
 <?php
 
 ///Este es el contenido que no se ha puesto
