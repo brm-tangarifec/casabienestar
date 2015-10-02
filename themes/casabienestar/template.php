@@ -456,7 +456,35 @@ function casabienestar_preprocess_user_profile_category(&$variables) {
   }
 }
 
-/*Imprime los templates disponible en drupal7*/
+/*Funcion para modificar la estructura de los campos*/
 
+function casabienestar_preprocess_field(&$variables) {
+  $output = '';
+  $element = &$variables['element'];
+   if ($variables['element']['#field_name'] == 'field_receta_porciones') {
+   // do something
+    $values = $element['#items'][0]['value'];
+    $output .= '<input type="hidden" name="cantInicial" id="cantInicial" value="'.$values.'">';
+    $output .= '<select class="form-control" id="cantReceta">';
+    for ($i=1;$i<=30;$i++){
+      if($i==$values){
+        $output .="<option value='".$i."' selected='selected'>".$i."</option>";
+
+      }else{
+        $output .="<option value='".$i."'>".$i."</option>";
+      }
+    }
+    $output.="</select>";
+
+      //$output .= '<select class="form-control">';
+
+
+
+
+
+    print $output;
+    
+   }
+}
 
 ?>

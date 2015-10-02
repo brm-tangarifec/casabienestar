@@ -75,10 +75,10 @@
 
 $linksPerfil=toArray($tabs);
 
-/*echo '<pre>';
+echo '<pre>';
 print_r(array_keys($tabs['#primary'][1]));
-/*print_r($tabs);
-echo '</pre>';*/
+//*print_r($tabs);
+echo '</pre>';
 
 ?>
 <header>
@@ -151,7 +151,7 @@ echo '</pre>';*/
   <!--Fin Header-->
     <!--Menú home-->
 
-    <?php if ($main_menu /*|| $secondary_menu*/): ?>
+ 
     <div id="menu" class="container-fluid shadow-z-2 menu u-no-border">
      <div class="row">
 
@@ -185,7 +185,6 @@ echo '</pre>';*/
     </div>
 
 
-    <?php endif; ?>
     <!--Fin del menú del home-->
     </header>
 
