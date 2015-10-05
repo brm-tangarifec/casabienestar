@@ -167,12 +167,20 @@
      
       <?php print render($page['content']); ?>
 
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+
         <!--Links para el loggin-->
       <?php if ($tabs): ?>
         <div class="tabs">
           <?php print render($tabs); ?>
         </div>
       <?php endif; ?>
+
+        </div>
+      </div>
       <!--Links para el loggin-->
       
     </div>
