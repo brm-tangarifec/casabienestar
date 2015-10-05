@@ -193,21 +193,10 @@ asdasdsadsadsadsadsdds
     </header>
 
 
-<!--Acá se pone el contenido
+<!--Acá se pone el contenido -->
 
- <?php /* print render($page['content']); */ ?> -->
+ <?php  print render($page['content']);  ?>
 
- <div class="sup_home_recetas">
-    <?php if ($page['superior_recetario']) :?>
-        <?php print render($page['superior_recetario']); ?>        
-    <?php endif; ?> 
-  </div>
-
-  <div class="medio_home_recetas">
-    <?php if ($page['medio_recetario']) :?>
-        <?php print render($page['medio_recetario']); ?>        
-    <?php endif; ?> 
-  </div>
 
  <!--Acá finaliza el contenido-->
 
