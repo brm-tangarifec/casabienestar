@@ -113,6 +113,7 @@ regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
+
 regions[superior_recetario] = Superior Home recetario
 regions[medio_recetario] = Medio Home recetario
 regions[bajo_recetario] = Bajo Home recetario
