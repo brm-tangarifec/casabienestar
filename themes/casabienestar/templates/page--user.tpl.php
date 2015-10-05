@@ -91,15 +91,25 @@ echo '</pre>';*/
           <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
-        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
-        <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-          Registro y Login
-          <p class="helpers-registro">
-            <a href="registro.html">Registrarse</a> / <a href="#" class="btn-login">Iniciar sesión</a>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+         <!--  Registro y Login -->
+
+         <p class="helpers-registro">
+         <?php if($logged_in):?>
+          
+           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
+  
+      
+        <?php else: ?>
+
+ 
+          
 
           </p>
-          /-Registro y Login
-        </div> -->
+
+          <?php endif; ?>
+          <!-- /-Registro y Login -->
+        </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
           <!--País y buscador-->
           <p class="pais">
