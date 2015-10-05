@@ -255,8 +255,48 @@ $(document).ready(function(){
 
 	}
 
+
 	jQuery('.image-widget-data input[type="submit"]').addClass('btn btn-primary');
 	jQuery('#edit-submit').addClass('btn btn-warning');
+
+	/*Funciones que se va a utilizar para el multiplicador de receta*/
+
+	var cant = $(".field-name-field-receta-ingrediente-cantida");
+	var medida= jQuery('.field-name-field-receta-ingrediente-lista');
+	
+	//console.log(medida);
+
+	
+   jQuery('#cantReceta').change(function(){
+   	var cantidad = jQuery('#cantReceta').val();
+   	var cantIni = jQuery('#cantInicial').val();
+   	/*Toma la medida*/
+
+
+
+   	$(".table-responsive div div").each(function(){
+
+		var text=$(this).text();
+
+		var divi = text/cantIni;
+
+		var mult=(divi*cantidad);
+
+		if(mult % 1 === 0){
+			$(this).text(mult);
+			
+		}else{
+			$(this).text(mult.toFixed(2));
+		}
+
+		
+	 	jQuery('#cantInicial').val(cantidad);
+
+	});
+   });
+	
+
+	
 
 	
 

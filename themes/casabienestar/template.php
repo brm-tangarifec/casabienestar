@@ -477,11 +477,6 @@ function casabienestar_preprocess_field(&$variables) {
     $output.="</select>";
 
       //$output .= '<select class="form-control">';
-
-
-
-
-
     print $output;
     
    }
