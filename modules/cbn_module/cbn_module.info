@@ -1,0 +1,9 @@
+; $Id$
+
+name = CBN Module ajustes
+description = Define los justes del web site CBN
+
+package = Modulo CBN
+version = VERSION
+core = 7.x
+files[] = cbn_module.module

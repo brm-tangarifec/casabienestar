@@ -193,6 +193,7 @@
      
     jQuery('.fa-share-alt').attr('id','compartirN');
     jQuery('.box-comentarios').hide();
+    jQuery('.field-name-field-receta-porciones').hide();
 
 
     /*jQuery('.share-others').click(function(){
