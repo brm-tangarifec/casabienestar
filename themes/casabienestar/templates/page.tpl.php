@@ -307,7 +307,7 @@ print_r($contShN);
          </div> -->
           <div class="row">
             <div class="col-lg-12">
-              <a class="twitter-timeline" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent noheader" data-tweet-limit="1">Nestlé Colombia.</a>
+              <a class="twitter-timeline" height="200" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent noheader" data-tweet-limit="1">Nestlé Colombia.</a>
 
             </div>
             <!-- <div class="col-lg-12">
@@ -364,7 +364,9 @@ print_r($contShN);
       $.material.init();
     });
   </script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
   <script src="https://apis.google.com/js/platform.js"></script>
   <!-- /#page, /#page-wrapper -->
  <!--Fin Footer-->

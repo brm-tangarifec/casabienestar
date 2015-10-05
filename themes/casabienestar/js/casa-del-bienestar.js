@@ -277,8 +277,14 @@ $(document).ready(function(){
    	$(".table-responsive div div").each(function(){
 
 		var text=$(this).text();
+		//console.log(text.replace(/\s+/g, ''));
 
-		var divi = text/cantIni;
+		textClean=text.replace(/\s+/g, '');
+
+		//console.log(textClean);
+		var divi = textClean/cantIni;
+		//console.log(cantIni);
+		//console.log(divi);
 
 		var mult=(divi*cantidad);
 
