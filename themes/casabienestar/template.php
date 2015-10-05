@@ -282,41 +282,12 @@ function toArray($obj)
     return $new;
 }
 
-/*Funcion para modificar el buscador*/
 
-/*function casabienestar_theme($existing, $type, $theme, $path){
-  $hooks['user_login']=array(
-    'render element'=>'form',
-    'template'    =>'templates/user-login',
-  );
-  $hooks['user_register']=array(
-    'render element'=>'form',
-    'template'    =>'templates/user-register',
-  );
-  $hooks['user_pass']=array(
-    'render element'=>'form',
-    'template'    =>'templates/user-pass',
-  );
-  return $hooks;
-}*/
 
-/*function casabienestar_theme(&$existing, $type, $theme, $path){
-  $hooks = array();
-   // Make user-register.tpl.php available
-  $hooks['user_register_form'] = array (
-     'render element' => 'form',
-     'path' => drupal_get_path('theme','casabienestar'),
-     'template' => 'user-register',
-     'preprocess functions' => array('casabienestar_preprocess_user_register_form'),
-  );
-  return $hooks;
-}
-function casabienestar_preprocess_user_register_form(&$vars) {
-  $args = func_get_args();
-  array_shift($args);
-  $form_state['build_info']['args'] = $args; 
-  $vars['form'] = drupal_build_form('user_register_form', $form_state['build_info']['args']);
-}*/
+
+
+/*Temas de perfil de usuario*/
+
 
 function casabienestar_theme() {
   $items = array();
@@ -364,10 +335,10 @@ function casabienestar_lt_username_description($variables) {
   switch ($variables['form_id']) {
     case 'user_login':
       // The username field's description when shown on the /user/login page.
-      return t('Inicie sesión con su nombre de usuario o correo electr&oacute;nico');
+      return t('Inicie sesión con su nombre de usuario o correo electrónico');
       break;
     case 'user_login_block':
-      return t('Inicie sesión con su nombre de usuario o correo electr&oacute;nico');
+      return t('Inicie sesión con su nombre de usuario o correo electrónico');
       break;
   }
 }
@@ -380,7 +351,7 @@ function casabienestar_lt_password_description($variables) {
   switch ($variables['form_id']) {
     case 'user_login':
       // The password field's description on the /user/login page.
-      return t('El campo de contrase&ntilde;a diferencia entre may&ucute;sculas y min&ucute;sculas.');
+      return t('El campo de contrase&ntilde;a diferencia entre mayúsculas y minúsculas.');
       break;
 
     case 'user_login_block':
@@ -417,6 +388,10 @@ function casabienestar_preprocess_user_profile(&$variables) {
     $variables['user_profile'][$key] = $variables['elements'][$key];
    
   }
+
+   //Add mail to $user_profile variable
+  $variables['user_profile']['mail'] = $account->mail;
+  // Preprocess fields.
 
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);

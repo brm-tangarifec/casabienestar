@@ -112,11 +112,9 @@ asdasdsadsadsadsadsdds
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
             <!--Logo-->
-<<<<<<< HEAD:themes/casabienestar/templates/page--recetas.tpl.php
+
             <h1><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
-=======
-            <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
->>>>>>> 5ffa60e76988200d30ee680cbb2e3977ca5e9eac:themes/casabienestar/templates/page--recetario.tpl.php
+
             <!--/-Logo-->
           </div>
           <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
