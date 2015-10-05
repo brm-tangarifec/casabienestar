@@ -194,7 +194,7 @@ asdasdsadsadsadsadsdds
 
 
 <!--Acá se pone el contenido -->
-
+<div>estoy en la vista de recetario</div>
  <?php  print render($page['content']);  ?>
 
 
