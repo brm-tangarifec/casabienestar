@@ -82,7 +82,9 @@ echo '</pre>';*/
 
 ?>
 <header>
-
+<div>
+asdasdsadsadsadsadsdds
+</div>
   <div class="container-fluid login">
    <!--Wrapper login-->
         <div class="row">
@@ -110,7 +112,7 @@ echo '</pre>';*/
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
             <!--Logo-->
-            <h1><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+            <h1><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
             <!--/-Logo-->
           </div>
           <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
@@ -159,7 +161,7 @@ echo '</pre>';*/
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/drupal"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
@@ -190,9 +192,21 @@ echo '</pre>';*/
     </header>
 
 
-<!--Acá se pone el contenido-->
+<!--Acá se pone el contenido
 
- <?php print render($page['content']); ?>
+ <?php /* print render($page['content']); */ ?> -->
+
+ <div class="sup_home_recetas">
+    <?php if ($page['superior_recetario']) :?>
+        <?php print render($page['superior_recetario']); ?>        
+    <?php endif; ?> 
+  </div>
+
+  <div class="medio_home_recetas">
+    <?php if ($page['medio_recetario']) :?>
+        <?php print render($page['medio_recetario']); ?>        
+    <?php endif; ?> 
+  </div>
 
  <!--Acá finaliza el contenido-->
 
@@ -202,9 +216,9 @@ echo '</pre>';*/
        <div class="row">
          <div class="col-lg-12">
            <ul class="footer-list">
-             <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+             <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
              <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-             <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
+             <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
            </ul>
            <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 
