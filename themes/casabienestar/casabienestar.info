@@ -117,6 +117,7 @@ regions[superior_recetario] = Superior Home recetario
 regions[medio_recetario] = Medio Home recetario
 regions[bajo_recetario] = Bajo Home recetario
 
+
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for
 ; the html.tpl.php to work properly, so do not delete them.
