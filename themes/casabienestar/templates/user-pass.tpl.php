@@ -41,9 +41,29 @@ echo '</pre>';*/
 ?>
 
 
-    <?php
-        /*print render($form['field_confirmar_contrasena']);*/ 
-         print render($field_confirmar_contrasena['pass']);
-    ?>
+<div class="row">
+	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	      <h1 class="text-center">Cancelar Cuenta</h1>
+	    
+	  
+	 
+	 
+	  <?php print render($page['content']); ?>
+
+	    <!--Links para el loggin-->
+	  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+
+
+	          <!--Links para el loggin-->
+	        <?php if ($tabs): ?>
+	          <div class="tabs">
+	            <?php print render($tabs); ?>
+	          </div>
+	        <?php endif; ?>
+	        <!--Links para el loggin-->
+
+	  </div>
+
+</div>
     
     

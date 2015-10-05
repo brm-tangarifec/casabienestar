@@ -88,7 +88,7 @@ echo '</pre>';*/
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
@@ -98,14 +98,6 @@ echo '</pre>';*/
          <?php if($logged_in):?>
           
            <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
-  
-      
-        <?php else: ?>
-
- 
-          
-
-          </p>
 
           <?php endif; ?>
           <!-- /-Registro y Login -->
@@ -136,7 +128,7 @@ echo '</pre>';*/
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
@@ -174,27 +166,59 @@ echo '</pre>';*/
 <section>
 
   <div id="perfil" class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h1 class="text-center">Mi perfil</h1>
-        </div>
-      </div>
-      
-     
-     
-      <?php print render($page['content']); ?>
 
+    <?php if($logged_in):?>
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="text-center">Mi perfil</h1>
+          </div>
+        </div>
+        
+       
+       
+        <?php print render($page['content']); ?>
+
+          <!--Links para el loggin-->
+        <?php if ($tabs): ?>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+            <div class="center-block editar text-center"><span class="fa fa-pencil-square-o"> </span>   <?php print render($tabs['#primary'][1]); ?></div>
+          </div>
+        <?php endif; ?>
         <!--Links para el loggin-->
-      <?php if ($tabs): ?>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
-          <div class="center-block editar text-center"><span class="fa fa-pencil-square-o"> </span>   <?php print render($tabs['#primary'][1]); ?></div>
-        </div>
-        </div>
-      <?php endif; ?>
+        
+      </div>
+  <?php else: ?>
+
+  <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h1 class="text-center">Inicio de Sesión</h1>
+      </div>
+    
+   
+   
+    <?php print render($page['content']); ?>
+
       <!--Links para el loggin-->
-      
+    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+
+
+            <!--Links para el loggin-->
+          <?php if ($tabs): ?>
+            <div class="tabs">
+              <?php print render($tabs); ?>
+            </div>
+          <?php endif; ?>
+          <!--Links para el loggin-->
+
     </div>
+    
+
+  <?php endif; ?>
+
+  </div>
+
+
 </section>
 
 
@@ -209,9 +233,9 @@ echo '</pre>';*/
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
             <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-            <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
+            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 
