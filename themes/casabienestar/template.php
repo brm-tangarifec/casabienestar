@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1);
+ini_set('display_errors',0);
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup

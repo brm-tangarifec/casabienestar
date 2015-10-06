@@ -372,6 +372,34 @@ function Share(url) {
 }, function(response){});
 }
 
+/*Validación de formularios*/
+
+jQuery(document).ready(function(){
+jQuery("#user-login-form").validate({
+
+	errorClass: "text-danger",
+	errorPlacement: function(error, element) {
+    	error.insertAfter(element);
+    	element.focus();
+		},
+			rules: {
+				name: {
+					required: true,
+				},
+				pass: {
+					required: true,
+				}
 
 
+			},
+			messages: {
+				name: {
+					required: 'El campo no debe estar vacio',
+				},
+				pass: {
+					required: 'El campo no debe estar vacio',
+				}
 
+			}
+		});
+});

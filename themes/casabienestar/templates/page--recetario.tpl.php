@@ -193,6 +193,11 @@ estoy en el tpl de recetario
     <!--Fin del menú del home-->
     </header>
 
+    <?php if ($page['banner']) :?>
+   <div class="regiones_ banner">
+       <?php print render($page['banner']); ?>        
+   </div>
+<?php endif; ?>
 
 <!--Acá se pone el contenido -->
 <div>estoy en la vista de recetario</div>
