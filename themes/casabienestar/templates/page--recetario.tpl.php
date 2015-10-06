@@ -91,7 +91,7 @@ estoy en el tpl de recetario
           <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
             <?php if($logged_in):?>
             
-             <!-- <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+             <!-- <p class="nombre"> Hola  <?php /* print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; */?></p>
              
             <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a> -->
         
