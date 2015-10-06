@@ -375,9 +375,11 @@ function Share(url) {
 /*Validación de formularios*/
 
 jQuery(document).ready(function(){
-jQuery("#user-login-form").validate({
 
-	errorClass: "text-danger",
+jQuery('form').each(function(){
+    jQuery(this).validate({
+
+    	errorClass: "text-danger",
 	errorPlacement: function(error, element) {
     	error.insertAfter(element);
     	element.focus();
@@ -386,20 +388,40 @@ jQuery("#user-login-form").validate({
 				name: {
 					required: true,
 				},
+
 				pass: {
 					required: true,
+				},
+				mail : {
+					required: true,
+					email: true
 				}
-
 
 			},
 			messages: {
 				name: {
-					required: 'El campo no debe estar vacio',
+					required: 'El campo no debe estar vacío',
 				},
 				pass: {
-					required: 'El campo no debe estar vacio',
+					required: 'El campo no debe estar vacío',
+				},
+				mail : {
+					required: 'El campo no debe estar vacío',
+					email: 'Ingrese un formato de e-mail válido'
+					
 				}
-
 			}
-		});
+
+    });
+
+    jQuery("#edit-keys-6").rules("add", {
+         required:true,
+         messages: {
+                required: "Ingrese un valor para su búsqueda"
+         }
+      });
+});
+
+
+
 });
