@@ -250,7 +250,9 @@ function casabienestar_preprocess_page(&$vars, $hook) {
 
   /*Muesta los templates disponibles*/
    /*echo '<pre>'; var_dump($variables['theme_hook_suggestions']); echo '</pre>';*/
-
+   if(arg(0)== "recetario"){
+    $vars['theme_hook_suggestions'][] = 'page__recetario';
+    }
   
 }
 
