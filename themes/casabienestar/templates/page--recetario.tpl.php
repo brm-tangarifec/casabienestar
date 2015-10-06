@@ -83,7 +83,7 @@ echo '</pre>';
 ?>
 <header>
 <div>
-asdasdsadsadsadsadsdds
+estoy en el tpl de recetario
 </div>
   <div class="container-fluid login">
    <!--Wrapper login-->
