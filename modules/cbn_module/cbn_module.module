@@ -10,7 +10,8 @@ function cbn_module_block_info() {
 
 function cbn_module_form_alter(&$form, $form_state, $form_id) {
   
-  if($form_id == 'views-exposed-form-recetario-page' && $form_state['view']->name == 'recetario') {
-    $form['type']['#options']['all'] = t('aqui vaaaa');
+  if($form_id == 'views-exposed-form' && $form_state['view']->name == 'recetario'
+    && $form['#id'] == 'views-exposed-form-recetario-page') {
+    $form['type']['#options']['all'] = t('Aqui va');
   }
 }
