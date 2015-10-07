@@ -158,6 +158,7 @@
       <!--Preparación-->
       <article class="preparacion col-lg-7 col-md-7 col-sm-7 col-xs-12">
         <h3>Preparación</h3>
+        <p class="text-info">Los tiempos de preparación pueden variar de acuerdo a la cantidad de porciones que selecciones </p>
         
         <?php print render($content['body']);?>
       </article>
