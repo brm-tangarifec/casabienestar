@@ -92,6 +92,8 @@ $(document).on("ready", function () {
 	//Clase a la cual se le da el link
 		//Variable que recoge el href del módulo donde se está dando click		
 		var j= jQuery(this).parent().parent().next().find("a").attr('href');
+		var tituloArticle= jQuery(this).parent().parent().parent().find("h3").text();
+		tituloArticle=jQuery.trim(tituloArticle);
 
     
 		count++;
@@ -106,14 +108,21 @@ $(document).on("ready", function () {
     		oli=urlShare;
 
     		var data;
+    		var gmail;
 
+    		var meta = $(document).find("");
 		    		var sendGmail = function(opts){
-		   			 var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-		              '&to=' + opts.to +
-		              '&su=' + opts.subject +
-		              '&body=' + opts.message.replace(/\n/g,'%0A') +
-		              '&ui=1';
-		    			location.href = str;
+		   			 var recipient = '',
+    					 subject   = 'Mira éste contenido en NESTLÉ&reg; Colombia',
+     					message  = tituloArticle+"&#13;&#10;"+ oli;
+
+
+
+						gmail= 'http://mail.google.com/mail/?view=cm&fs=1'+
+               			 '&to=' + recipient +
+               			 '&su=' + subject +
+                			'&body=' + message + 
+                			'&ui=1';
 					}
 				//Share();
 
@@ -144,6 +153,7 @@ $(document).on("ready", function () {
 					count=0;
 				}else if(data=='mail'){
 					sendGmail();
+					window.open(gmail,'toolbar=0,resizable=1,status=0,width=640,height=528')
 					
 				}
 			});
