@@ -88,7 +88,7 @@
         
           <?php else: ?>
             <h2>Inicio de sesión</h2>
-            
+            <?php print $messages?>            
             <?php print render($page['loggin']);?>
 
             <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>

@@ -88,7 +88,7 @@
       
         <?php else: ?>
           <h2>Inicio de sesión</h2>
-          
+          <?php print $messages?>
           <?php print render($page['loggin']);?>
 
           <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
@@ -103,7 +103,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
           <!--Logo-->
-          <h1><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+          <h1><a href="/consumidor_nestle_com_co/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
           <!--/-Logo-->
         </div>
         <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
@@ -265,9 +265,9 @@
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="/consumidor_nestle_com_co/politicas-privacidad">Políticas de privacidad</a></li>
             <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-            <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
+            <li><a href="/consumidor_nestle_com_co/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

@@ -52,7 +52,12 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content">
+    <?php if (arg(0)=='recetario'): ?>
+      <div class="view-content row">
+    <?php else: ?>
+      <div class="view-content">
+    <?php endif; ?>
+
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>

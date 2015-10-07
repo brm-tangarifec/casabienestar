@@ -17,6 +17,7 @@ $(document).on("click", ".boton-brand", function () {
 		}
 
 
+
 });
 //Funcion que muestra X para quitar selección
 $(document).on("mouseover", ".boton-brand", function () {
@@ -53,6 +54,7 @@ $(document).on("click", "#btn-up", function () {
 
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
+	var dominio=window.location.hostname;
 	var count=0;
 	jQuery('#compartirN').on('click',function(){
 		count++;
@@ -81,7 +83,10 @@ $(document).on("ready", function () {
 
 
 
-		var link = "http://fbapp.brm.com.co";
+		//var link = "http://fbapp.brm.com.co";
+
+		var link = '//:'+dominio;
+		console.log(link);
 
 	//Clase a la cual se le da el link
 		//Variable que recoge el href del módulo donde se está dando click		

@@ -81,7 +81,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <!--Logo-->
-          <h2><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
+          <h2><a href="/consumidor_nestle_com_co/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
           <!--/-Logo-->
         </div>
         <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
@@ -119,7 +119,7 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/consumidor_nestle_com_co/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
@@ -194,9 +194,9 @@
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="/consumidor_nestle_com_co/politicas-privacidad">Políticas de privacidad</a></li>
             <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-            <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
+            <li><a href="/consumidor_nestle_com_co/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

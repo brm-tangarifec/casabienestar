@@ -83,7 +83,7 @@ echo '</pre>';
 ?>
 <header>
 <div>
-asdasdsadsadsadsadsdds
+estoy en el tpl de recetario
 </div>
   <div class="container-fluid login">
    <!--Wrapper login-->
@@ -91,13 +91,13 @@ asdasdsadsadsadsadsdds
           <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
             <?php if($logged_in):?>
             
-             <!-- <p class="nombre"> Hola  <?php print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; ?></p>
+             <!-- <p class="nombre"> Hola  <?php /* print $user_profile['field_nombres'][0]['#markup']." ".$user_profile['field_apellidos'][0]['#markup']; */?></p>
              
             <a role="button" href="user/logout" class="btn btn-danger cerrar-login">Cerrar Sesión</a> -->
         
           <?php else: ?>
             <h2>Inicio de sesión</h2>
-            
+            <?php print $messages?>
             <?php print render($page['loggin']);?>
 
             <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
@@ -113,7 +113,7 @@ asdasdsadsadsadsadsdds
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
             <!--Logo-->
 
-            <h1><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+            <h2><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
 
             <!--/-Logo-->
           </div>
@@ -123,6 +123,7 @@ asdasdsadsadsadsadsdds
 
            <p class="helpers-registro">
            <?php if($logged_in):?>
+           
             
              <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
     
@@ -163,7 +164,7 @@ asdasdsadsadsadsadsdds
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/drupal"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
@@ -192,22 +193,16 @@ asdasdsadsadsadsadsdds
     <!--Fin del menú del home-->
     </header>
 
+    <?php if ($page['banner']) :?>
+   <div class="regiones_ banner">
+       <?php print render($page['banner']); ?>        
+   </div>
+<?php endif; ?>
 
-<!--Acá se pone el contenido
+<!--Acá se pone el contenido -->
+<div>estoy en la vista de recetario</div>
+ <?php  print render($page['content']);  ?>
 
- <?php /* print render($page['content']); */ ?> -->
-
- <div class="sup_home_recetas">
-    <?php if ($page['superior_recetario']) :?>
-        <?php print render($page['superior_recetario']); ?>        
-    <?php endif; ?> 
-  </div>
-
-  <div class="medio_home_recetas">
-    <?php if ($page['medio_recetario']) :?>
-        <?php print render($page['medio_recetario']); ?>        
-    <?php endif; ?> 
-  </div>
 
  <!--Acá finaliza el contenido-->
 
@@ -217,9 +212,9 @@ asdasdsadsadsadsadsdds
        <div class="row">
          <div class="col-lg-12">
            <ul class="footer-list">
-             <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
+             <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
              <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-             <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
+             <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
            </ul>
            <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 
