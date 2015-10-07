@@ -113,13 +113,13 @@
          <p class="helpers-registro">
          <?php if($logged_in):?>
           
-           <a href="user/">Ver Perfil</a> /  <a href="user/logout" class="text-danger">Cerrar sesión</a>
+           <a href="/user/">Ver Perfil</a> /  <a href="/user/logout" class="text-danger">Cerrar sesión</a>
   
       
         <?php else: ?>
 
  
-            <a href="user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
+            <a href="/user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
 
