@@ -414,14 +414,14 @@ jQuery('form').each(function(){
 
     });
 
-    jQuery("#edit-keys-6").rules("add", {
+   
+});
+ jQuery("#edit-keys-6").rules("add", {
          required:true,
          messages: {
                 required: "Ingrese un valor para su búsqueda"
          }
-      });
-});
-
+ });
 
 
 });
