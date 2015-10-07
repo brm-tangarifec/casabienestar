@@ -97,7 +97,7 @@ echo '</pre>';*/
          <p class="helpers-registro">
          <?php if($logged_in):?>
           
-           <a href="user/"> <a href="user/logout" class="text-danger">Cerrar sesión</a>
+           <a href="/user/logout" class="text-danger">Cerrar sesión</a>
 
           <?php endif; ?>
           <!-- /-Registro y Login -->

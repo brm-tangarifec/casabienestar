@@ -8,76 +8,9 @@ function cbn_module_block_info() {
     return $blocks;
 }
 
-
-
-function cbn_module_block_view($delta = '') {
-    $block = array();
-    switch ($delta) {
-  case 'cbn_modules':
-        if (arg(0) == "taxonomy" && arg(1) == "term") {
-          $feweek = strtotime("-4 week");
-          $arraNod = get_nodos_masleidos_tax(arg(2), $feweek, arg(0), arg(1));
-
-          $variables["result"] = $arraNod;
-
-        }elseif(arg(0) == "node") {
-          $feweek = strtotime("-4 week");
-          $nod = get_nodos_masleidos_tax_nodo(arg(1));
-          $arraNod = get_nodos_masleidos_tax($nod, $feweek, arg(0), arg(1));
-          $variables["result"] = $arraNod;
-        }
-
-        $block['content'] = theme('theme_cbn', $variables);
-    break;
-              }
-   return $block;
-}
-
-function get_nodos_masleidos_tax($termi, $fex, $type, $nido){
-
-    $result = db_query("select tt.name, nc.nid, nc.totalcount from taxonomy_index as ti INNER JOIN taxonomy_term_data as tt ON ti.tid = tt.tid INNER JOIN node_counter as nc ON ti.nid = nc.nid WHERE ti.created >= :fx AND ti.tid = :uid ORDER BY nc.totalcount DESC limit 5;",
-      array(':uid' => $termi, ':fx' => $fex));
-    
-    $arraynodos = array();
-    while ($record = $result->fetchAssoc()){
-      $arraynodos[] = $record;
-    }
-
-    foreach ($arraynodos as $key => $value) {
-      if( isset($value["nid"]) && $value["nid"] > 0){
-        $nodoso = node_load($value["nid"]);
-        $nodos[] = $nodoso;  
-      }
-    }
-
-    $nodos['tax'] = isset($arraynodos[0]) ? $arraynodos[0] : false;
-    return $nodos;
-}
-
-function get_nodos_masleidos_tax_nodo($nido){
-  $result = db_query("select tid from taxonomy_index WHERE nid = :nd ORDER BY created DESC limit 1;",array(':nd' => $nido));
-    
-    $arraynodos = array();
-    while ($record = $result->fetchAssoc()){
-      $arraynodos[] = $record;
-    }
-
-    foreach ($arraynodos as $key => $value) {
-      if( isset($value["nid"]) && $value["nid"] > 0){
-        $nodoso = node_load($value["nid"]);
-        $nodos[] = $nodoso; 
-      }
-      
-    }
-    $nodos['tax'] = isset($arraynodos[0]) ? $arraynodos[0] : false;
-
-    return isset($nodos["tax"]["tid"]) ? $nodos["tax"]["tid"] : false;
-}
-
-function cbn_module_theme(){
-    return array(
-      'theme_cbn' => array(
-        'template' => 'theme/theme_cbn'
-      ),
-    );
+function cbn_module_form_alter(&$form, $form_state, $form_id) {
+  
+  if($form_id == 'views-exposed-form-recetario-page' && $form_state['view']->name == 'recetario') {
+    $form['type']['#options']['all'] = t('aqui vaaaa');
+  }
 }
