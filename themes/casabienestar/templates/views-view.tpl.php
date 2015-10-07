@@ -56,7 +56,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <?php if (arg(0)=='recetario'): ?>
+    <?php if (arg(0)=='recetario' && $exposed): ?>
       <div class="view-content row">
     <?php else: ?>
       <div class="view-content">
