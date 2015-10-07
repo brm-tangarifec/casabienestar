@@ -54,14 +54,15 @@ $(document).on("click", "#btn-up", function () {
 
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
-	var dominio=window.location.hostname;
+	var dominio= window.location.protocol+'//'+window.location.hostname;
+	console.log(dominio);
 	var count=0;
 	jQuery('#compartirN').on('click',function(){
 		count++;
 		console.log(count);
 		if(count==1){
 			$('.botones-redes-wrapper').show('fade').share({
-        networks: ['facebook','googleplus','twitter'],
+        networks: ['facebook','googleplus','twitter','email'],
     	});
 			count++;
 			console.log(count);
@@ -85,8 +86,8 @@ $(document).on("ready", function () {
 
 		//var link = "http://fbapp.brm.com.co";
 
-		var link = '//:'+dominio;
-		console.log(link);
+		var link = dominio;
+		
 
 	//Clase a la cual se le da el link
 		//Variable que recoge el href del módulo donde se está dando click		
@@ -99,15 +100,21 @@ $(document).on("ready", function () {
 
 			/*Generación de los botones para compartir*/
 
-			jQuery(this).parent().prev().show("fade").html('<a href="javascript:;" title="Share this page on facebook" class="pop share-icon share-icon-facebook" data-share="fb" rel="nofollow"></a><a href="javascript:;" title="Share this page on googleplus" class="pop share-icon share-icon-googleplus" data-share="g+"></a><a href="javascript:;" title="Share this page on twitter" class="pop share-icon share-icon-twitter" data-share="tw"></a>');
-
+			jQuery(this).parent().prev().show("fade").html('<a href="javascript:;" title="Share this page on facebook" class="pop share-icon share-icon-facebook" data-share="fb" rel="nofollow"></a><a href="javascript:;" title="Share this page on googleplus" class="pop share-icon share-icon-googleplus" data-share="g+"></a><a href="javascript:;" title="Share this page on twitter" class="pop share-icon share-icon-twitter" data-share="tw"></a><a href="javascript:;" title="Share this on email" class="pop fa fa-paper-plane" data-share="mail"></a> ');
+			
 			var urlShare= link + j;
     		oli=urlShare;
 
     		var data;
-    		
 
-  
+		    		var sendGmail = function(opts){
+		   			 var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+		              '&to=' + opts.to +
+		              '&su=' + opts.subject +
+		              '&body=' + opts.message.replace(/\n/g,'%0A') +
+		              '&ui=1';
+		    			location.href = str;
+					}
 				//Share();
 
 			jQuery(".pop").click(function () {
@@ -135,6 +142,9 @@ $(document).on("ready", function () {
 					$('.botones-redes-wrapper').html("");
 					return false;
 					count=0;
+				}else if(data=='mail'){
+					sendGmail();
+					
 				}
 			});
 

@@ -75,10 +75,7 @@
 
 $linksPerfil=toArray($tabs);
 
-echo '<pre>';
-print_r(array_keys($tabs['#primary'][1]));
-//*print_r($tabs);
-echo '</pre>';
+
 
 ?>
 <header>
@@ -193,7 +190,7 @@ estoy en el tpl de recetario
     <!--Fin del menú del home-->
     </header>
 
-    <?php if ($page['banner']) :?>
+    <?php if ($page['banner']):?>
    <div class="regiones_ banner">
        <?php print render($page['banner']); ?>        
    </div>

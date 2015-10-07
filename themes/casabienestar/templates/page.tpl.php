@@ -77,7 +77,10 @@
 
 ?>
 <?php
- render($page['content']['metatags']); 
+ if(isset($page['content']['metatags'])){
+ render($page['content']['metatags']);  
+ }
+ 
 ?>
 <header>
 
