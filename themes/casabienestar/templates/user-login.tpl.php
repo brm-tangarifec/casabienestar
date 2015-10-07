@@ -41,9 +41,34 @@ echo '</pre>';*/
 ?>
 
 
+
+<div class="row">
+  <!--Nombre Usuario-->
+   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+    <?php
+      print render($form['account']['name']);
+    ?>
+
+  </div>
+  <!--/-Nombre Usuario-->
+</div>
+
+<div class="row">
+  <!--Email-->
+   <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+    <?php
+      print render($form['account']['mail']);
+    ?>
+
+
+  </div>
+  <!--/-Email-->
+  
+  <!--/-Autorizo uso de datos-->
+</div>
 <div class="row">
   <!--Submit-->
-  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
     <?php print drupal_render_children($form); ?>
     
   </div>

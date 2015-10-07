@@ -94,7 +94,7 @@
       
         <?php else: ?>
           <h2>Inicio de sesión</h2>
-          <?php print $messages?>
+          
           <?php print render($page['loggin']);?>
 
           <button type="button" class="btn btn-warning cerrar-login"><span class="glyphicon glyphicon-chevron-up"></span></button>
@@ -109,7 +109,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
           <!--Logo-->
-          <h1><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+          <h1><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
           <!--/-Logo-->
         </div>
         <!-- <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div> -->
@@ -161,7 +161,7 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/fbappCasaBienestar/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle button</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/drupal/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle-blanco.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive logo-franja"></a>
               </div>
                 <div id="navbar" aria-expanded="false" class="navbar-collapse collapse">
 
@@ -218,7 +218,34 @@
 <!--Fin Banners-->
 <!--Acá se pone el contenido-->
 <section>
-	
+	 <?php
+         //Campos vista nutricion
+         $view = views_get_view_result('view_nutricion', 'default', array(arg(0)));
+         $contenidoArt=$view[0]->_field_data[nid][entity];
+
+          $shareN=views_get_view('view_nutricion');
+          $contShN=toArray($shareN);
+          $accesoSh=$contShN['display']['default']['display_options']['fields']['sharethis'];
+      /*echo "<pre>";
+
+print_r($contShN);
+
+
+
+
+          //var_dump($accesoSh); // returns null so I cannot use your suggestion
+
+          echo "</pre>";
+*/
+
+         //Campos vista salud
+         $viewsalud = views_get_view_result('view_salud', 'default', array(arg(0)));
+         $contenidoSalud=$viewsalud[0]->_field_data[nid][entity];
+
+          //Campos vista bienestar
+         $viewbienestar = views_get_view_result('view_bienestar', 'default', array(arg(0)));
+         $contenidoBienestar=$viewbienestar[0]->_field_data[nid][entity];
+     ?>
     <!--Secciones Nutrición, Salud y Bienestar-->
     <div class="container-fluid">
       <div class="row">
@@ -269,7 +296,15 @@
         <div class="widget widget-tw col-lg-4 col-md-4 col-sm-4 hidden-xs">
           <!-- Twitter -->
           <div class="icon-widget btn btn-info btn-fab btn-raised"><span class="fa fa-twitter"></span></div>
-        
+         <!--  <div class="row">
+           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><img src="<?php print base_path() . path_to_theme(); ?>/images/avatar-nestle.jpg" alt="Nestlé en Twitter" class="img-responsive img-circle">
+             <p class="desc">
+               Nestlé Colombia @NestleColombia
+
+             </p>
+           </div>
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="https://twitter.com/NestleColombia" data-size-value="default" data-show-count="false" data-show-screen-name="false" class="twitter-follow-button">Follow @NestleColombia</a></div>
+         </div> -->
           <div class="row">
             <div class="col-lg-12">
               <a class="twitter-timeline" height="200" href="https://twitter.com/NestleColombia" data-widget-id="633660256560807936"  data-chrome="noborders noscrollbar transparent noheader" data-tweet-limit="1">Nestlé Colombia.</a>
@@ -311,9 +346,9 @@
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-list">
-            <li><a href="/fbappCasaBienestar/politicas-privacidad">Políticas de privacidad</a></li>
+            <li><a href="/drupal/politicas-privacidad">Políticas de privacidad</a></li>
             <li><a href="http://corporativa.nestle.com.co/" target='_blank'>Ver información corporativa</a></li>
-            <li><a href="/fbappCasaBienestar/politicas-datos">Política de tratamiento de datos personales</a></li>
+            <li><a href="/drupal/politicas-datos">Política de tratamiento de datos personales</a></li>
           </ul>
           <p>NESTLÉ&reg; Colombia 2015 - Todos los derechos reservados</p>
 

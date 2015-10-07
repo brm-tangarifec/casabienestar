@@ -173,7 +173,7 @@ echo '</pre>';*/
 </div>
 <div class="row">
   <!--Deseo Recibir Info-->
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
        <?php
       print render($form['field_como_te_enteraste']);
       ?>
@@ -190,7 +190,7 @@ echo '</pre>';*/
   </div>
   <!--/-Como te enteraste-->
   <!--Autorizo uso de datos-->
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
      <?php
       print render($form['field_aturizacion_datos']); 
      ?>
