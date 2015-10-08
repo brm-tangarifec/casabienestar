@@ -107,7 +107,7 @@
   </div>
   <section class="container-fluid article-body">
     <!--Compartir y ranking-->
-    <!-- <div class="box-compartir box-compartir-receta row">
+    <div class="box-compartir box-compartir-receta row">
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h5>Compartido</h5>
         <p class="contador-general">9999</p>
@@ -119,11 +119,11 @@
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div class="contador-social facebook"><i class="fa fa-facebook"></i>
-          <p class="contador-num">9999</p>
+          <p class="contador-num" data-layout="box_count"></p>
         </div>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div>
-    </div> -->
+    </div>
     <!--/-Compartir y ranking-->
     <!--Momentos y Marcas-->
     <div class="row filtros">

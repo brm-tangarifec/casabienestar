@@ -160,6 +160,7 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
         <h1 class="titulo-articulo"><?php print $title?></h1>
       </div>
     </div>
+
     <!--/-Titulo del artículo-->
     <div class="row max-width img-article">
       <!--Imagen destacada del articulo-->
@@ -174,6 +175,25 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
 <section class="container-fluid article-body">
  <div class="row">
       <!--Contenido artículo-->
+      <!--Compartir y ranking-->
+    <div class="box-compartir box-compartir-receta row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <h5>Compartido</h5>
+        <p class="contador-general">0</p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="contador-social twitter"><i class="fa fa-twitter"></i>
+          <p class="contador-num contTw">0</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="contador-social facebook"><i class="fa fa-facebook"></i>
+          <p class="contador-num contFb" data-layout="box_count">0</p>
+        </div>
+      </div>
+      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div> -->
+    </div>
+    <!--/-Compartir y ranking-->
       
       <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
    

@@ -94,7 +94,6 @@ $(document).on("ready", function () {
 		var j= jQuery(this).parent().parent().next().find("a").attr('href');
 		var tituloArticle= jQuery(this).parent().parent().parent().find("h3").text();
 		tituloArticle=jQuery.trim(tituloArticle);
-
     
 		count++;
 		//console.log(count);
@@ -114,7 +113,7 @@ $(document).on("ready", function () {
 		    		var sendGmail = function(opts){
 		   			 var recipient = '',
     					 subject   = 'Mira éste contenido en NESTLÉ&reg; Colombia',
-     					message  = tituloArticle+"&#13;&#10;"+ oli;
+     					message  = tituloArticle+ '\n' + ' '+oli;
 
 
 
@@ -448,5 +447,72 @@ jQuery('form').each(function(){
          }
  });
 
+/*Contador redes sociales*/
+var graph = window.location.href;
+var conteoFB;
+var conteoTW;
+var contGeneral;
+		
+		/*Contador Facebook*/
+      var urlFB='http://graph.facebook.com/';
+      $.ajax({
+        url: urlFB,
+        dataType: 'json',
+        data: 'id='+graph,
+        success: function (data) {
+        	
+        	countFB=data.shares;
 
+        	if(countFB!=0){
+        		jQuery('.contFb').html(countFB);
+
+
+        	}else{
+        		jQuery('.contFb').html('0');
+        	}
+        	
+
+        }
+
+          
+      });
+
+
+
+      /*Contador Twitter*/
+      var urlTw='http://cdn.api.twitter.com/1/urls/count.json';
+      jQuery.ajax({
+
+      	 url: urlTw,
+        dataType: 'jsonp',
+        data: 'url='+graph,
+        success: function (data) {
+        	
+        	countTW=data.count;
+
+        	if(countTW!=0){
+        		jQuery('.contTw').html(countTW);
+
+        	}else{
+        		jQuery('.contTw').html('0');
+        	}
+        	
+
+        }
+
+      });
+});
+
+/*Sumador general de compartidos*/
+jQuery(document).ajaxComplete(function( event,request, settings ) {
+  	  setTimeout(function(){
+  	  conteoFB=jQuery('.contFb').text();
+      conteoTW=jQuery('.contTw').text();
+      conteoFB = parseInt(conteoFB);
+      conteoTW = parseInt(conteoTW);
+ 		contGeneral=conteoFB+conteoTW;
+      	jQuery('.contador-general').html(contGeneral);
+		}, 500);
+           
+      
 });
