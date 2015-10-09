@@ -79,9 +79,6 @@ $linksPerfil=toArray($tabs);
 
 ?>
 <header>
-<div>
-estoy en el tpl de recetario
-</div>
   <div class="container-fluid login">
    <!--Wrapper login-->
         <div class="row">
@@ -197,7 +194,6 @@ estoy en el tpl de recetario
 <?php endif; ?>
 
 <!--Acá se pone el contenido -->
-<div>estoy en la vista de recetario</div>
  <?php  print render($page['content']);  ?>
 
 
