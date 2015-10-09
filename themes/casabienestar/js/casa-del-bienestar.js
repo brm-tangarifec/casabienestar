@@ -534,7 +534,7 @@ var contGeneral;
 
       });
 /*Clases para filtros*/
-$("#edit-reset")addClass('btn btn-primary');
+$("#edit-reset").addClass('btn btn-primary');
 
 });
 
