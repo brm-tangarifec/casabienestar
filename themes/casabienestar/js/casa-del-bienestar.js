@@ -472,8 +472,7 @@ if(textOption2 == "- Any -"){
 }
 
 jQuery(".view-id-recetario view-content").css('display','none');
-
-$( ".form-item-field-momentos-tid select" ).delegate( "option", "change", function() {
+jQuery(".form-item-field-momentos-tid select").delegate( "option", "change", function() {
   jQuery(".view-id-recetario view-content").css('display','block');
   jQuery(".view-recetario-1er-tiempo").css('display','none');
   
