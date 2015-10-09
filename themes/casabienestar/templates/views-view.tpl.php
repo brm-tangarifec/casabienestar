@@ -40,7 +40,7 @@
   <?php endif; ?>
 
   <?php if ($exposed): ?>
-   <?php if (arg(0)=='recetario' ?>
+   <?php if (arg(0)=='recetario'): ?>
       <div class="view-filters row">
     <?php else: ?>
       <div class="view-filters">
