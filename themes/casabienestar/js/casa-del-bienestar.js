@@ -534,6 +534,9 @@ var contGeneral;
         }
 
       });
+/*Clases para filtros*/
+$("#edit-reset")addClass('btn btn-primary');
+
 });
 
 /*Sumador general de compartidos*/
@@ -549,8 +552,3 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
            
       
 });
-
-
-
-
- 
