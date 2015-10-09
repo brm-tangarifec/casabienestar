@@ -50,11 +50,6 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
-  
-  <?php if (arg(0)=='recetario' && $exposed): ?>
-      <h2 class="tit_recetario">PARA ESTA SEMANA TE RECOMENDAMOS</h2>
-  <?php endif; ?>
-
   <?php if ($rows): ?>
     <?php if (arg(0)=='recetario' && $exposed): ?>
       <div class="view-content row">
