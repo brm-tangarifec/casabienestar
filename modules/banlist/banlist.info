@@ -1,0 +1,10 @@
+name = Ban List
+description = "Disallow users from registerting from a list of usernames."
+core = 7.x
+dependencies[] = user_restrictions
+; Information added by drupal.org packaging script on 2012-01-07
+version = "7.x-1.0-beta1"
+core = "7.x"
+project = "banlist"
+datestamp = "1325968537"
+
