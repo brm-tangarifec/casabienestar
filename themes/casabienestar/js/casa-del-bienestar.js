@@ -465,7 +465,6 @@ if(textOption2 == "- Any -"){
 }
 
 var textOption2 = jQuery("#edit-field-tiempo-rango-tid option:first").text();
-alert(textOption2);
 var textTitu2 = jQuery("#edit-field-tiempo-rango-tid-wrapper label:first").text();
 console.log(textTitu2);
 if(textOption2 == "- Any -"){
