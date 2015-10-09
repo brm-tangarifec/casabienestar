@@ -471,6 +471,14 @@ if(textOption2 == "- Any -"){
 	jQuery("#edit-field-tiempo-rango-tid option:first").text(textTitu2);
 }
 
+jQuery(".view-id-recetario view-content").css('display','none');
+
+$( ".form-item-field-momentos-tid select" ).delegate( "option", "change", function() {
+  jQuery(".view-id-recetario view-content").css('display','block');
+  jQuery(".view-recetario-1er-tiempo").css('display','none');
+  
+});
+
 
 /*Contador redes sociales*/
 var graph = window.location.href;
@@ -544,5 +552,3 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
            
       
 });
-
-
