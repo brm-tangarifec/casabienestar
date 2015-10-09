@@ -447,6 +447,32 @@ jQuery('form').each(function(){
          }
  });
 
+var textOption = jQuery("#edit-field-momentos-tid option:first").text();
+var textTitu = jQuery("#edit-field-momentos-tid-wrapper label:first").text();
+if(textOption == "- Any -"){
+	jQuery("#edit-field-momentos-tid option:first").text(textTitu);
+}
+var textOption1 = jQuery("#edit-field-tipo-tid option:first").text();
+var textTitu1 = jQuery("#edit-field-tipo-tid-wrapper label:first").text();
+if(textOption1 == "- Any -"){
+	jQuery("#edit-field-tipo-tid option:first").text(textTitu1);
+}
+var textOption2 = jQuery("#edit-field-marcas-tid option:first").text();
+var textTitu2 = jQuery("#edit-field-marcas-tid-wrapper label:first").text();
+console.log(textTitu2);
+if(textOption2 == "- Any -"){
+	jQuery("#edit-field-marcas-tid option:first").text(textTitu2);
+}
+
+var textOption2 = jQuery("#edit-field-tiempo-rango-tid option:first").text();
+alert(textOption2);
+var textTitu2 = jQuery("#edit-field-tiempo-rango-tid-wrapper label:first").text();
+console.log(textTitu2);
+if(textOption2 == "- Any -"){
+	jQuery("#edit-field-tiempo-rango-tid option:first").text(textTitu2);
+}
+
+
 /*Contador redes sociales*/
 var graph = window.location.href;
 var conteoFB;
@@ -516,3 +542,4 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
            
       
 });
+
