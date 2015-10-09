@@ -55,7 +55,7 @@ $(document).on("click", "#btn-up", function () {
 //Funciones y animaciones del sitio web
 $(document).on("ready", function () {
 	var dominio= window.location.protocol+'//'+window.location.hostname;
-	console.log(dominio);
+	//console.log(dominio);
 	var count=0;
 	jQuery('#compartirN').on('click',function(){
 		count++;
@@ -536,6 +536,36 @@ var contGeneral;
 /*Clases para filtros*/
 $("#edit-reset").addClass('btn btn-primary');
 
+
+
+/*Funcion para obtener las palabras bloqueadas en la contraseña*/
+var dominio= window.location.protocol+'//'+window.location.hostname;
+
+		/*var urlBn=dominio;
+      	jQuery.ajax({
+
+      	url: urlBn,
+        dataType: 'jsonp',
+        data: dominio+'/lalistabanea',
+        success: function (data) {
+        	console.log(data);
+        	
+
+        }
+
+      });*/
+
+$.getJSON( dominio+':8585/lalistabanea', function( data ) {
+  var items = [];
+  $.each( data, function(val) {
+    items.push(val);
+
+    console.log(items);
+	});
+  });
+ 
+
+
 });
 
 /*Sumador general de compartidos*/
@@ -550,4 +580,13 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
 		}, 500);
            
       
+});
+
+
+$(document).on("change", ".form-select" ,function () {
+
+$(".view-recetario-1er-tiempo").addClass('hidden');
+$(".view-recetario .view-content").addClass('block');
+
+
 });
