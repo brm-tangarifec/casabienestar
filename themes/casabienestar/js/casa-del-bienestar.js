@@ -555,18 +555,38 @@ var dominio= window.location.protocol+'//'+window.location.hostname;
 
       });*/
 
+
+
+/*CAmbios en el filtro*/
+$(".form-select").change(function () {
+
+$(".view-recetario-1er-tiempo").addClass('hidden');
+$(".view-id-recetario .view-content").addClass('show');
+});
+
+var baneoesto;
+
 $.getJSON( dominio+':8585/lalistabanea', function( data ) {
-  var items = [];
-  $.each( data, function(val) {
-    items.push(val);
+  
+  baneoesto = data;
+		
+}); 
+	jQuery('.password-field').on('blur',function(){
+		
+		var pass=jQuery('input[name="pass[pass1]"]').val();
+		
+		if(jQuery.inArray(pass,baneoesto) !== -1) {
+			
+		   	jQuery('input[name="pass[pass1]"]').val('');
+		    jQuery('.form-type-password').append('<label class="error">La contraseña no es válida</label>');
 
-    console.log(items);
-	});
-  });
- 
+		}
 
+	}); 
 
 });
+
+
 
 /*Sumador general de compartidos*/
 jQuery(document).ajaxComplete(function( event,request, settings ) {
@@ -580,13 +600,4 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
 		}, 500);
            
       
-});
-
-
-$(document).on("change", ".form-select" ,function () {
-
-$(".view-recetario-1er-tiempo").addClass('hidden');
-$(".view-recetario .view-content").addClass('block');
-
-
 });
