@@ -242,6 +242,7 @@ function casabienestar_preprocess_node(&$variables) {
 
 
 function casabienestar_preprocess_page(&$vars, $hook) {
+  drupal_add_js(path_to_theme() . '/js/jquery.bxslider.js',  array( 'scope' => 'header', 'weight' => -20 , 'group' => JS_LIBRARY, 'preprocess' => FALSE));
   if (isset($vars['node']->type)) {
     // If the content type's machine name is "my_machine_name" the file
     // name will be "page--my-machine-name.tpl.php".
