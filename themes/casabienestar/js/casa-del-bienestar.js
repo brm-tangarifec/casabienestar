@@ -440,6 +440,7 @@ jQuery('form').each(function(){
 
    
 });
+
  jQuery("#edit-keys-6").rules("add", {
          required:true,
          messages: {
@@ -447,7 +448,22 @@ jQuery('form').each(function(){
          }
  });
 
-var textOption = jQuery("#edit-field-momentos-tid option:first").text();
+
+/*Clases para filtros*/
+$("#edit-reset").addClass('btn btn-primary');
+
+/*CAmbios en el filtro*/
+$(".form-select").change(function () {
+
+	window.setTimeout(function () {
+		$(".view-recetario-1er-tiempo").addClass('hidden');
+		$(".view-id-recetario .view-content").addClass('show');
+		$("#edit-reset").addClass('btn btn-primary');
+	console.log("oli");
+	},10000);
+});
+
+/*var textOption = jQuery("#edit-field-momentos-tid option:first").text();
 var textTitu = jQuery("#edit-field-momentos-tid-wrapper label:first").text();
 if(textOption == "- Any -"){
 	jQuery("#edit-field-momentos-tid option:first").text(textTitu);
@@ -469,14 +485,14 @@ var textTitu2 = jQuery("#edit-field-tiempo-rango-tid-wrapper label:first").text(
 console.log(textTitu2);
 if(textOption2 == "- Any -"){
 	jQuery("#edit-field-tiempo-rango-tid option:first").text(textTitu2);
-}
+}*/
 
-jQuery(".view-id-recetario view-content").css('display','none');
+/*jQuery(".view-id-recetario view-content").css('display','none');
 jQuery(".form-item-field-momentos-tid select").delegate( "option", "change", function() {
   jQuery(".view-id-recetario view-content").css('display','block');
   jQuery(".view-recetario-1er-tiempo").css('display','none');
   
-});
+});*/
 
 
 /*Contador redes sociales*/
@@ -533,8 +549,7 @@ var contGeneral;
         }
 
       });
-/*Clases para filtros*/
-$("#edit-reset").addClass('btn btn-primary');
+
 
 
 
@@ -557,12 +572,6 @@ var dominio= window.location.protocol+'//'+window.location.hostname;
 
 
 
-/*CAmbios en el filtro*/
-$(".form-select").change(function () {
-
-$(".view-recetario-1er-tiempo").addClass('hidden');
-$(".view-id-recetario .view-content").addClass('show');
-});
 
 var baneoesto;
 
