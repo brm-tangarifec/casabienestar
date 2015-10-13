@@ -455,6 +455,8 @@ $("#edit-reset").addClass('btn btn-primary');
 /*CAmbios en el filtro*/
 $(".form-select").change(function () {
 
+	
+
 	window.setTimeout(function () {
 		$(".view-recetario-1er-tiempo").addClass('hidden');
 		$(".view-id-recetario .view-content").addClass('show');
