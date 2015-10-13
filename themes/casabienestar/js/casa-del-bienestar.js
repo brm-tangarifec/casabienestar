@@ -536,6 +536,11 @@ var contGeneral;
 /*Clases para filtros*/
 $("#edit-reset").addClass('btn btn-primary');
 
+/*Boton imprimir receta*/
+$(".fa-print").on("click", function () {
+	window.print();
+});
+
 
 
 /*Funcion para obtener las palabras bloqueadas en la contraseña*/
