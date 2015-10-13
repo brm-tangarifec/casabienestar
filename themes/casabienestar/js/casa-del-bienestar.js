@@ -553,6 +553,11 @@ var contGeneral;
       });
 
 
+/*Boton imprimir receta*/
+$(".fa-print").on("click", function () {
+	window.print();
+});
+
 
 
 /*Funcion para obtener las palabras bloqueadas en la contraseña*/
