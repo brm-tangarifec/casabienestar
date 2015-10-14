@@ -1,0 +1,9 @@
+; $Id$
+
+name = CBN Module Hours Momentos
+description = Define los resultados para la vista del momentos del home
+
+package = Modulo CBN
+version = VERSION
+core = 7.x
+files[] = cbn_hour_momentos.module
