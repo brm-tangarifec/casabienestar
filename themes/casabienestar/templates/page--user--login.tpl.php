@@ -162,8 +162,9 @@
           <h1 class="text-center">Inicio de sesión</h1>
         </div>
       
-      
+      <?php print $messages?>
        <?php print render($page['content']); ?>
+
      
      
      <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">

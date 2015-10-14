@@ -79,6 +79,9 @@
  */
 
 
+
+
+
 ?>
 
 
@@ -86,7 +89,7 @@
     <!--Titulo del artículo-->
     <div class="row max-width titular titular-receta">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <div class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_receta_tiempo'])?></div>
+        <div class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_tiempo_eeal_'])?></div>
         <h1 class="titulo-articulo"><?php print render($title)?></h1>
       </div>
       <!--Calorías-->
@@ -106,23 +109,24 @@
     </div>
   </div>
   <section class="container-fluid article-body">
-    <!--Compartir y ranking-->
+    <!--Contenido artículo-->
+      <!--Compartir y ranking-->
     <div class="box-compartir box-compartir-receta row">
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h5>Compartido</h5>
-        <p class="contador-general">9999</p>
+        <p class="contador-general">0</p>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div class="contador-social twitter"><i class="fa fa-twitter"></i>
-          <p class="contador-num">9999</p>
+          <p class="contador-num contTw">0</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div class="contador-social facebook"><i class="fa fa-facebook"></i>
-          <p class="contador-num" data-layout="box_count"></p>
+          <p class="contador-num contFb" data-layout="box_count">0</p>
         </div>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div>
+      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div> -->
     </div>
     <!--/-Compartir y ranking-->
     <!--Momentos y Marcas-->
@@ -131,14 +135,14 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h3>Ideal para</h3>
         <div class="momentos">
-          <?php print render($content['field_receta_momentos'])?>
+          <?php print render($content['field_momentos'])?>
         </div>
       </div>
       <!--/-Momentos-->
       <!--Marcas-->
       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
         <h3>prepara esta receta con</h3>
-        <?php print render($content['field_receta_marca'])?>
+        <?php print render($content['field_marcas'])?>
       </div>
       <!--/-Marcas-->
     </div>
@@ -167,7 +171,8 @@
     <!--Calificación y compartir-->
     <!--Barra para compartir-->
         <div class="row compartir">
-          <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div>
+          <span class="fa fa-print"></span>
+         <!--  <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div> -->
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 article-action">
             <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
             <!-- <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->

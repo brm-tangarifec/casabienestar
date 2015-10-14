@@ -448,6 +448,31 @@ jQuery('form').each(function(){
          }
  });
 
+ /*se agrega un metodo de validacion llamdo string; se encarga de
+	* validar que las cadenas de caracteres ingresadas no contengan
+	* caracteres especiales.
+	*/
+	jQuery.validator.addMethod("string", function(value, element)
+    {
+        return this.optional(element) || /^[a-z" "ñÑáéíóúÁÉÍÓÚ,.;]+$/i.test(value);
+    });
+ jQuery("#edit-field-nombres-und-0-value").rules("add", {
+         required:true,
+         string: true,
+         messages: {
+                required: "El campo no debe estar vacio",
+                string: "El nombre no debe contener caracteres numéricos o especiales",
+         }
+ });
+ jQuery("#edit-field-apellidos-und-0-value").rules("add", {
+         required:true,
+         string: true,
+         messages: {
+                required: "El campo no debe estar vacio",
+                string: "El nombre no debe contener caracteres numéricos o especiales",
+         }
+ });	
+
 
 /*Clases para filtros*/
 $("#edit-reset").addClass('btn btn-primary');

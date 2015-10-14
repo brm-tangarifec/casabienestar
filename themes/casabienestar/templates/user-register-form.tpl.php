@@ -197,6 +197,14 @@ echo '</pre>';*/
 
   </div>
   <!--/-Autorizo uso de datos-->
+  <!--Preferencias-->
+  <div class="row">
+    <?php
+      print render($form['field_contenido_preferencias']); 
+     ?>
+
+
+  </div>
 </div>
 <div class="row">
   <!--Submit-->

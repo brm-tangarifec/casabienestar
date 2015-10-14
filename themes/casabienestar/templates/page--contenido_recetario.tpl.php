@@ -110,7 +110,7 @@ $linksPerfil=toArray($tabs);
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
             <!--Logo-->
 
-            <h1><a href="/consumidor_nestle_com_co/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h1>
+            <h2><a href="/consumidor_nestle_com_co/"><img src="<?php print base_path() . path_to_theme(); ?>/images/logo-nestle.svg" alt="NESTLÉ&amp;reg; A gusto con la vida" class="img-responsive"></a></h2>
 
             <!--/-Logo-->
           </div>

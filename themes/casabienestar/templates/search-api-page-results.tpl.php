@@ -43,6 +43,7 @@
   <?php if ($result_count): ?>
     <h2><?php print t('Search results');?></h2>
     <ol class="pagina-resultados">
+      
       <?php print render($search_results); ?>
     </ol>
     <?php print render($pager); ?>
