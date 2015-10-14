@@ -13,9 +13,11 @@ $newResults = array();
 if ($view->name == 'recetario' && $view->current_display == 'page') {
     $h = date("Hi");
     //var_dump($h);
+    
     foreach ($view->result as &$result) {
         if($h >= 0501 && $h <= 0900){
         //var_dump("estamos en el Desayuno");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1157"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -23,8 +25,10 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
                 $newResults[]=$result;
               }
           }
+        }
       }elseif($h >= 0901 && $h <= 1100){
         //var_dump("estamos en las Medias nueves");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1159"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -32,8 +36,10 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
                 $newResults[]=$result;
               }
           }
+        }
       }elseif($h >= 1101 && $h <= 1400){
         //var_dump("estamos en el Almuerzo");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1160"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -41,8 +47,10 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
                 $newResults[]=$result;
               }
           }
+        }
       }elseif($h >= 1401 && $h <= 1800){
         //var_dump("estamos en las Onces");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1158"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -50,8 +58,10 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
                 $newResults[]=$result;
               }
           }
+        }
       }elseif($h >= 1801 && $h <= 0500){
         //var_dump("estamos en la Cena");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1161"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -59,6 +69,7 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
                 $newResults[]=$result;
               }
           }
+        }
       }
     }
 }
