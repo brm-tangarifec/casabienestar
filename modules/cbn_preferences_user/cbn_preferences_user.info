@@ -1,0 +1,9 @@
+; $Id$
+
+name = CBN Preferencias de usuario
+description = Captura las vistas de articulos y los filtra por la preferencia de los usuarios
+
+package = Modulo CBN
+version = VERSION
+core = 7.x
+files[] = cbn_preferences_user.module
