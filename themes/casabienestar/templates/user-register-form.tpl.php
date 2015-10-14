@@ -197,15 +197,16 @@ echo '</pre>';*/
 
   </div>
   <!--/-Autorizo uso de datos-->
-  <!--Preferencias-->
+
+</div>
+<!--Preferencias-->
   <div class="row">
     <?php
-      print render($form['field_contenido_preferencias']); 
+        print render($form['field_contenido_preferencias']); 
      ?>
 
 
   </div>
-</div>
 <div class="row">
   <!--Submit-->
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
