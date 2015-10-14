@@ -207,6 +207,127 @@ echo '</pre>';*/
 
 
   </div>
+
+
+  <!--Inicio selección temas-->
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+      <div class="selection select-default"><span class="logo icon icon-white icon-check"></span>
+        <div class="content">
+          <p>SELECCIONA LOS TEMAS<br>QUE MÁS TE INTERESAN</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/-Final selección temas-->
+  <!--Inicio selección pilares-->
+  <div class="row">
+    <!-- Selección nutrición-->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <!--Titulo nutrición-->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 selection select-nutricion"><span class="logo icon icon-pilares icon-nutricion"></span>
+        <div class="content">
+          <h2>NUTRICIÓN</h2>
+        </div>
+      </div>
+      <!--Línea-->
+      <div data-box="linea" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="linea" id="linea" value="linea"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-line"></span>
+        <div class="content">
+          <h3 class="titulo-selector">Nutrientes Alimenticios</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p> -->
+        </div>
+      </div>
+      <!--Preparaciones-->
+      <div data-box="preparaciones" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="preparaciones" id="preparaciones" value="preparaciones"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-preparaciones"></span>
+        <div class="content">
+          <h3 class="titulo-selector">Alimentos Saludables</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p> -->
+        </div>
+      </div>
+      <!--Familia-->
+      <div data-box="familia" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="familia" id="familia" value="familia"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-familia"></span>
+        <div class="content">
+          <h3 class="titulo-selector">FAMILIA</h3>
+          <!-- <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p> -->
+        </div>
+      </div>
+    </div>
+    <!--/- Selección nutrición-->
+    
+    <!-- Selección salud-->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <!--Titulo salud-->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 selection select-salud"><span class="logo icon icon-pilares icon-white icon-salud"></span>
+        <div class="content">
+          <h2>SALUD</h2>
+        </div>
+      </div>
+      <!--Adultos mayores-->
+      <div data-box="adultos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="adultos" id="adultos" value="adultos"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-adulto-mayor"></span>
+        <div class="content">
+          <h3 class="titulo-selector">ADULTOS MAYORES</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+      <!--Ejercicio-->
+      <div data-box="ejercicio" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="ejercicio" id="ejercicio" value="ejercicio"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-ejercicio"></span>
+        <div class="content">
+          <h3 class="titulo-selector">EJERCICIO</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+      <!--Alergias-->
+      <div data-box="alergias" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="alergias" id="alergias" value="alergias"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-alergias"></span>
+        <div class="content">
+          <h3 class="titulo-selector">INTOLERANCIAS</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <!--/- Selección salud-->
+    
+    <!-- Selección bienestar-->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <!--Titulo bienestar-->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 selection select-bienestar"><span class="logo icon icon-pilares icon-white icon-bienestar"></span>
+        <div class="content">
+          <h2>BIENESTAR</h2>
+        </div>
+      </div>
+      <!--Adultos mayores-->
+      <div data-box="belleza" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="belleza" id="belleza" value="belleza"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-belleza"></span>
+        <div class="content">
+          <h3 class="titulo-selector">BELLEZA</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+      <!--Ejercicio-->
+      <div data-box="ocio" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="ocio" id="ocio" value="ocio"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-ocio"></span>
+        <div class="content">
+          <h3 class="titulo-selector">OCIO</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+      <!--Alergias-->
+      <div data-box="deporte" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+        <input type="checkbox" name="deporte" id="deporte" value="deporte"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-deporte"></span>
+        <div class="content">
+          <h3 class="titulo-selector">DEPORTE</h3>
+          <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <!--/- Selección bienestar-->
+  </div>
+  <!--/-Final selección pilares-->
 <div class="row">
   <!--Submit-->
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
