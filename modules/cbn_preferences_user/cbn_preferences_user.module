@@ -13,16 +13,33 @@ function cbn_preferences_user_views_post_execute(&$view) {
 	$newResults = array();	
 	if ($view->name == 'view_bienestar_articulos' && $view->current_display == 'block') {
 
-		$preferences = array("1","2","3","4","5","6");
+		$preferences = array("1179","2","3","1181","5","1182");
 
-		var_dump($view->name);
-		var_dump("*********");
-		var_dump($view->current_display);
-	    global $user; 	    
-	    foreach ($view->result as &$result) {
-	        var_dump($result);
-	        var_dump("-------------------------------------");
-	    }
+	    global $user;
+	    //if($user->uid != 0){ 	    
+		    foreach ($view->result as &$result) {
+
+		       // var_dump($result->_field_data["nid"]["entity"]->field_contenido_preferencias);
+		        //var_dump("-------------------------------------");
+
+		        if(isset($result->_field_data["nid"]["entity"]->field_contenido_preferencias["und"])){
+		        	//var_dump("entro al UND");
+		        	foreach ($result->_field_data["nid"]["entity"]->field_contenido_preferencias["und"] as $value) {
+		        		//var_dump($value["tid"]);
+		        		foreach ($preferences as $valuePrefe) {
+		        			//var_dump($valuePrefe);
+		        			if($value["tid"] == $valuePrefe){
+		        				//var_dump($valuePrefe);
+		        				$newResults[]=$result;
+		        			}
+		        		}
+		        	}
+		        }
+		    }
+		//}
 	}
-	$view->result = $newResults;
+	if(count($newResults) >= 3){
+		//var_dump("envio");
+	 $view->result = $newResults;
+	}
 }

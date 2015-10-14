@@ -448,7 +448,13 @@ jQuery('form').each(function(){
          }
  });
 
- /*se agrega un metodo de validacion llamdo string; se encarga de
+
+var currentURL = window.location.href;
+	 	var hs = currentURL.slice(-8);
+	 	console.log(hs);
+if(hs=='register'){
+
+/*se agrega un metodo de validacion llamdo string; se encarga de
 	* validar que las cadenas de caracteres ingresadas no contengan
 	* caracteres especiales.
 	*/
@@ -471,7 +477,11 @@ jQuery('form').each(function(){
                 required: "El campo no debe estar vacio",
                 string: "El nombre no debe contener caracteres numéricos o especiales",
          }
- });	
+ });
+
+}
+ 
+
 
 
 /*Clases para filtros*/
