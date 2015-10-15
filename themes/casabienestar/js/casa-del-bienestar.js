@@ -1,10 +1,42 @@
 //Función para check de selección de preferencias en el registro
+
+jQuery(document).on('click','.tipoc',function(){
+	
+	var Tcontenido = $(this).attr('data-contenido');
+	var chequea = jQuery(this).attr('data-iden');
+	
+
+	/*Muestra las subcategorias de los pilares*/
+	if(Tcontenido=='nutricion'){
+		jQuery('.show-nutricion').removeClass('hidden');
+
+	}
+	else if(Tcontenido=='salud'){
+		jQuery('.show-salud').removeClass('hidden');
+	}
+	else if(Tcontenido=='bienestar'){
+		jQuery('.show-bienestar').removeClass('hidden');
+	}
+
+	/*Selecciona y selecciona las preferencias padre*/
+	if(chequea==chequea){
+		console.log(chequea);
+		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);
+		if(jQuery(chequear).prop('checked')==true){
+			jQuery(Tcontenido).addClass('hidden');
+			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',false);
+		}else{
+			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',true);
+		}
+	}
+});
 $(document).on("click", ".boton-brand", function () {
 		//Variable que almacena la opción que fue clickeada
 		var idCheck = $(this).attr('data-box');
+		
 		//Dejar "chulo" activo sobre el elemento
 		$(this).addClass("active");
-		//console.log(idCheck);
+		
 		//Check en la preferencia
 		$('#'+idCheck).prop('checked', true);
 		//Quitar clases para deseleccionar checkbox
