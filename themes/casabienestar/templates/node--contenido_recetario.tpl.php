@@ -166,7 +166,11 @@
         
         <?php print render($content['body']);?>
       </article>
-      <div class="cont_comment"><?php print render($content['comments']); ?></div>
+      <div class="cont_comment">
+        <?php print render($content['comments']); ?>
+        <?php print_r ($comment); ?>
+        <?php print render($comment); ?>
+      </div>
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
