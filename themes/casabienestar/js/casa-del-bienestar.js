@@ -6,27 +6,16 @@ jQuery(document).on('click','.tipoc',function(){
 	var chequea = jQuery(this).attr('data-iden');
 	
 
-	/*Muestra las subcategorias de los pilares*/
-	if(Tcontenido=='nutricion'){
-		jQuery('.show-nutricion').removeClass('hidden');
-
-	}
-	else if(Tcontenido=='salud'){
-		jQuery('.show-salud').removeClass('hidden');
-	}
-	else if(Tcontenido=='bienestar'){
-		jQuery('.show-bienestar').removeClass('hidden');
-	}
-
 	/*Selecciona y selecciona las preferencias padre*/
 	if(chequea==chequea){
 		console.log(chequea);
 		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);
 		if(jQuery(chequear).prop('checked')==true){
-			jQuery(Tcontenido).addClass('hidden');
+			jQuery('.show-'+Tcontenido).addClass('hidden');
 			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',false);
 		}else{
 			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',true);
+			jQuery('.show-'+Tcontenido).removeClass('hidden');
 		}
 	}
 });
