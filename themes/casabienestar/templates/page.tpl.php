@@ -252,7 +252,32 @@
     </div>
     <!--/-Nuestras Marcas-->
 
+    <!--Recetario y Module postres-->
+<section class="container-fluid">
 
+  <div class="cont_recetas_y_loncheras row">
+
+    <div id="carrusel-recetario" class="recetas_slider col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
+      <div class="title">
+             <h2>
+               Mi Recetario Nestlé<sup>&reg;</sup>
+               
+             </h2>
+           </div>
+    <?php print views_embed_view('recetas_home_block'); ?>
+    </div>
+
+    <div class="loncheras_slider col-lg-4 col-md-4 col-sm-4 col-xs-12 module-box module-box-lonchera">
+      <div class="title">
+           <h2>Postres</h2>
+         </div>
+    <?php print views_embed_view('loncheras_home_block'); ?>
+    </div>
+
+  </div>
+
+</section>
+<!--/-Recetario y Module postres-->
 
 <!--Acá finaliza el contenido-->
 

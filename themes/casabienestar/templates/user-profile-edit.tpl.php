@@ -201,7 +201,7 @@ echo '</pre>';*/
   <!--/-Autorizo uso de datos-->
 </div>
 <!--Preferencias-->
-  <div class="row">
+  <div class="row preferenciasO">
     <?php
         print render($form['field_contenido_preferencias']); 
      ?>
@@ -209,7 +209,7 @@ echo '</pre>';*/
 
   </div>
 
-  
+
 <div id="selector-preferencias">
   <!--Inicio selección temas-->
   <div class="row">

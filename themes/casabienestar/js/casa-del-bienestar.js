@@ -8,7 +8,7 @@ jQuery(document).on('click','.tipoc',function(){
 
 	/*Selecciona y selecciona las preferencias padre*/
 	
-		console.log(chequea);
+		/*console.log(chequea);*/
 		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);
 		if(jQuery(chequear).prop('checked')==true){
 			jQuery('.show-'+Tcontenido).addClass('hidden');
@@ -21,7 +21,7 @@ jQuery(document).on('click','.tipoc',function(){
 
 		if(jQuery('.show-'+Tcontenido).hasClass('hidden')){
 			jQuery( '.show-'+Tcontenido + ' input' ).prop("checked", false);
-			console.log("me quite ");
+			//console.log("me quite ");
 			$("div").find('input:checkbox').each(function() {
    			 $(this).prop("checked", false);
    			 $(".boton-brand").removeClass("active");
@@ -36,7 +36,7 @@ $(document).on("click", ".boton-brand", function () {
 		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);		
 		//Dejar "chulo" activo sobre el elemento
 		$(this).addClass("active");
-		console.log(chequea);
+		//console.log(chequea);
 		//Check en la preferencia
 		$('#'+idCheck).prop('checked', true);
 		//Quitar clases para deseleccionar checkbox
@@ -55,6 +55,29 @@ $(document).on("click", ".boton-brand", function () {
 			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',true);
 		}
 
+});
+/*Se preseleccionan las preferencias en el perfil de usuario*/
+jQuery(document).ready(function(){
+	jQuery('.preferenciasO').find('input:checkbox').each(function(){
+		 var input = $(this).attr('id');
+    	 var parte = input.split('-');
+    	 if(jQuery('#'+input).prop("checked")==true){
+    	 	jQuery('.tipoc').removeClass('active');
+    	 	jQuery('div[data-iden="'+parte[5]+'"]').addClass('active');
+    	 	/*Activa las categorias*/
+    	 	if(jQuery(parte[5]=='1')){
+    	 		jQuery('.show-nutricion').removeClass('hidden');
+    	 	}
+    	 	if(jQuery(parte[5]=='2')){
+    	 		jQuery('.show-salud').removeClass('hidden');
+    	 	}
+    	 	if(jQuery(parte[5]=='3')){
+    	 		jQuery('.show-bienestar').removeClass('hidden');
+    	 	}
+    	 }
+
+		 
+	});
 });
 //Funcion que muestra X para quitar selección
 $(document).on("mouseover", ".boton-brand", function () {
@@ -662,7 +685,7 @@ var dominio= window.location.protocol+'//'+window.location.hostname;
 
 var baneoesto;
 
-$.getJSON( dominio+':8585/lalistabanea', function( data ) {
+$.getJSON( dominio+'/fbappCasaBienestar/lalistabanea', function( data ) {
   
   baneoesto = data;
 		

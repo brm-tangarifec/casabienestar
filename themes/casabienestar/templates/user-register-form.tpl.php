@@ -200,7 +200,7 @@ echo '</pre>';*/
 
 </div>
 <!--Preferencias-->
-  <div class="row">
+  <div class="row preferenciasO">
     <?php
         print render($form['field_contenido_preferencias']); 
      ?>
@@ -372,7 +372,8 @@ echo '</pre>';*/
 
     </div>
     <!--/- Selección bienestar-->
-  </div> </div>
+  </div>
+</div>
   </div>
   <!--/-Final selección pilares-->
 <div class="row">
