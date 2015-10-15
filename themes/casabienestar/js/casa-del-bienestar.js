@@ -271,8 +271,15 @@ $(document).ready(function(){
 	 	var nutricion = currentURL.slice(-1);
 	 	var lg = currentURL.slice(-9);
 	 	//console.log(currentURL);
-	var url = jQuery('.view-recetario-videos li:first .field-name-field-codigo-video').text();
-	jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div>Hola soy el html Js con COD: '+url+'</div>')
+	var url = jQuery('.view-recetario-videos li:first .cod_youtube .field-name-field-codigo-video').text();
+	jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div><iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+url+'?autoplay=1"frameborder="0"/></div>');
+
+	$('.content_video_biges').html('<iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+url+'?autoplay=1"frameborder="0"/>');
+
+	jQuery('.view-recetario-videos li').click(function(){
+		var cod = jQuery(".field-name-field-codigo-video",this).text();
+		jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div class="embed-responsive embed-responsive-16by9"><iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+cod+'?autoplay=1"frameborder="0" class="embed-responsive-item"></iframe></div>');
+	});
 
 	jQuery('.menu-534 > a').html("<img src='/fbappCasaBienestar/sites/all/themes/casabienestar/images/logo-nestle-blanco.svg' alt='NESTLÉ&amp;reg; A gusto con la vida' class='img-responsive'>");
 
