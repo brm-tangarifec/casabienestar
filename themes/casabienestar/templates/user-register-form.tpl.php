@@ -247,7 +247,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="balanceados" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1175">
+      <div data-box="balanceados" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1178">
         <input type="checkbox" name="familia" id="familia" value="familia"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-familia"></span>
         <div class="content">
           <h3 class="titulo-selector">Menús balanceados</h3>
@@ -256,7 +256,7 @@ echo '</pre>';*/
       </div>
 
         <!--Familia-->
-      <div data-box="alimentos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1175">
+      <div data-box="alimentos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1177">
         <input type="checkbox" name="familia" id="familia" value="familia"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-familia"></span>
         <div class="content">
           <h3 class="titulo-selector">Manipulación de alimentos</h3>
@@ -282,7 +282,7 @@ echo '</pre>';*/
       <div class="hidden show-salud">
 
         <!--Adultos mayores-->
-      <div data-box="Personal" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Personal" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand"  data-iden="1179">
         <input type="checkbox" name="adultos" id="adultos" value="adultos"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-adulto-mayor"></span>
         <div class="content">
           <h3 class="titulo-selector">Cuidado Personal</h3>
@@ -290,14 +290,14 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="Descanso" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Descanso" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1181">
         <input type="checkbox" name="ejercicio" id="ejercicio" value="ejercicio"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-ejercicio"></span>
         <div class="content">
           <h3 class="titulo-selector">Descanso</h3>
           <!-- <p>Lorem ipsum dolor sit amet, consecte tuer adipiscing elit.</p> -->
         </div>
       </div>
-      <div data-box="Ejercicio" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Ejercicio" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1180">
         <input type="checkbox" name="alergias" id="alergias" value="alergias"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-alergias"></span>
         <div class="content">
           <h3 class="titulo-selector">Ejercicio</h3>
@@ -305,7 +305,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="enfermedades" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="enfermedades" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1182">
         <input type="checkbox" name="alergias" id="alergias" value="alergias"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-alergias"></span>
         <div class="content">
           <h3 class="titulo-selector">Prevención de enfermedades</h3>
@@ -328,7 +328,7 @@ echo '</pre>';*/
 
      <div class="hidden show-bienestar">
 
-       <div data-box="belleza" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+       <div data-box="belleza" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1186">
         <input type="checkbox" name="belleza" id="belleza" value="belleza"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-belleza"></span>
         <div class="content">
           <h3 class="titulo-selector">Belleza</h3>
@@ -336,7 +336,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="Celebraciones" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Celebraciones" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1187">
         <input type="checkbox" name="ocio" id="ocio" value="ocio"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-ocio"></span>
         <div class="content">
           <h3 class="titulo-selector">Celebraciones</h3>
@@ -344,7 +344,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="Familia" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Familia" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1184">
         <input type="checkbox" name="deporte" id="deporte" value="deporte"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-deporte"></span>
         <div class="content">
           <h3 class="titulo-selector">Familia</h3>
@@ -352,7 +352,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="Hijos" data-iden='' class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Hijos" data-iden='' class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1183">
         <input type="checkbox" name="deporte" id="deporte" value="deporte"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-deporte"></span>
         <div class="content">
           <h3 class="titulo-selector">Hijos</h3>
@@ -360,7 +360,7 @@ echo '</pre>';*/
         </div>
       </div>
 
-      <div data-box="Vacaciones" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand">
+      <div data-box="Vacaciones" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 boton-brand" data-iden="1185"> 
         <input type="checkbox" name="deporte" id="deporte" value="deporte"><span class="icon icon-check check-active circle-check"></span><span class="icon icon-close check-active-two circle-uncheck"></span><span class="logo icon icon-deporte"></span>
         <div class="content">
           <h3 class="titulo-selector">Vacaciones</h3>

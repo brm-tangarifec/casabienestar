@@ -34,7 +34,12 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header">
+   <?php if (arg(0)=='recetario'): ?>
+    <div class="view-header row">
+      <?php else: ?>
+      <div class="view-header">
+    <?php endif; ?>
+
       <?php print $header; ?>
     </div>
   <?php endif; ?>

@@ -7,25 +7,36 @@ jQuery(document).on('click','.tipoc',function(){
 	
 
 	/*Selecciona y selecciona las preferencias padre*/
-	if(chequea==chequea){
+	
 		console.log(chequea);
 		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);
 		if(jQuery(chequear).prop('checked')==true){
 			jQuery('.show-'+Tcontenido).addClass('hidden');
 			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',false);
+						
 		}else{
 			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',true);
 			jQuery('.show-'+Tcontenido).removeClass('hidden');
 		}
-	}
+
+		if(jQuery('.show-'+Tcontenido).hasClass('hidden')){
+			jQuery( '.show-'+Tcontenido + ' input' ).prop("checked", false);
+			console.log("me quite ");
+			$("div").find('input:checkbox').each(function() {
+   			 $(this).prop("checked", false);
+   			 $(".boton-brand").removeClass("active");
+			});
+		}
+	
 });
 $(document).on("click", ".boton-brand", function () {
 		//Variable que almacena la opción que fue clickeada
 		var idCheck = $(this).attr('data-box');
-		
+		var chequea = jQuery(this).attr('data-iden');
+		var chequear=jQuery('#edit-field-contenido-preferencias-und-'+chequea);		
 		//Dejar "chulo" activo sobre el elemento
 		$(this).addClass("active");
-		
+		console.log(chequea);
 		//Check en la preferencia
 		$('#'+idCheck).prop('checked', true);
 		//Quitar clases para deseleccionar checkbox
@@ -38,6 +49,11 @@ $(document).on("click", ".boton-brand", function () {
 		}
 
 
+		if(jQuery(chequear).prop('checked')==true){
+			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',false);
+		}else{
+			jQuery('#edit-field-contenido-preferencias-und-'+chequea).prop('checked',true);
+		}
 
 });
 //Funcion que muestra X para quitar selección
@@ -272,7 +288,7 @@ $(document).ready(function(){
 	 	var lg = currentURL.slice(-9);
 	 	//console.log(currentURL);
 	var url = jQuery('.view-recetario-videos li:first .cod_youtube .field-name-field-codigo-video').text();
-	jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div><iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+url+'?autoplay=1"frameborder="0"/></div>');
+	jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div class="embed-responsive embed-responsive-16by9"><iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+url+'?autoplay=1"frameborder="0" class="embed-responsive-item"></iframe></div>');
 
 	$('.content_video_biges').html('<iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+url+'?autoplay=1"frameborder="0"/>');
 
