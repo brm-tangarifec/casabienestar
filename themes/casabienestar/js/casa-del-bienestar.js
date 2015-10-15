@@ -161,7 +161,7 @@ $(document).on("ready", function () {
 
 			/*Generación de los botones para compartir*/
 
-			jQuery(this).parent().prev().show("fade").html('<a href="javascript:;" title="Share this page on facebook" class="pop share-icon share-icon-facebook" data-share="fb" rel="nofollow"></a><a href="javascript:;" title="Share this page on googleplus" class="pop share-icon share-icon-googleplus" data-share="g+"></a><a href="javascript:;" title="Share this page on twitter" class="pop share-icon share-icon-twitter" data-share="tw"></a><a href="javascript:;" title="Share this on email" class="pop fa fa-paper-plane" data-share="mail"></a> ');
+			jQuery(this).parent().prev().show("fade").html('<a href="javascript:;" title="Share this page on facebook" class="pop share-icon share-icon-facebook" data-share="fb" rel="nofollow"></a><a href="javascript:;" title="Share this page on googleplus" class="pop share-icon share-icon-googleplus" data-share="g+"></a><a href="javascript:;" title="Share this page on twitter" class="pop share-icon share-icon-twitter" data-share="tw"></a><a href="javascript:;" title="Share this on email" class="pop share-icon share-icon-email" data-share="mail"></a> ');
 			
 			var urlShare= link + j;
     		oli=urlShare;
