@@ -1,45 +1,90 @@
 <?php
 function cbn_hour_momentos_block_info() {
-    $blocks = array();
-    $blocks['cbn_modules'] = array(
-       'info' => t("CBN Module: Ajustes varios web site CBN"),
-       'cache' => DRUPAL_CACHE_CUSTOM,
-        );
-    return $blocks;
+  $blocks = array();
+  $blocks['cbn_modules'] = array(
+    'info' => t("CBN Module: Ajustes varios web site CBN"),
+    'cache' => DRUPAL_CACHE_CUSTOM,
+  );
+  return $blocks;
 }
 
 function cbn_hour_momentos_views_post_execute(&$view) {
-$newResults = array();
+  $newResults = array();
+  $h = date("Hi");
+  if(($view->name == "recetario_1er_tiempo") && ($view->current_display == "block_1" || 
+                                                 $view->current_display == "block_2" || 
+                                                 $view->current_display == "block_3" || 
+                                                 $view->current_display == "block_4" || 
+                                                 $view->current_display == "block_5" || 
+                                                 $view->current_display == "block_6" || 
+                                                 $view->current_display == "block")){
 
-if($view->name == "recetario_1er_tiempo" && $view->current_display == "block_9"){
-  foreach ($view->result as $result) {
-    if($h >= 0501 && $h <= 0900){
-        var_dump("estamos en el Desayuno");
+    foreach ($view->result as $result) {
+      if($h >= 0501 && $h <= 0900){
+        //var_dump("estamos en el Desayuno");
         if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
-        foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-              if($value["tid"]=="1157"){
-                //var_dump($result->_field_data["nid"]["entity"]);
-                //var_dump("entro!!");
-                $newResults[]=$result;
-              }
+          foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
+            if($value["tid"]=="1157"){
+              $newResults[]=$result;
+            }
+          }
+        }
+      }elseif($h >= 0901 && $h <= 1100){
+        //var_dump("estamos en las Medias Nueves");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
+          foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
+            if($value["tid"]=="1159"){
+              $newResults[]=$result;
+            }
           }
         }
       }elseif($h >= 1101 && $h <= 1400){
-        var_dump("estamos en el Almuerzo");
-        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
+        //var_dump("estamos en el Almuerzo");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
           foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-                if($value["tid"]=="1160"){
-                  //var_dump($result->_field_data["nid"]["entity"]);
-                  //var_dump("entro!!");
-                  $newResults[]=$result;
-                }
+            if($value["tid"]=="1160"){
+              $newResults[]=$result;
             }
+          }
+        }
+      }elseif($h >= 1401 && $h <= 1800){
+        //var_dump("estamos en las Onces");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
+          foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
+            //var_dump($value["tid"]);
+            //var_dump("***********************");
+            if($value["tid"]=="1158"){
+              //var_dump($value["tid"]);
+              $newResults[]=$result;
+            }
+          }
+          //var_dump($newResults[0]);
+        }
+      }elseif($h >= 1801 || $h <= 0500){
+        var_dump("estamos en la Cena");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
+          foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
+            if($value["tid"]=="1161"){
+              $newResults[]=$result;
+            }
+          }
         }
       }
+    }
+    if(count($newResults)>0){
+      $aux = NULL;
+      $aux = $newResults;
+      $newResults = NULL;
+      $newResults[] = $aux[0];
+    }else{
+      foreach ($view->result as $result) {
+        $newResults[]=$result;
+      }
+      $aux = NULL;
+      $aux = $newResults;
+      $newResults = NULL;
+      $newResults[] = $aux[0];  
+    }
+    $view->result = $newResults;
   }
-}
-
-
-
-$view->result = $newResults;
 }
