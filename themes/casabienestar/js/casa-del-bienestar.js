@@ -272,7 +272,7 @@ $(document).ready(function(){
 	 	var lg = currentURL.slice(-9);
 	 	//console.log(currentURL);
 	var url = jQuery('.view-recetario-videos li:first .field-name-field-codigo-video').text();
-	jQuery('.view-recetario-videos li:first .field-name-field-codigo-video').html('<div>Hola soy el html Js con COD: '+url+'</div>')
+	jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div>Hola soy el html Js con COD: '+url+'</div>')
 
 	jQuery('.menu-534 > a').html("<img src='/fbappCasaBienestar/sites/all/themes/casabienestar/images/logo-nestle-blanco.svg' alt='NESTLÉ&amp;reg; A gusto con la vida' class='img-responsive'>");
 
