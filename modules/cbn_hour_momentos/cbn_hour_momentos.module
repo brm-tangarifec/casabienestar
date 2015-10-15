@@ -10,19 +10,12 @@ function cbn_hour_momentos_block_info() {
 
 function cbn_hour_momentos_views_post_execute(&$view) {
 $newResults = array();
-if ($view->name == 'recetario' && $view->current_display == 'page') {
-    $h = date("Hi");
-    //print_r(date('Y-m-d H-m-s'));
-    
-    $h = (int)$h;
-    //var_dump($h);
-    
-    foreach ($view->result as &$result) {
-        if($h >= 501 && $h <= 900){
-       // var_dump("estamos en el Desayuno");
 
-          if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
-
+if($view->name == "recetario_1er_tiempo" && $view->current_display == "block_9"){
+  foreach ($view->result as $result) {
+    if($h >= 0501 && $h <= 0900){
+        var_dump("estamos en el Desayuno");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
         foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
               if($value["tid"]=="1157"){
                 //var_dump($result->_field_data["nid"]["entity"]);
@@ -31,62 +24,22 @@ if ($view->name == 'recetario' && $view->current_display == 'page') {
               }
           }
         }
-      }elseif($h >= 901 && $h <= 1100){
-        //var_dump("estamos en las Medias nueves");
-        //var_dump($result->_field_data["nid"]["entity"]->field_momentos);
-        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
-         // var_dump("existeeee");
-        foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-              if($value["tid"]=="1159"){
-                //var_dump($result->_field_data["nid"]["entity"]);
-                //var_dump("entro!!");
-                $newResults[]=$result;
-              }
-          }
-        }
       }elseif($h >= 1101 && $h <= 1400){
-        //var_dump("estamos en el Almuerzo");
-
-        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
-
-        foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-              if($value["tid"]=="1160"){
-                //var_dump($result->_field_data["nid"]["entity"]);
-                //var_dump("entro!!");
-                $newResults[]=$result;
-              }
-          }
-        }
-      }elseif($h >= 1401 && $h <= 1800){
-        //var_dump("sdfsdsaasd");
-        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
-
-        foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-              if($value["tid"]=="1158"){
-                //var_dump($result->_field_data["nid"]["entity"]);
-                //var_dump("entro!!");
-                $newResults[]=$result;
-              }
-          }
-        }
-      }elseif($h <= 500){
-        //var_dump("estamos en la Cena");
-
-        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"])){
-
-        foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
-              if($value["tid"]=="1161"){
-                //var_dump($result->_field_data["nid"]["entity"]);
-                //var_dump("entro!!");
-                $newResults[]=$result;
-              }
-          }
+        var_dump("estamos en el Almuerzo");
+        if(isset($result->_field_data["nid"]["entity"]->field_momentos["und"] )){
+          foreach ($result->_field_data["nid"]["entity"]->field_momentos["und"] as $key => $value) {
+                if($value["tid"]=="1160"){
+                  //var_dump($result->_field_data["nid"]["entity"]);
+                  //var_dump("entro!!");
+                  $newResults[]=$result;
+                }
+            }
         }
       }
-    }
+  }
 }
 
-if(count($newResults) > 1){
- $view->result = $newResults;
-}
+
+
+$view->result = $newResults;
 }
