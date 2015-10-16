@@ -1,0 +1,50 @@
+<?php
+function cbn_nodes_related_block_info() {
+  $blocks = array();
+  $blocks['cbn_module_nodes_related'] = array(
+    'info' => t("CBN Module: Block para contenidos relacionados"),
+    'cache' => DRUPAL_CACHE_CUSTOM,
+  );
+  return $blocks;
+}
+
+function cbn_nodes_related_block_view($delta = '') {
+    $block = array();
+    $variables = array();
+    switch ($delta) {
+	case 'cbn_module_nodes_related':
+        if (arg(0) == "node") {
+          $nos = node_load(arg(1));
+          $tax = $nos->field_tipo["und"][0]["tid"];
+          $variables["info_node"]= search_nodes_related($tax);
+          //var_dump($variables);
+        }
+        $block['content'] = theme('theme_nodes_related', $variables);
+    break;
+              }
+   return $block;
+}
+
+function cbn_nodes_related_theme(){
+    return array(
+    	'theme_nodes_related' => array(
+        'template' => 'theme/theme_nodes_related'
+      ),
+    );
+}
+
+
+function search_nodes_related($taxo){
+	$result = db_query("select entity_id from cbn_field_data_field_tipo WHERE field_tipo_tid = :fx limit 3;",
+	            array(':fx' => $taxo));
+	  while ($record = $result->fetchAssoc()){
+	    $arraynodos[] = $record;
+	  };
+
+	  foreach ($arraynodos as $key => $value) {
+	    $nodoso = node_load($value["nid"]);
+	    $nodos[] = $nodoso;
+	  }
+	  $nodos['tax'] = $arraynodos;
+	  return $nodos;
+}

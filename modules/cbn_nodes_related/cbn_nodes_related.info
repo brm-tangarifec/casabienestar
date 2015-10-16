@@ -1,0 +1,9 @@
+; $Id$
+
+name = CBN Module Nodos Relacionados
+description = Define contenidos relacionados por los nodos
+
+package = Modulo CBN
+version = VERSION
+core = 7.x
+files[] = cbn_nodes_related.module
