@@ -72,7 +72,7 @@
  *
  * @ingroup themeable
  */
-
+  
 $linksPerfil=toArray($tabs);
 
 
@@ -194,8 +194,16 @@ $linksPerfil=toArray($tabs);
 
  <?php print render($page['content']);  ?>
 
-
+<div class="tabs">
+              <?php print $tabs; ?>
+            </div>
+       
  <!--Acá finaliza el contenido-->
+
+<!--Links para el loggin-->
+          
+            
+          <!--Links para el loggin-->
 
      <!--Footer-->
       <footer>

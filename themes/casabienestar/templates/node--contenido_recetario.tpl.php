@@ -191,7 +191,7 @@
       </div>
     </div> -->
     <!--/-Calificación y compartir-->
-    
+
     
   </section>
   <script type="text/javascript">
@@ -213,6 +213,8 @@
   });
 </script>
 <?php
+
+
 
 ///Este es el contenido que no se ha puesto
 // <!--Comentarios-->
