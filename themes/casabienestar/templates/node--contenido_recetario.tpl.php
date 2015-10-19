@@ -167,9 +167,10 @@ hide($content['comment_form']);
         
         <?php print render($content['body']);?>
       </article>
-        <?php print render($content['field_valoracion']);?>
+      </div>
         <?php print render($content['comments']); ?>
-        <?php print render($content["links"]);?></div>
+        <?php print render($content["links"]);?>
+        <?php print render($content['field_valoracion']);?>
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
