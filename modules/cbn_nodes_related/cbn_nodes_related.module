@@ -42,8 +42,10 @@ function search_nodes_related($taxo){
 	  };
 
 	  foreach ($arraynodos as $key => $value) {
-	    $nodoso = node_load($value["nid"]);
-	    $nodos[] = $nodoso;
+      if(isset($value["nid"])){
+	      $nodoso = node_load($value["nid"]);
+	      $nodos[] = $nodoso;
+      }
 	  }
 	  $nodos['tax'] = $arraynodos;
 	  return $nodos;
