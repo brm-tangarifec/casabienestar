@@ -166,7 +166,9 @@
         
         <?php print render($content['body']);?>
       </article>
-      
+        <?php print render($content['field_valoracion']);?>
+        <?php print render($content['comments']); ?>
+        <?php print render($content["links"]);?></div>
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
@@ -198,7 +200,6 @@
   jQuery(document).ready(function($) {
      
     jQuery('.fa-share-alt').attr('id','compartirN');
-    jQuery('.box-comentarios').hide();
     jQuery('.field-name-field-receta-porciones').hide();
 
 
