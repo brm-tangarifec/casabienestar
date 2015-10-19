@@ -216,6 +216,6 @@
       $.material.init();
     });
   </script>
-  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="<?php print base_path() . path_to_theme(); ?>/js/platform.js"></script>
   <!-- /#page, /#page-wrapper -->
  <!--Fin Footer-->

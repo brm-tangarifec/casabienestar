@@ -114,13 +114,13 @@
          <p class="helpers-registro">
          <?php if($logged_in):?>
           
-           <a href="/user/">Ver Perfil</a> /  <a href="/user/logout" class="text-danger">Cerrar sesión</a>
+           <a href="/consumidor_nestle_com_co/user/">Ver Perfil</a> /  <a href="/consumidor_nestle_com_co/user/logout" class="text-danger">Cerrar sesión</a>
   
       
         <?php else: ?>
 
  
-            <a href="/user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
+            <a href="/consumidor_nestle_com_co/user/register">Registrarse</a> /  <a href="#" class="btn-login"> Iniciar sesión</a>
 
           </p>
 
@@ -212,6 +212,6 @@
       $.material.init();
     });
   </script>
-  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="<?php print base_path() . path_to_theme(); ?>/js/platform.js"></script>
   <!-- /#page, /#page-wrapper -->
  <!--Fin Footer-->
