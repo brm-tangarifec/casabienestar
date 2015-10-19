@@ -221,14 +221,7 @@ $descripcion=$contenido['body']['#object']['field_descripcionarticulo']['und'][0
         <div class="row box-comentarios">
           <div class="col-lg-12">
             <h3>Comentarios</h3>
-            <form id="comentarios" action="">
-              <div class="form-group">
-                <textarea id="espacio-comentario" name="espacio-comentario" placeholder="Déjanos tus comentarios" class="form-control"></textarea>
-              </div>
-              <div class="form-group u-text-right">
-                <button id="comentar" type="button" class="btn btn-primary">Publicar</button>
-              </div>
-            </form>
+            <?php print render($comment) ?>
           </div>
         </div>
       </article>
@@ -336,7 +329,7 @@ col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-7 col-md-offset-7 col-sm-offs
     jQuery('.field-name-field-imginternaarticulo > img').removeAttr('height');
     jQuery('.link-wrapper').hide();
     jQuery('.fa-share-alt').attr('id','compartirN');
-    jQuery('.box-comentarios').hide();
+   
 
 
     /*jQuery('.share-others').click(function(){

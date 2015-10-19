@@ -238,6 +238,12 @@ function casabienestar_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
   }
+
+ /* $comment = new stdClass;
+  $comment->nid = $row->nid;
+  $formComent = drupal_get_form('comment_form', $comment);
+  //print_r($formComent);
+  $variables['hoola'] = $formComent;*/
 }
 
 

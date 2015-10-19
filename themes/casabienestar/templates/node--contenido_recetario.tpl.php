@@ -79,7 +79,8 @@
  */
 
 
-
+hide($content['comments']);
+hide($content['comment_form']);
 
 
 ?>
@@ -181,16 +182,21 @@
           </div>
         </div>
         <!--/-Barra para compartir-->
-    <!-- <div class="row compartir">
+    <!-- <div class="row compartir"-->
       
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-md-push-8 col-sm-push-8 article-action">
-        <button class="btn btn-default share share-print"><span class="fa fa-print"></span></button>
-        <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
-        <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
-        <button class="btn btn-default share share-others"><span class="fa fa-share-alt"></span></button>
-      </div>
-    </div> -->
-    <!--/-Calificación y compartir-->
+      <!--/-Barra para compartir-->
+        <div class="row box-comentarios">
+          <div class="col-lg-12">
+            <h3>Comentarios</h3>
+            <?php print render($content['comment_form']); ?>
+            <?php print render($content['comments']); ?>
+               <?php print render($comment); ?>
+               <?php print render($comments); ?>
+
+             
+          </div>
+        </div><!--/-Barra para compartir-->
+        
 
     
   </section>
@@ -198,7 +204,6 @@
   jQuery(document).ready(function($) {
      
     jQuery('.fa-share-alt').attr('id','compartirN');
-    jQuery('.box-comentarios').hide();
     jQuery('.field-name-field-receta-porciones').hide();
 
 
