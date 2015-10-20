@@ -144,7 +144,7 @@ $(document).on("ready", function () {
 
 
 
-		//var link = "http://fbapp.brm.com.co";
+		//var link = "https://fbapp.brm.com.co";
 
 		var link = dominio;
 		
@@ -177,13 +177,12 @@ $(document).on("ready", function () {
 
 
 
-						gmail= 'http://mail.google.com/mail/?view=cm&fs=1'+
+						gmail= 'https://mail.google.com/mail/?view=cm&fs=1'+
                			 '&to=' + recipient +
                			 '&su=' + subject +
                 			'&body=' + message + 
                 			'&ui=1';
-					}
-				//Share();
+					};
 
 			jQuery(".pop").click(function () {
 
@@ -212,7 +211,7 @@ $(document).on("ready", function () {
 					count=0;
 				}else if(data=='mail'){
 					sendGmail();
-					window.open(gmail,'toolbar=0,resizable=1,status=0,width=640,height=528')
+					window.open(gmail,'toolbar=0,resizable=1,status=0,width=640,height=528');
 					
 				}
 			});
@@ -320,7 +319,7 @@ $(document).ready(function(){
 		jQuery('.view-recetario-videos .view-header #repro_youtube').html('<div class="embed-responsive embed-responsive-16by9"><iframe id="ytplayer" type="text/html" width="500" height="390"src=//www.youtube.com/embed/'+cod+'?autoplay=1"frameborder="0" class="embed-responsive-item"></iframe></div>');
 	});
 
-	jQuery('.menu-534 > a').html("<img src='/fbappCasaBienestar/sites/all/themes/casabienestar/images/logo-nestle-blanco.svg' alt='NESTLÉ&amp;reg; A gusto con la vida' class='img-responsive'>");
+	jQuery('.menu-534 > a').html("<img src='/consumidor_nestle_com_co/sites/all/themes/casabienestar/images/logo-nestle-blanco.svg' alt='NESTLÉ&amp;reg; A gusto con la vida' class='img-responsive'>");
 
 	$(".st_email_custom").addClass("fa fa-paper-plane");
 	$(".st_sharethis_custom").addClass("fa fa-share-alt");
@@ -329,7 +328,7 @@ $(document).ready(function(){
 	//$(".sharethis-wrapper").wrap( "<div class='row' >");
 	$(".article-action").wrap( "<div class='shareThis' >");
 	$(".article-action").html( '</span><span class="fa fa-share-alt" displayText="sharethis"></span>');
-	jQuery('.shareThis').prepend('<div class="botones-redes-wrapper" style="display:none"></div>')
+	jQuery('.shareThis').prepend('<div class="botones-redes-wrapper" style="display:none"></div>');
 
 
 	//Se agrega clase responsive a las imagenes de cada box de contenido
@@ -468,240 +467,202 @@ function Share(url) {
 
 jQuery(document).ready(function(){
 
-jQuery('form').each(function(){
-    jQuery(this).validate({
+	jQuery('form').each(function(){
+	    jQuery(this).validate({
 
-    	errorClass: "text-danger",
-	errorPlacement: function(error, element) {
-    	error.insertAfter(element);
-    	element.focus();
-		},
-			rules: {
-				name: {
-					required: true,
-				},
-
-				pass: {
-					required: true,
-				},
-				mail : {
-					required: true,
-					email: true
-				}
-
+	    	errorClass: "text-danger",
+		errorPlacement: function(error, element) {
+	    	error.insertAfter(element);
+	    	element.focus();
 			},
-			messages: {
-				name: {
-					required: 'El campo no debe estar vacío',
+				rules: {
+					name: {
+						required: true,
+					},
+
+					pass: {
+						required: true,
+					},
+					mail : {
+						required: true,
+						email: true
+					}
+
 				},
-				pass: {
-					required: 'El campo no debe estar vacío',
-				},
-				mail : {
-					required: 'El campo no debe estar vacío',
-					email: 'Ingrese un formato de e-mail válido'
-					
+				messages: {
+					name: {
+						required: 'El campo no debe estar vacío',
+					},
+					pass: {
+						required: 'El campo no debe estar vacío',
+					},
+					mail : {
+						required: 'El campo no debe estar vacío',
+						email: 'Ingrese un formato de e-mail válido'
+						
+					}
 				}
-			}
 
-    });
+	    });
 
-   
-});
+	   
+	});
 
- jQuery("#edit-keys-6").rules("add", {
-         required:true,
-         messages: {
-                required: "Ingrese un valor para su búsqueda"
-         }
- });
-
-
-var currentURL = window.location.href;
-	 	var hs = currentURL.slice(-8);
-	 	console.log(hs);
-if(hs=='register'){
-
-/*se agrega un metodo de validacion llamdo string; se encarga de
-	* validar que las cadenas de caracteres ingresadas no contengan
-	* caracteres especiales.
-	*/
-	jQuery.validator.addMethod("string", function(value, element)
-    {
-        return this.optional(element) || /^[a-z" "ñÑáéíóúÁÉÍÓÚ,.;]+$/i.test(value);
-    });
- jQuery("#edit-field-nombres-und-0-value").rules("add", {
-         required:true,
-         string: true,
-         messages: {
-                required: "El campo no debe estar vacio",
-                string: "El nombre no debe contener caracteres numéricos o especiales",
-         }
- });
- jQuery("#edit-field-apellidos-und-0-value").rules("add", {
-         required:true,
-         string: true,
-         messages: {
-                required: "El campo no debe estar vacio",
-                string: "El nombre no debe contener caracteres numéricos o especiales",
-         }
- });
-
-}
- 
+	 jQuery("#edit-keys-6").rules("add", {
+	         required:true,
+	         messages: {
+	                required: "Ingrese un valor para su búsqueda"
+	         }
+	 });
 
 
+	var currentURL = window.location.href;
+		 	var hs = currentURL.slice(-8);
+		 	console.log(hs);
+	if(hs=='register'){
 
-/*Clases para filtros*/
-$("#edit-reset").addClass('btn btn-primary');
+	/*se agrega un metodo de validacion llamdo string; se encarga de
+		* validar que las cadenas de caracteres ingresadas no contengan
+		* caracteres especiales.
+		*/
+		jQuery.validator.addMethod("string", function(value, element)
+	    {
+	        return this.optional(element) || /^[a-z" "ñÑáéíóúÁÉÍÓÚ,.;]+$/i.test(value);
+	    });
+	 jQuery("#edit-field-nombres-und-0-value").rules("add", {
+	         required:true,
+	         string: true,
+	         messages: {
+	                required: "El campo no debe estar vacio",
+	                string: "El nombre no debe contener caracteres numéricos o especiales",
+	         }
+	 });
+	 jQuery("#edit-field-apellidos-und-0-value").rules("add", {
+	         required:true,
+	         string: true,
+	         messages: {
+	                required: "El campo no debe estar vacio",
+	                string: "El nombre no debe contener caracteres numéricos o especiales",
+	         }
+	 });
 
-/*CAmbios en el filtro*/
-$(".form-select").change(function () {
+	}
+	 
+
+
 
 	
 
-	window.setTimeout(function () {
-		$(".view-recetario-1er-tiempo").addClass('hidden');
-		$(".view-id-recetario .view-content").addClass('show');
-		$("#edit-reset").addClass('btn btn-primary');
-	console.log("oli");
-	},10000);
-});
-
-/*var textOption = jQuery("#edit-field-momentos-tid option:first").text();
-var textTitu = jQuery("#edit-field-momentos-tid-wrapper label:first").text();
-if(textOption == "- Any -"){
-	jQuery("#edit-field-momentos-tid option:first").text(textTitu);
-}
-var textOption1 = jQuery("#edit-field-tipo-tid option:first").text();
-var textTitu1 = jQuery("#edit-field-tipo-tid-wrapper label:first").text();
-if(textOption1 == "- Any -"){
-	jQuery("#edit-field-tipo-tid option:first").text(textTitu1);
-}
-var textOption2 = jQuery("#edit-field-marcas-tid option:first").text();
-var textTitu2 = jQuery("#edit-field-marcas-tid-wrapper label:first").text();
-console.log(textTitu2);
-if(textOption2 == "- Any -"){
-	jQuery("#edit-field-marcas-tid option:first").text(textTitu2);
-}
-
-var textOption2 = jQuery("#edit-field-tiempo-rango-tid option:first").text();
-var textTitu2 = jQuery("#edit-field-tiempo-rango-tid-wrapper label:first").text();
-console.log(textTitu2);
-if(textOption2 == "- Any -"){
-	jQuery("#edit-field-tiempo-rango-tid option:first").text(textTitu2);
-}*/
-
-/*jQuery(".view-id-recetario view-content").css('display','none');
-jQuery(".form-item-field-momentos-tid select").delegate( "option", "change", function() {
-  jQuery(".view-id-recetario view-content").css('display','block');
-  jQuery(".view-recetario-1er-tiempo").css('display','none');
-  
-});*/
-
-
-/*Contador redes sociales*/
-var graph = window.location.href;
-var conteoFB;
-var conteoTW;
-var contGeneral;
-		
-		/*Contador Facebook*/
-      var urlFB='http://graph.facebook.com/';
-      $.ajax({
-        url: urlFB,
-        dataType: 'json',
-        data: 'id='+graph,
-        success: function (data) {
-        	
-        	countFB=data.shares;
-
-        	if(countFB!=0){
-        		jQuery('.contFb').html(countFB);
-
-
-        	}else{
-        		jQuery('.contFb').html('0');
-        	}
-        	
-
-        }
-
-          
-      });
-
-
-
-      /*Contador Twitter*/
-      var urlTw='http://cdn.api.twitter.com/1/urls/count.json';
-      jQuery.ajax({
-
-      	 url: urlTw,
-        dataType: 'jsonp',
-        data: 'url='+graph,
-        success: function (data) {
-        	
-        	countTW=data.count;
-
-        	if(countTW!=0){
-        		jQuery('.contTw').html(countTW);
-
-        	}else{
-        		jQuery('.contTw').html('0');
-        	}
-        	
-
-        }
-
-      });
-
-
-/*Boton imprimir receta*/
-$(".fa-print").on("click", function () {
-	window.print();
-});
-
-
-
-/*Funcion para obtener las palabras bloqueadas en la contraseña*/
-var dominio= window.location.protocol+'//'+window.location.hostname;
-
-		/*var urlBn=dominio;
-      	jQuery.ajax({
-
-      	url: urlBn,
-        dataType: 'jsonp',
-        data: dominio+'/lalistabanea',
-        success: function (data) {
-        	console.log(data);
-        	
-
-        }
-
-      });*/
-
-
-
-
-var baneoesto;
-
-$.getJSON( dominio+'/fbappCasaBienestar/lalistabanea', function( data ) {
-  
-  baneoesto = data;
-		
-}); 
-	jQuery('.password-field').on('blur',function(){
-		
-		var pass=jQuery('input[name="pass[pass1]"]').val();
-		
-		if(jQuery.inArray(pass,baneoesto) !== -1) {
+	/*Contador redes sociales*/
+	var graph = window.location.href;
+	var conteoFB;
+	var conteoTW;
+	var contGeneral;
 			
-		   	jQuery('input[name="pass[pass1]"]').val('');
-		    jQuery('.form-type-password').append('<label class="error">La contraseña no es válida</label>');
+			/*Contador Facebook*/
+	      var urlFB='https://graph.facebook.com/';
+	      $.ajax({
+	        url: urlFB,
+	        dataType: 'json',
+	        data: 'id='+graph,
+	        success: function (data) {
+	        	
+	        	countFB=data.shares;
 
-		}
+	        	if(countFB!=0){
+	        		jQuery('.contFb').html(countFB);
 
+
+	        	}else{
+	        		jQuery('.contFb').html('0');
+	        	}
+	        	
+
+	        }
+
+	          
+	      });
+
+
+
+	      /*Contador Twitter*/
+	      var urlTw='https://cdn.api.twitter.com/1/urls/count.json';
+	      jQuery.ajax({
+
+	      	 url: urlTw,
+	        dataType: 'jsonp',
+	        data: 'url='+graph,
+	        success: function (data) {
+	        	
+	        	countTW=data.count;
+
+	        	if(countTW!=0){
+	        		jQuery('.contTw').html(countTW);
+
+	        	}else{
+	        		jQuery('.contTw').html('0');
+	        	}
+	        	
+
+	        }
+
+	      });
+
+
+	/*Boton imprimir receta*/
+	$(".fa-print").on("click", function () {
+		window.print();
+	});
+
+
+
+	/*Funcion para obtener las palabras bloqueadas en la contraseña*/
+	var dominio= window.location.protocol+'//'+window.location.hostname;
+
+	var baneoesto;
+
+	$.getJSON( dominio+'/consumidor_nestle_com_co/lalistabanea', function( data ) {
+	  
+	  baneoesto = data;
+			
 	}); 
+		jQuery('.password-field').on('blur',function(){
+			
+			var pass=jQuery('input[name="pass[pass1]"]').val();
+			
+			if(jQuery.inArray(pass,baneoesto) !== -1) {
+				
+			   	jQuery('input[name="pass[pass1]"]').val('');
+			    jQuery('.form-type-password').append('<label class="error">La contraseña no es válida</label>');
+
+			}
+
+		});
+
+
+
+	/*Clases para filtros*/
+	$("#edit-reset").addClass('btn btn-primary');
+
+	/*CAmbios en el filtro*/
+	/*$(".form-select").change(function () {
+
+		$("#block-views-recetario-1er-tiempo-block-9").append('<div class="loader"><img src="'+dominio+'/fbappCasaBienestar/sites/all/themes/casabienestar/images/icono-recetario.svg" width="42" class="img-responsive"><p>Estamos preparando las recetas</p></div>');
+			$(".view-recetario-1er-tiempo").addClass('hidden');
+
+			 $("option", this).addClass("hidden");
+
+		window.setTimeout(function () {
+			$(".view-id-recetario .view-content").addClass('show');
+			$("#edit-reset").addClass('btn btn-primary');
+			 $("option", this).removeClass("hidden");
+
+			$(".loader").remove();
+		console.log("oli");
+		},10000);
+	});*/
+
+
 
 });
 
@@ -719,4 +680,93 @@ jQuery(document).ajaxComplete(function( event,request, settings ) {
 		}, 500);
            
       
+});
+
+
+
+/*Click en cada div*/
+
+
+$(document).on("click", "#edit-field-momentos-tid-wrapper", function () {
+	function open(elem) {
+	    if (document.createEvent) {
+	        var e = document.createEvent("MouseEvents");
+	        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+	        elem[0].dispatchEvent(e);
+	    } else if (element.fireEvent) {
+	        elem[0].fireEvent("onmousedown");
+	    }
+	};
+
+	 open($('#edit-field-momentos-tid'));
+});
+
+$(document).on("click", "#edit-field-tipo-tid-wrapper", function () {
+	function open(elem) {
+    if (document.createEvent) {
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        elem[0].dispatchEvent(e);
+    } else if (element.fireEvent) {
+        elem[0].fireEvent("onmousedown");
+    }
+};
+
+	 open($('#edit-field-tipo-tid'));
+});
+
+$(document).on("click", "#edit-field-tiempo-rango-tid-wrapper", function () {
+	function open(elem) {
+    if (document.createEvent) {
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        elem[0].dispatchEvent(e);
+    } else if (element.fireEvent) {
+        elem[0].fireEvent("onmousedown");
+    }
+};
+
+	 open($('#edit-field-tiempo-rango-tid'));
+});
+
+$(document).on("click", "#edit-field-marcas-tid-wrapper", function () {
+	function open(elem) {
+    if (document.createEvent) {
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        elem[0].dispatchEvent(e);
+    } else if (element.fireEvent) {
+        elem[0].fireEvent("onmousedown");
+    }
+};
+
+	 open($('#edit-field-marcas-tid'));
+});
+
+/*Funcion para simular click de los selects en los filtros del recetario*/
+
+
+
+
+
+/*Funcion para mostrar el cargador y los divs correspondientes a las recetas*/
+
+$(document).on("change", ".form-select", function () {
+
+	var dominio= window.location.protocol+'//'+window.location.hostname;
+
+	$("#block-views-recetario-1er-tiempo-block-9").append('<div class="loader"><img src="'+dominio+'/consumidor_nestle_com_co/sites/all/themes/casabienestar/images/icono-recetario.svg" width="42" class="img-responsive"><p>Estamos preparando las recetas</p></div>');
+		$(".view-recetario-1er-tiempo").addClass('hidden');
+
+		 $("option", this).addClass("hidden");
+
+	window.setTimeout(function () {
+		$(".view-id-recetario .view-content").addClass('show');
+		$("#edit-reset").addClass('btn btn-primary');
+		 $("option", this).removeClass("hidden");
+
+		$(".loader").remove();
+	console.log("oli");
+	},10000);
+	
 });

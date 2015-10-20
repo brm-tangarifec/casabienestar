@@ -198,6 +198,6 @@
       $.material.init();
     });
   </script>
-  <script src="<?php print base_path() . path_to_theme(); ?>/js/platform.js"></script>
-  <!-- /#page, /#page-wrapper -->
+  <script type="text/javascript" src="<?php print base_path() . path_to_theme(); ?>/js/platform.js"></script>
+  /#page, /#page-wrapper -->
  <!--Fin Footer-->

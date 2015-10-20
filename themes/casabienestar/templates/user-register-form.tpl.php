@@ -200,7 +200,7 @@ echo '</pre>';*/
 
 </div>
 <!--Preferencias-->
-  <div class="row">
+  <div class="row preferenciasO">
     <?php
         print render($form['field_contenido_preferencias']); 
      ?>
