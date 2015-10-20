@@ -79,12 +79,17 @@
  */
 
 
+
 hide($content['comments']);
 hide($content['comment_form']);
 
 
-?>
 
+?>
+<?php
+  if(arg(0)=="user"){ ?> 
+     <h1 class="titulo-articulo"><?php print render($title)?></h1>
+  <?php }else{ ?>
 
   <div class="container-fluid u-no-border article-head article-receta">
     <!--Titulo del artículo-->
@@ -166,11 +171,13 @@ hide($content['comment_form']);
         <p class="text-info">Los tiempos de preparación pueden variar de acuerdo a la cantidad de porciones que selecciones </p>
         
         <?php print render($content['body']);?>
+
       </article>
-      </div>
-        <?php print render($content['comments']); ?>
-        <?php print render($content["links"]);?>
-        <?php print render($content['field_valoracion']);?>
+      <div>
+          <?php print render($content["links"]);?>
+          <?php print render($content['field_valoracion']);?>
+          <?php //var_dump($content["links"]); ?>
+          </div>
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
@@ -184,6 +191,15 @@ hide($content['comment_form']);
             <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
           </div>
         </div>
+
+      <div class="row">
+
+        <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+          <?php print render($content['comments']); ?>
+
+        </article>
+
+      </div>
         <!--/-Barra para compartir-->
     <!-- <div class="row compartir"-->
       
@@ -220,6 +236,7 @@ hide($content['comment_form']);
     });*/
   });
 </script>
+<?php } ?>
 <?php
 
 
