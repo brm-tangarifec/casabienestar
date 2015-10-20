@@ -35,7 +35,7 @@ function cbn_nodes_related_theme(){
 
 
 function search_nodes_related($taxo){
-	$result = db_query("select entity_id from cbn_field_data_field_tipo WHERE field_tipo_tid = :fx limit 3;",
+	$result = db_query("select cbn_node.status, cbn_field_data_field_tipo.entity_id from cbn_field_data_field_tipo INNER JOIN cbn_node ON cbn_field_data_field_tipo.entity_id = cbn_node.nid WHERE field_tipo_tid = :fx AND cbn_node.status = 1 limit 3",
 	            array(':fx' => $taxo));
 	  while ($record = $result->fetchAssoc()){
 	    $arraynodos[] = $record;
