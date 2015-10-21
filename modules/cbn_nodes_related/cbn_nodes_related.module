@@ -64,9 +64,12 @@ function cbn_nodes_related_form_comment_form_alter(&$form, &$form_state, $form_i
   switch($form_id) { 
     case 'comment_node_contenido_recetario_form':
       global $user;
+      $usu = user_load($user->uid);
       if ( $user->uid ) {
-        $form['author']['name']['#default_value']= $user->name;
+        $nom = $usu->field_nombres["und"][0]["value"]." ".$usu->field_apellidos["und"][0]["value"]." Usuario: ".$user->name;
+        var_dump($nom);
+        $form['author']['name']['#default_value'] = $nom;
       } 
     break; 
   } 
-} 
+}  
