@@ -250,6 +250,7 @@ function casabienestar_preprocess_node(&$variables) {
 function casabienestar_preprocess_page(&$vars, $hook) {
   drupal_add_js(path_to_theme() . '/js/jquery.bxslider.js',  array( 'scope' => 'header', 'weight' => -20 , 'group' => JS_LIBRARY, 'preprocess' => FALSE));
   $header = drupal_get_http_header('status'); 
+
   if ($header == '404 Not Found') { 
     $vars['theme_hook_suggestions'][] = 'page__404'; 
   } 
@@ -257,6 +258,10 @@ function casabienestar_preprocess_page(&$vars, $hook) {
     // If the content type's machine name is "my_machine_name" the file
     // name will be "page--my-machine-name.tpl.php".
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+
+  if(arg(0)=="node" && arg(1)=="1177"){
+     $vars['theme_hook_suggestions'][] = 'page__webform';
   }
 
   /*Muesta los templates disponibles*/

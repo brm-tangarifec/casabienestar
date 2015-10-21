@@ -78,24 +78,16 @@
  * @see template_process()
  */
 
-
-
-hide($content['comments']);
-hide($content['comment_form']);
-
-
+/*print_r(array_keys($content));*/
 
 ?>
-<?php
-  if(arg(0)=="user"){ ?> 
-     <h1 class="titulo-articulo"><?php print render($title)?></h1>
-  <?php }else{ ?>
+
 
   <div class="container-fluid u-no-border article-head article-receta">
     <!--Titulo del artículo-->
     <div class="row max-width titular titular-receta">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <div class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_tiempo_eeal_'])?></div>
+        <div class="tiempo"><span class="mdi-device-access-alarm "></span> <?php print render($content['field_receta_tiempo'])?></div>
         <h1 class="titulo-articulo"><?php print render($title)?></h1>
       </div>
       <!--Calorías-->
@@ -115,25 +107,24 @@ hide($content['comment_form']);
     </div>
   </div>
   <section class="container-fluid article-body">
-    <!--Contenido artículo-->
-      <!--Compartir y ranking-->
-    <div class="box-compartir box-compartir-receta row">
+    <!--Compartir y ranking-->
+    <!-- <div class="box-compartir box-compartir-receta row">
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h5>Compartido</h5>
-        <p class="contador-general">0</p>
+        <p class="contador-general">9999</p>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div class="contador-social twitter"><i class="fa fa-twitter"></i>
-          <p class="contador-num contTw">0</p>
+          <p class="contador-num">9999</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div class="contador-social facebook"><i class="fa fa-facebook"></i>
-          <p class="contador-num contFb" data-layout="box_count">0</p>
+          <p class="contador-num">9999</p>
         </div>
       </div>
-      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div> -->
-    </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star"></i><i class="ranking fa fa-star-half-o"></i><i class="ranking fa fa-star-o"></i></div>
+    </div> -->
     <!--/-Compartir y ranking-->
     <!--Momentos y Marcas-->
     <div class="row filtros">
@@ -141,14 +132,14 @@ hide($content['comment_form']);
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <h3>Ideal para</h3>
         <div class="momentos">
-          <?php print render($content['field_momentos'])?>
+          <?php print render($content['field_receta_momentos'])?>
         </div>
       </div>
       <!--/-Momentos-->
       <!--Marcas-->
       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
         <h3>prepara esta receta con</h3>
-        <?php print render($content['field_marcas'])?>
+        <?php print render($content['field_receta_marca'])?>
       </div>
       <!--/-Marcas-->
     </div>
@@ -168,55 +159,40 @@ hide($content['comment_form']);
       <!--Preparación-->
       <article class="preparacion col-lg-7 col-md-7 col-sm-7 col-xs-12">
         <h3>Preparación</h3>
-        <p class="text-info">Los tiempos de preparación pueden variar de acuerdo a la cantidad de porciones que selecciones </p>
         
-        <?php print render($content['body']);?>
-
+        <?php print render($content);?>
       </article>
-      <div>
-          <?php print render($content["links"]);?>
-          <?php print render($content['field_valoracion']);?>
-          <?php //var_dump($content["links"]); ?>
-          </div>
       <!--/-Preparación-->
     </div>
     <!--Calificación y compartir-->
     <!--Barra para compartir-->
         <div class="row compartir">
-          <span class="fa fa-print"></span>
-         <!--  <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div> -->
+          <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">             </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 article-action">
             <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
             <!-- <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button> -->
             <button class="btn btn-default share share-others"><span class="fa fa-share-alt">       </span></button>
           </div>
         </div>
-
-      <div class="row">
-
-        <article class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-          <?php print render($content['comments']); ?>
-
-        </article>
-
-      </div>
         <!--/-Barra para compartir-->
-    <!-- <div class="row compartir"-->
+    <!-- <div class="row compartir">
       
-      <!--/-Barra para compartir
-        <div class="row box-comentarios">
-          <div class="col-lg-12">
-            <h3>Comentarios</h3>             
-          </div>
-        </div>-->
-        
-
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-8 col-md-offset-8 col-sm-offset-8 col-md-push-8 col-sm-push-8 article-action">
+        <button class="btn btn-default share share-print"><span class="fa fa-print"></span></button>
+        <button class="btn btn-default share share-mail"><span class="fa fa-paper-plane"></span></button>
+        <button class="btn btn-default share share-favorito"><span class="glyphicon glyphicon-heart-empty"></span></button>
+        <button class="btn btn-default share share-others"><span class="fa fa-share-alt"></span></button>
+      </div>
+    </div> -->
+    <!--/-Calificación y compartir-->
+    
     
   </section>
   <script type="text/javascript">
   jQuery(document).ready(function($) {
      
     jQuery('.fa-share-alt').attr('id','compartirN');
+    jQuery('.box-comentarios').hide();
     jQuery('.field-name-field-receta-porciones').hide();
 
 
@@ -230,10 +206,7 @@ hide($content['comment_form']);
     });*/
   });
 </script>
-<?php } ?>
 <?php
-
-
 
 ///Este es el contenido que no se ha puesto
 // <!--Comentarios-->
