@@ -50,3 +50,23 @@ function search_nodes_related($taxo){
 	  $nodos['tax'] = $arraynodos;
 	  return $nodos;
 }
+
+
+function cbn_nodes_related_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == "comment_node_contenido_recetario_form"){
+    $form['#action'] = request_uri();
+    //var_dump($form);
+  }
+}
+
+
+function cbn_nodes_related_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  switch($form_id) { 
+    case 'comment_node_contenido_recetario_form':
+      global $user;
+      if ( $user->uid ) {
+        $form['author']['name']['#default_value']= $user->name;
+      } 
+    break; 
+  } 
+} 
