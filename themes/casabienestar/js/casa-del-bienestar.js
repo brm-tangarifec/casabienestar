@@ -645,6 +645,11 @@ jQuery(document).ready(function(){
 	$("#edit-reset").addClass('btn btn-primary');
 	$(".webform-submit").addClass('btn btn-warning');
 
+	
+
+	$(".webform-component--sadsadasdsa p").replaceWith('<label>'+ $( this ).text() +'</label>' );
+
+
 	/*CAmbios en el filtro*/
 	/*$(".form-select").change(function () {
 
