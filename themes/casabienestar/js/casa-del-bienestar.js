@@ -645,6 +645,7 @@ jQuery(document).ready(function(){
 
 	/*Clases para filtros*/
 	$("#edit-reset").addClass('btn btn-primary');
+	$(".webform-submit").addClass('btn btn-warning');
 
 	/*CAmbios en el filtro*/
 	/*$(".form-select").change(function () {
