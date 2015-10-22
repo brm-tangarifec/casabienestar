@@ -305,6 +305,8 @@ $(document).on("ready", function () {
 
 $(document).ready(function(){
 
+	$("form#webform-client-form-1177").addClass("col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4");
+
 	var currentURL = window.location.pathname;
 	 	var nutricion = currentURL.slice(-1);
 	 	var lg = currentURL.slice(-9);
