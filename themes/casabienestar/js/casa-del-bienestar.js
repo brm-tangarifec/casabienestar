@@ -649,7 +649,7 @@ jQuery(document).ready(function(){
 
 	
 
-	$(".webform-component--sadsadasdsa p").replaceWith('<label>'+ $( this ).text() +'</label>' );
+	/*$(".webform-component--sadsadasdsa p").replaceWith('<label>'+ $( this ).text() +'</label>' );*/
 
 
 	/*CAmbios en el filtro*/

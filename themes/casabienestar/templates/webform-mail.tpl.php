@@ -21,11 +21,11 @@
  * when using the "default" e-mail template.
  */
 ?>
-<?php print ($email['html'] ? '<p>' : '') . t('Enviado el [submission:date:long]'). ($email['html'] ? '</p>' : ''); ?>
+<?php print ($email['html'] ? '<p>' : '') . t('Enviado el [submission:date:long]'). ($email['html'] ? '</p>' : ''); ?><br>
 <?php if ($user->uid): ?>
-<?php print ($email['html'] ? '<p>' : '') . t('Enviado por el usuario: [submission:user]') . ($email['html'] ? '</p>' : ''); ?>
+<?php print ($email['html'] ? '<p>' : '') . t('Enviado por el usuario: [submission:user]') . ($email['html'] ? '</p>' : ''); ?><br>
 <?php else: ?>
-<?php print ($email['html'] ? '<p>' : '') . t('Enviado por el usuario anonimo: [submission:ip-address]') . ($email['html'] ? '</p>' : ''); ?>
+<?php print ($email['html'] ? '<p>' : '') . t('Enviado por el usuario anonimo: [submission:ip-address]') . ($email['html'] ? '</p>' : ''); ?><br>
 <?php endif; ?>
 <span class="Nombre">=Nombre: [submission:values:nombres_contacto] </span>
 <span class="Apellido">=Apellido: [submission:values:apellidos_contacto] </span>
