@@ -763,7 +763,7 @@ $(document).on("change", ".form-select", function () {
 
 	var dominio= window.location.protocol+'//'+window.location.hostname;
 
-	$("#block-views-recetario-1er-tiempo-block-9").append('<div class="loader"><img src="'+dominio+'/consumidor_nestle_com_co/sites/all/themes/casabienestar/images/icono-recetario.svg" width="42" class="img-responsive"><p>Estamos preparando las recetas</p></div>');
+	$("#block-views-recetario-1er-tiempo-block-9").append('<div class="loader"><img src="'+dominio+'/consumidor_nestle_com_co/sites/all/themes/casabienestar/images/icono-recetario.svg" width="60" class="img-responsive"><p>Estamos preparando las recetas</p></div>');
 		$(".view-recetario-1er-tiempo").addClass('hidden');
 
 		 $("option", this).addClass("hidden");
